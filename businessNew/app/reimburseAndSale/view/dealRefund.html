@@ -1,0 +1,43 @@
+<section class="dealRefund_main">
+    <header class="header">
+        <div class="head">
+            <div class="ret_left" v-on:click="goBack"><span>&#xe621;</span></div>
+            <span class="ret_title">退款/售后</span>
+        </div>
+        <div class="list" v-for="list in babyMessage">
+            <div class="de_img">
+                <img :src="list.skuPhoto">
+            </div>
+            <div class="int">
+                <p><span class="int_title">{{list.goodsName}}</span><span class="R">x{{list.num}}</span></p>
+                <p><span v-for="skuDetail in list.skuDetail" class="margin_r">{{skuDetail.skuAttrClass}}:{{skuDetail.skuAttrVal}}</span>
+                    <span class="R pir">￥{{list.price}}</span>
+                </p>
+                <p><span class="int_title">退款编号：{{list.orderNo}}</span></p>
+                <p>时间{{list.createDate}}</p>
+            </div>
+        </div>
+    </header>
+    <section class="content">
+        <div class="record">
+            <div class="re_text">王二
+                <div class="re_time">2016.12.12<span>12：12：12</span></div>
+            </div>
+            <div class="del">
+                <div class="apply">买家申请退款</div>
+                <div class="reason">
+                    <p>退款原因</p>
+                    <p>如果没有发货就不要了</p>
+                </div>
+            </div>
+        </div>
+        <div class="record">
+            <div class="re_text">平行世界
+                <div class="re_time">2016.12.12<span>12：12：12</span></div>
+            </div>
+            <div class="del del_color">
+                <div class="apply">买家申请退款</div>
+            </div>
+        </div>
+    </section>
+</section>

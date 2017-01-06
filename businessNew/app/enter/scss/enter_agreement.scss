@@ -1,0 +1,54 @@
+@import"../../../public/scss/variables.scss";
+.enter-agreement{
+    position: absolute;
+    left:0px;
+    right:0px;
+    top:0px;
+    bottom: 0px;
+    overflow-y: auto;
+    overflow-x: hidden; 
+    i,ins,em,s{
+        font-style: normal;
+        text-decoration: none;
+    }
+    .agreement_header{
+        height: $header_height;
+        background-color: $header_background;
+        color: $header_color;
+        font-size: $header_fontsize;
+        span {
+            position: absolute;
+            left: 0px;
+            display: inline-block;
+            width: $header_left_width;
+            height: $header_left_height;
+            font-family: "iconfont";
+            text-align: center;
+            line-height: $header_left_height;
+        }
+        .agreement_title {
+            text-align: center;
+            line-height: $header_height;
+            font-size: $header_center_fontsize;
+        }
+    }
+    .agreement_foot{
+        position: absolute;
+        bottom: 0px;
+        font-size: .16rem;
+        width: 100%;
+        height: 48px;
+        line-height: 48px;
+        text-align: center;
+        color: #fff;
+        background-color: #F17F22;
+    }
+    .agreement_sec{
+        position: absolute;
+        top:50px;
+        left: 0px;
+        right: 0px;
+        bottom: 48px;
+        overflow-y:auto;
+    }
+}

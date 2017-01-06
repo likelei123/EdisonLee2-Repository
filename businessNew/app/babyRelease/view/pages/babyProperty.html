@@ -1,0 +1,16 @@
+<section class="property_main">
+    <header class="header">
+        <div class="head">
+            <div v-on:click="goBack" class="nav"><span>&#xe621;</span></div>
+            <div class="nav_title">宝贝属性</div>
+        </div>
+    </header>
+    <section class="content">
+        <div class="nav" v-for="item in items[0]">
+            <div class="list"><span class="L">{{item.attribute_name}}</span><input class="int_r" type="text" placeholder="请输入" v-model="item.attribute_type"></div>
+        </div>
+    </section>
+    <footer class="footer" v-on:click="success">
+        完成
+    </footer>
+</section>

@@ -1,0 +1,17 @@
+<section class="switcher_main">
+    <header class="header">
+        <div class="head">
+            <div v-on:click="goBack" class="nav"><span>&#xe621;</span></div>
+            <div class="nav_title">选择图片</div>
+        </div>
+    </header>
+    <section class="content">
+        <div class="img_list" v-for="(key,imgUrl) in imgNewArray" track-by="$index">
+            <div class="choose" v-on:click="makeSure(key)"><span v-show="ActiveCheck == key">&#xe619;</span></div>
+            <img :src="imgUrl.img">
+        </div>
+    </section>
+    <footer class="footer" v-bind:class="{'footerColor':accomplishColor}" v-on:click="success">
+        确认
+    </footer>
+</section>

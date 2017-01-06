@@ -1,0 +1,141 @@
+@import "../../../public/scss/variables.scss";
+@mixin border-radius($radius) {
+    -webkit-border-radius: $radius;
+    -moz-border-radius: $radius;
+    border-radius: $radius;
+}
+
+@mixin box-sizing($sizing) {
+    -webkit-box-sizing: $sizing;
+    -moz-box-sizing: $sizing;
+    box-sizing: $sizing;
+}
+
+.dealRefund_main {
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    font-size: 0;
+    background: #F2F5F9;
+    .header {
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        font-size: 0;
+        background: #FFF;
+        .head {
+            background: $header_background;
+            padding: 0 10px;
+            height: $header_left_height;
+            line-height: $header_left_height;
+            text-align: center;
+            font-size: $header_fontsize;
+            overflow: hidden;
+            .ret_left {
+                float: left;
+                font-family: "iconfont";
+                color: $header_color;
+            }
+            .ret_title {
+                color: $header_color;
+            }
+        }
+        .list {
+            width: 90%;
+            margin: 0 auto;
+            overflow: hidden;
+            padding: 5px 0;
+            .de_img {
+                width: 74px;
+                height: 74px;
+                float: left;
+                img {
+                    width: 74px;
+                    height: 74px;
+                }
+            }
+            .int {
+                width: 72%;
+                float: right;
+                p {
+                    color: #AEAEAE;
+                    padding: 2px 0;
+                    color: #AEAEAE;
+                    font-size: .13rem;
+                    overflow: hidden;
+                    .int_title {
+                        color: #000;
+                    }
+                    .pir {
+                        color: #FFA842;
+                    }
+                    .R {
+                        float: right;
+                    }
+                    .margin_r {
+                        margin-right: 3px;
+                    }
+                }
+            }
+        }
+    }
+    .content {
+        position: absolute;
+        top: 140px;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        overflow-y: auto;
+        overflow-x: hidden;
+        background: #F2F5F9;
+        font-size: 0;
+        padding: 0 10px;
+        .record {
+            .re_text {
+                font-size: .14rem;
+                padding: 10px 0;
+                overflow: hidden;
+                .re_time {
+                    float: right;
+                    text-align: right;
+                    color: #BEBFC0;
+                    span {
+                        margin-left: 5px;
+                    }
+                }
+            }
+            .del {
+                margin-top: 5px;
+                padding: 5px 5px;
+                background: #FFF;
+                @include border-radius(5px);
+                overflow: hidden;
+                .apply {
+                    font-size: .14rem;
+                    color: #BEBFC0;
+                    height: 24px;
+                    line-height: 24px;
+                    @include box-sizing(border-box);
+                    border-bottom: 1px solid #BEBFC0;
+                }
+                .reason {
+                    p {
+                        font-size: .14rem;
+                        color: #BEBFC0;
+                        padding-top: 4px;
+                    }
+                }
+            }
+            .del_color {
+                background: #308AE8;
+                .apply {
+                    color: #FFF;
+                    border: none;
+                }
+            }
+        }
+    }
+}

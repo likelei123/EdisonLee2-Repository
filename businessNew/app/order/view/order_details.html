@@ -1,0 +1,88 @@
+<div class="order-details">
+    <header class="order_detail_header">
+        <span v-on:click="onBack">&#xe621;</span>
+        <p>订单详情</p>
+    </header>
+    <section class="order_detail_sec" style="height:clac(100% - 50px);overflow-y: scroll;">
+        <div class="order_user_address">
+            <div class="address_box">
+                <span>{{ data._recverName }}</span>
+                <span style="margin-left:10px;">{{ data._recverTel }}</span>
+                <br/>
+                <span>{{ data._provinceName }} {{ data._cityName }} {{ data._countyName }} {{ data._userAddrDetail }}</span>
+            </div>
+            <div class="address_user_content">
+                用户留言：{{ "无留言" }}
+            </div>
+            <div class="line-bottom"></div>
+            <div class="fn-button-box">
+                <div class="left-btn">
+                    <img src="../image/persionlisten.gif">
+                    <span>联系买家</span>
+                </div>
+                <div class="right-btn">
+                    <img src="../image/phone.gif">
+                    <span>拨打电话</span>
+                </div>
+            </div>
+        </div>
+        <div class="order_detail_title">订单信息</div>
+        <ul>
+            <li>
+                <em>买家账号： </em>
+                <h5>{{ data.nickName }}</h5>
+            </li>
+            <li>
+                <em>订单状态： </em>
+                <h5 class="isgreen">{{ data.nextNodeCodeName }}</h5>
+            </li>
+            <li>
+                <em>商品总价： </em>
+                <h5 class="isgreen">{{ data.sumMoney }}</h5>
+            </li>
+            <li>
+                <em>物流运费： </em>
+                <h5>{{ data.deliveryFee }}</h5>
+            </li>
+            <li>
+                <em>交易金额：</em>
+                <h5 class="isred">￥{{ (parseFloat(data.sumMoney)+parseFloat(data.deliveryFee)) }}</h5>
+            </li>
+            <li>
+                <em>订单编号：</em>
+                <h5>{{ data.orderNo }}</h5>
+            </li>
+            <li>
+                <em>创建时间： </em>
+                <h5>{{ data.createDate }}</h5>
+            </li>
+            <li><em>消费时间： </em>
+                <h5>{{ data.dealTime }}</h5>
+            </li>
+        </ul>
+        <div class="order_detail_title">商品信息</div>
+        <div class="detalis_goods_list"  v-for="item in data.goods">
+            <span class="detalis_img">
+                <img v-bind:src="item.skuPhoto" alt="订单详细的商品图片">
+            </span>
+            <div class="detalis_right">
+                <!-- <span>商品编码：</span><span>1582614521545</span> -->
+                <h2>{{ item.goodsName }}</h2>
+                <p>
+                    <em>网购价 ：</em>
+                    <ins class="isred">￥{{item.price}}</ins>
+                    <em>数量：{{ item.num }}</em>
+                </p>
+            </div>
+            <div class="order_state">
+                <em>{{ item.currentRefundNodeCodeName }}</em>
+            </div>
+        </div>
+        <div v-on:click="deliverGoods()" 
+            v-show="data.nextNodeCode == 'SEND' && data.odrerType == 0" 
+            class="active-button">我要发货</div>
+        <div v-on:click="confirmConsume()" 
+            v-show="data.nextNodeCode == 'CONSUME'  && data.odrerType == 1 && data.isShowButton" 
+            class="active-button">确认消费</div>
+    </section>
+</div>

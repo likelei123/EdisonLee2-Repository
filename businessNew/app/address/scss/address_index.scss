@@ -1,0 +1,88 @@
+@import"../../../public/scss/variables.scss";
+.adress-box{
+    position: absolute;
+    left:0px;
+    right:0px;
+    top:0px;
+    bottom: 0px;
+    background-color: #eee;
+    overflow-y: auto;
+
+    i,em,ins,s{
+        font-style: normal;
+        text-decoration: none;
+    };
+    .address_index_hed {
+        height: $header_height;
+        background-color: $header_background;
+        color: $header_color;
+        font-size: $header_fontsize;
+        overflow: hidden;
+        span {
+            position: absolute;
+            display: inline-block;
+            width: $header_left_width;
+            height: $header_left_height;
+            font-family: "iconfont";
+            text-align: center;
+            line-height: $header_left_height;
+        }
+        .span_left{
+             left:0px;
+        }
+        .span_right{
+            top:0px;
+            right:0px;
+        }
+        p{
+             text-align: center;
+            line-height: $header_height;
+            font-size: $header_center_fontsize;
+        }
+    }
+    .address_index_sec{
+        position: absolute;
+        top:50px;
+        left:0px;
+        right:0px;
+        bottom: 0px;
+        div{
+            background-color: #fff;
+           
+                font-size: .15rem;
+                margin-bottom: .14rem;
+                span{
+                    height: .46rem;
+                     line-height: .46rem;
+                    display: block;
+                    border-bottom: .01rem solid #E2E2E2; 
+                    padding: 0 .14rem;
+                    overflow: hidden;
+                    em{
+                        float: right;
+                        line-height: .46rem;
+                        font-family: 'iconFont';
+                    }
+                }
+                .Return_ul,.delivery_ul{
+                    font-size: 0px;
+                    li{
+                         padding: .16rem .32rem 0 .14rem;
+                         h5{
+                             font-size: .15rem;
+                             overflow: hidden;
+                             font-weight: bold;
+                            padding-bottom: .12rem;
+                             i{
+                                 float: right;
+                             }
+                         }
+                         p{
+                            font-size: .12rem;
+                            padding-bottom: .13rem;
+                         }
+                    }
+                }
+        }
+    }
+}

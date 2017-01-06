@@ -1,0 +1,259 @@
+@import"../../../public/scss/variables.scss";
+.box-withdrawal {
+    position: absolute;
+    left: 0px;
+    right: 0px;
+    top: 0px;
+    bottom: 0px;
+    background-color: #eee;
+    i,
+    ins,
+    em {
+        font-style: normal;
+        text-decoration: none;
+    }
+    .icon {
+        font-family: "iconfont";
+    }
+    .withdrawal_header {
+        height: $header_height;
+        background-color: $header_background;
+        color: $header_color;
+        font-size: $header_fontsize;
+        span {
+            position: absolute;
+            display: inline-block;
+            width: $header_left_width;
+            height: $header_left_height;
+            text-align: center;
+            line-height: $header_left_height;
+            font-family: "iconfont";
+        }
+        .withdrawal_title {
+            // position: relative;
+            text-align: center;
+            line-height: $header_height;
+            font-size: $header_center_fontsize;
+        }
+    }
+    .withdrawal_sec {
+        position: absolute;
+        top: 48px;
+        bottom: 0px;
+        right: 0px;
+        left: 0px;
+        overflow-y: auto;
+        overflow-x: hidden;
+        .back_card {
+            margin-top: 10px;
+            background-color: #fff;
+            font-size: .14rem;
+            color: #666;
+            padding: 12px;
+            overflow: hidden;
+            i {
+                margin-top: 2px;
+                float: right;
+                font-family: "iconfont";
+                font-size: .12rem;
+            }
+        }
+        .withdrawal_money {
+            position: relative;
+            margin-top: 10px;
+            font-size: 0px;
+            height: 38px;
+            line-height: 38px;
+            background-color: #fff;
+            overflow: hidden;
+            padding: 0 12px;
+            em {
+                font-size: .14rem;
+                color: #333;
+            }
+            input {
+                position: absolute;
+                left: 50px;
+                color: #f3632a;
+                height: 38px;
+                border: none;
+                width: 80%;
+                font-size: .14rem;
+            }
+        }
+    }
+    .withdrawal_foot {
+        position: absolute;
+        bottom: 10px;
+        width: 100%;
+        // height: 48px;
+        p {
+            text-align: center;
+            font-size: .12rem;
+            color: #666;
+            margin-bottom: 10px;
+        }
+        span {
+            display: block;
+            width: 90%;
+            margin-left: 5%;
+            border: 1px #2075cf solid;
+            height: 48px;
+            border-radius: 6px;
+            color: #2075cf;
+            text-align: center;
+            line-height: 48px;
+            font-size: .16rem;
+        }
+    }
+    .card_lists {
+        position: absolute;
+        background: rgba(0, 0, 0, 0.5);
+        top: 48px;
+        bottom: 0px;
+        left: 0px;
+        right: 0px;
+        .card_kuai {
+            position: absolute;
+            bottom: 0px;
+            width: 100%;
+            font-size: 0px;
+            p {
+                background-color: #fff;
+                height: 40px;
+                line-height: 40px;
+                border-bottom: 1px #eee solid;
+                overflow: hidden;
+                text-align: center;
+                i {
+                    display: inline-block;
+                    width: 40px;
+                    height: 40px;
+                    font-family: "iconfont";
+                    font-size: .14rem;
+                    float: left;
+                    vertical-align: top;
+                    text-align: center;
+                    line-height: 40px;
+                }
+                em {
+                    font-size: .16rem;
+                    color: #333;
+                }
+            }
+            ul {
+                padding: 0 20px;
+                background-color: #fff;
+                padding-bottom: 10px;
+                li {
+                    position: relative;
+                    height: 40px;
+                    border-bottom: 1px #eee solid;
+                    background-color: #fff;
+                    font-size: .14rem;
+                    color: #333;
+                    line-height: 40px;
+                    i {
+                        position: absolute;
+                        right: 2px;
+                        top: 10px;
+                        display: inline-block;
+                        width: 18px;
+                        height: 18px;
+                        border-radius: 50%;
+                        font-family: "iconfont";
+                        font-size: .12rem;
+                        text-align: center;
+                        line-height: 23px;
+                        color: #fff;
+                    }
+                    .i_background {
+                        background-color: #2075cf;
+                    }
+                }
+                .back_card {
+                    background-color: #fff;
+                    font-size: .14rem;
+                    color: #666;
+                    overflow: hidden;
+                    height: 40px;
+                    line-height: 40px;
+                    border-bottom: 1px #eee solid;
+                    i {
+                        margin-top: 2px;
+                        float: right;
+                        font-family: "iconfont";
+                        font-size: .12rem;
+                    }
+                }
+                .is_ok {
+                    margin-top: 30px;
+                    border: 1px #2075cf solid;
+                    border-radius: 6px;
+                    height: 40px;
+                    line-height: 40px;
+                    text-align: center;
+                    color: #2075cf;
+                    font-size: .14rem;
+                }
+            }
+        }
+    }
+    .jump_sec {
+        position: absolute;
+        background: rgba(0, 0, 0, 0.5);
+        top: 48px;
+        bottom: 0px;
+        left: 0px;
+        right: 0px;
+        .prompt {
+            position: absolute;
+            left: 0px;
+            right: 0px;
+            bottom: 0px;
+            top: 0px;
+            margin: auto;
+            height: 140px;
+            width: 80%;
+            background-color: #fff;
+            border-radius: 10px;
+            p {
+                margin-top: 5px;
+                font-size: .16rem;
+                padding: 20px;
+                text-align: center;
+                border-bottom: 1px #eee solid;
+            }
+            span {
+                margin-top: 15px;
+                display: block;
+                text-align: center;
+                font-size: 0px;
+                padding: 0 20px;
+                em,
+                i {
+                    position: relative;
+                    display: inline-block;
+                    width: 50%;
+                    vertical-align: top;
+                    font-size: .16rem;
+                }
+                em {
+                    color: #666;
+                }
+                i {
+                    color: #2075cf;
+                }
+                em:before {
+                    content: "";
+                    position: absolute;
+                    width: 1px;
+                    height: 30px;
+                    background-color: #eee;
+                    left: 100%;
+                    top: -5px;
+                }
+            }
+        }
+    }
+}

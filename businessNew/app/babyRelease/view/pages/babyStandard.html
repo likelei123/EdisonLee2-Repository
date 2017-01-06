@@ -1,0 +1,100 @@
+<section class="standard_main">
+    <header class="header">
+        <div class="head">
+            <div v-on:click="goBack" class="nav"><span>&#xe621;</span></div>
+            <div class="nav_title">宝贝规格</div>
+        </div>
+    </header>
+    <section class="content">
+        <div class="part" v-for="(allkey,title) in titleData">
+            <div class="title">{{title}}<span></span></div>
+            <div class="nav">
+                <div class="add" v-on:click="addColumn(allkey)">
+                    <span class="add_ico">&#xe625;</span><span class="add_text">自定义</span>
+                </div>
+                <div class="add" v-for="(key,list) in allListData[allkey]" v-on:click="listActive(allkey,key)" v-bind:class="{'add_bor':list.status}">
+                    <span class="add_text">{{list.name}}</span>
+                    <div class="list_sure" v-show="list.status">
+                    </div>
+                    <span class="icn" v-show="list.status">&#xe619;</span>
+                </div>
+            </div>
+            <div class="up">&#xe623;</div>
+            <div class="part_footer"></div>
+        </div>
+        <div class="part_norms">
+            <div class="title">价格/库存/商品编码<span class="title_bk"></span><span class="right_text" v-on:click="batchList">批量设定</span></div>
+            <div class="complete"  v-for="(allkey,title) in titleData">
+                <div class="list" v-for="(key,list) in allListData[allkey]" v-show="list.status">
+                    <div class="headline">
+                        <div class="check" v-on:click="choose(allkey,key)"><span v-show="list.check">&#xe619;</span></div><span class="head_name">"{{list.name}}"</span>
+                        <div class="list_R" v-on:click="skip(allkey,key)">选择图片</div>
+                    </div>
+                    <div class="import">
+                        <div class="class_fy">
+                            <p class="class_nav">实体价：</p>
+                            <input type="text" placeholder="请输入" v-model="list.shitil">
+                        </div>
+                        <div class="class_fy R">
+                            <p class="class_nav">平台价：</p>
+                            <input type="text" placeholder="请输入" v-model="list.pingtai">
+                        </div>
+                    </div>
+                    <div class="import">
+                        <div class="class_fy">
+                            <p class="class_nav">库存：</p>
+                            <input type="text" placeholder="请输入" v-model="list.kucun">
+                        </div>
+                        <div class="class_fy R">
+                            <p class="class_nav">商品编码：</p>
+                            <input type="text" placeholder="请输入" v-model="list.shangpin">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <footer class="footer" v-bind:class="{'footerColor':accomplishColor}" v-on:click="accomplish">
+        完成
+    </footer>
+    <section class="matte" v-if="bacth || maCont">
+    </section>
+    <section class="batch" v-show="bacth">
+        <div class="list">
+            <div class="headline">
+                批量处理<span v-on:click="batchHide">×</span>
+            </div>
+            <div class="import">
+                <div class="class_fy">
+                    <p class="class_nav">实体价：</p>
+                    <input type="text" placeholder="请输入" v-model="shitilVal">
+                </div>
+                <div class="class_fy R">
+                    <p class="class_nav">平台价：</p>
+                    <input type="text" placeholder="请输入" v-model="pingtaiVal">
+                </div>
+            </div>
+            <div class="import">
+                <div class="class_fy">
+                    <p class="class_nav">库存：</p>
+                    <input type="text" placeholder="请输入" v-model="kucunVal">
+                </div>
+                <div class="class_fy R">
+                    <p class="class_nav">商品编码：</p>
+                    <input type="text" placeholder="请输入" v-model="shangpinVal">
+                </div>
+            </div>
+        </div>
+        <div class="btn" v-on:click="success">
+            <span>完成</span>
+        </div>
+    </section>
+    <div class="ma_cont" v-show="maCont">
+        <p>添加</p>
+        <input type="text" placeholder="请输入宝贝类型" v-model="valude">
+        <div class="choose">
+            <span v-on:click="conceal">取消</span>
+            <span v-on:click="save">保存</span>
+        </div>
+    </div>
+</section>

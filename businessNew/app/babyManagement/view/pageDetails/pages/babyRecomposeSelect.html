@@ -1,0 +1,30 @@
+<section class="babyRecomposeSelect_main">
+    <header class="header">
+        <div class="head">
+            <div v-on:click="goBack" class="nav"><span class="ico_nav">&#xe621;</span></div>
+            <div class="nav_title">选择类目</div>
+            <div class="nav" v-on:click="affirm"><span>确定</span></div>
+        </div>
+        <div class="search">
+            <div class="search_bar"><input type="text" placeholder="输入商品关键字"><span>&#xe61e;</span></div>
+        </div>
+    </header>
+    <section class="content">
+        <ul class="nav">
+            <li class="nav_list" v-for="(key,item) in dataClassification">
+                <div class="grade" v-on:click="active(key)">
+                    <span class="title">选择{{N[key]}}级分类</span>
+                    <div class="text"><span v-text=" listZhi.length == key?'':dataClassification[key][listZhi[key]].name"></span>&#xe623;</div>
+                </div>
+                <ul class="classify" v-if="show == key">
+                    <li class="classify_list" v-for="(keyList,list) in dataClassification[key]">
+                        <div class="classify_active" v-on:click="listActive(list.categoryId,key,keyList)">
+                            <span class="title" v-bind:class="{'titleColor':listZhi[key] == keyList}">{{list.name}}</span>
+                            <em v-show="listZhi[key] == keyList">&#xe619;</em>                  
+                        </div>
+                    </li>
+                </ul>
+            </li>
+        </ul>
+    </section>
+</section>

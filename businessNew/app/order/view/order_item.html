@@ -1,0 +1,32 @@
+<div class="lists" v-for="item in items">
+    <h3>
+        <a>
+            <span class="lists_photo">
+                <img v-bind:src="item.shopLogo" alt="店铺的logo">
+            </span>
+        </a>
+        <a>
+            <em>{{ item.shopName }}</em>
+        </a>
+        <ins>{{ item.nextNodeCodeName }}</ins>
+    </h3>
+    <ul v-for="product in item.goods" v-on:click="onGodetails(item)">
+        <li>
+            <span class="goods_img" >
+                <img v-bind:src="product.skuPhoto" alt="商品图片">
+            </span>
+            <div class="goods_top" >
+                <div class="left_name">{{ product.goodsName }}</div>
+                <div class="right_status">{{ product.currentRefundNodeCodeName }}</div>
+            </div>
+            <div class="goods_money">
+                <em>{{ product.price }}</em>
+                <i>X<s>{{ product.num }}</s></i>
+            </div>
+        </li>
+    </ul>
+    <div class="lists_bot">
+        <p class="bot_text">共<em>{{ item.sumProduct }}</em>件商品 合计：{{ item.sumPrice }}￥<i>{{ item.count }}</i>（含运费￥{{ item.deliveryFee }}）</p>
+        <p class="bot_texttime">创建时间：{{ item.createDate }}</p>
+    </div>
+</div>

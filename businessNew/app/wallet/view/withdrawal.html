@@ -1,0 +1,61 @@
+<div class="box-withdrawal">
+    <header class="withdrawal_header">
+        <span v-on:click="OnGoback">&#xe621;</span>
+        <p class="withdrawal_title">提现</p>
+    </header>
+    <section class="withdrawal_sec">
+        <div class="back_card" v-on:click="OnCard">
+            <em>您还未添加银行卡，请先添加</em>
+            <i>&#xe623;</i>
+        </div>
+        <div class="withdrawal_money">
+            <em>提现</em>
+            <input type="number" placeholder="本次可提现 6000元">
+        </div>
+    </section>
+    <div class="withdrawal_foot">
+        <p>提现将在三个工作日内到账</p>
+        <span>提现</span>
+    </div>
+    <section class="card_lists" v-show="lists_show" v-on:click="Onhide($event)">
+        <div class="card_kuai">
+            <p>
+                <i>&#xe621;</i>
+                <em>选择银行卡</em>
+            </p>
+            <ul>
+                <li>
+                    <em>中国银行</em>
+                    <i class="i_background">&#xe619;</i>
+                </li>
+                <li>
+                    <em>中国银行</em>
+                    <i class="i_background">&#xe619;</i>
+                </li>
+                <li>
+                    <em>中国银行</em>
+                    <i>&#xe619;</i>
+                </li>
+                <li>
+                    <em>中国银行</em>
+                    <i>&#xe619;</i>
+                </li>
+                <li>中国银行</li>
+                <div class="back_card">
+                    <em>添加银行卡</em>
+                    <i>&#xe623;</i>
+                </div>
+                <div class="is_ok">确定</div>
+            </ul>
+        </div>
+    </section>
+    <section class="jump_sec" v-show="sec_show">
+        <div class="prompt">
+            <p>您还未设置提现密码，请你设置以后再进行提现申请操作</p>
+            <span>
+                <em>取消</em>
+                <i>去设置</i>
+            </span>
+        </div>
+    </section>
+</div>

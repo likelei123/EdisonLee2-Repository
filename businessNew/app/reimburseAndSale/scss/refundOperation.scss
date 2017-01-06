@@ -1,0 +1,296 @@
+@import "../../../public/scss/variables.scss";
+@mixin border-radius($radius) {
+    -webkit-border-radius: $radius;
+    -moz-border-radius: $radius;
+    border-radius: $radius;
+}
+
+@mixin box-sizing($sizing) {
+    -webkit-box-sizing: $sizing;
+    -moz-box-sizing: $sizing;
+    box-sizing: $sizing;
+}
+
+@mixin opacity($val) {
+    -webkit-opacity: $val;
+    -moz-opacity: $val;
+    opacity: $val;
+}
+
+.reOperation_main {
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    font-size: 0;
+    background: #F2F5F9;
+    .header {
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        font-size: 0;
+        background: #FFF;
+        .head {
+            background: $header_background;
+            padding: 0 10px;
+            height: $header_left_height;
+            line-height: $header_left_height;
+            text-align: center;
+            font-size: $header_fontsize;
+            overflow: hidden;
+            .ret_left {
+                float: left;
+                font-family: "iconfont";
+                color: $header_color;
+            }
+            .ret_title {
+                color: $header_color;
+            }
+        }
+        .list {
+            margin: 0 auto;
+            overflow: hidden;
+            padding: 5px 10px;
+            background: #FFF;
+            .de_img {
+                width: 74px;
+                height: 74px;
+                float: left;
+                img {
+                    width: 74px;
+                    height: 74px;
+                }
+            }
+            .int {
+                width: 72%;
+                float: right;
+                p {
+                    color: #AEAEAE;
+                    padding: 2px 0;
+                    color: #AEAEAE;
+                    font-size: .13rem;
+                    overflow: hidden;
+                    .int_title {
+                        color: #000;
+                    }
+                    .pir {
+                        color: #FFA842;
+                    }
+                    .R {
+                        float: right;
+                    }
+                    .margin_r {
+                        margin-right: 3px;
+                    }
+                }
+            }
+        }
+    }
+    .content {
+        position: absolute;
+        top: 140px;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        overflow-y: auto;
+        overflow-x: hidden;
+        background: #F2F5F9;
+        font-size: 0;
+        .con_main {
+            padding: 0 10px;
+            .record {
+                .re_text {
+                    font-size: .14rem;
+                    padding: 10px 0;
+                    overflow: hidden;
+                    .re_time {
+                        float: right;
+                        text-align: right;
+                        color: #BEBFC0;
+                        span {
+                            margin-left: 5px;
+                        }
+                    }
+                }
+                .del {
+                    margin-top: 5px;
+                    padding: 5px 5px;
+                    background: #FFF;
+                    @include border-radius(5px);
+                    overflow: hidden;
+                    .user_apply {
+                        font-size: .14rem;
+                        height: 24px;
+                        line-height: 24px;
+                        border-bottom: 1px solid #EEE;
+                    }
+                    .apply {
+                        padding: 5px 0;
+                        font-size: .14rem;
+                        color: #FFF;
+                        height: 24px;
+                        line-height: 24px;
+                        overflow: hidden;
+                        span {
+                            float: right;
+                            color: #FFA842;
+                        }
+                        .icn {
+                            font-family: 'iconfont';
+                        }
+                    }
+                    .user_res {
+                        font-size: .14rem;
+                        padding-top: 4px;
+                        color: #BEBFC0;
+                    }
+                    .reason {
+                        padding: 5px 0;
+                        @include box-sizing(border-box);
+                        border-bottom: 1px solid #FFF;
+                        border-top: 1px solid #FFF;
+                        span {
+                            font-size: .14rem;
+                            color: #FFF;
+                            padding-top: 4px;
+                        }
+                    }
+                    .cod {
+                        padding: 5px 0;
+                        .block {
+                            font-size: .14rem;
+                            padding-top: 4px;
+                        }
+                    }
+                }
+                .del_color {
+                    background: #308AE8;
+                    .apply {
+                        color: #FFF;
+                        border: none;
+                    }
+                }
+            }
+        }
+        .con_refuse {
+            background: #FFF;
+            padding: 10px 20px;
+            textarea {
+                width: 100%;
+                height: 100px;
+                font-size: .14rem;
+                color: #838383;
+                resize: none;
+            }
+             ::-webkit-textarea-placeholder {
+                color: #838383;
+                font-size: .14rem;
+            }
+        }
+    }
+    .footer {
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        overflow: hidden;
+        height: 48px;
+        line-height: 48px;
+        background: #FFF;
+        padding: 0 10px;
+        .main {
+            text-align: justify;
+            .btn {
+                margin-top: 6px;
+                width: 30%;
+                height: 36px;
+                display: inline-block;
+                line-height: 36px;
+                text-align: center;
+                color: #308AE8;
+                font-size: .14rem;
+                @include box-sizing(border-box);
+                border: 1px solid #308AE8;
+                @include border-radius(5px);
+            }
+        }
+        .main:after {
+            content: '';
+            display: inline-block;
+            position: relative;
+            top: 0;
+            left: 0;
+            width: 100%;
+        }
+        .refuse {
+            overflow: hidden;
+            .btn {
+                float: left;
+                width: 50%;
+                margin-top: 2px;
+                height: 44px;
+                line-height: 44px;
+                text-align: center;
+                font-size: .14rem;
+                color: #308AE8;
+            }
+            .btn_L {
+                @include box-sizing(border-box);
+                border-left: 1px solid #EEE;
+            }
+        }
+    }
+    .meng_block {
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background: #000;
+        @include opacity(.6);
+    }
+    .pay {
+        position: absolute;
+        top: 40%;
+        left: 0;
+        right: 0;
+        height: 48px;
+        background: #FFF;
+        overflow: hidden;
+        padding: 0 10px;
+        .input_box {
+            float: left;
+            width: 70%;
+            height: 48px;
+            line-height: 48px;
+            input {
+                width: 100%;
+                padding: 0 5px;
+                background: #EEE;
+                height: 36px;
+                font-size: .14rem;
+                color: #A5A5A5;
+                margin-top: 6px;
+                @include border-radius(5px);
+            }
+             ::-webkit-input-placeholder {
+                font-size: .14rem;
+                color: #A5A5A5;
+            }
+        }
+        .btn {
+            float: right;
+            width: 70px;
+            height: 36px;
+            line-height: 36px;
+            margin-top: 6px;
+            color: #FFF;
+            font-size: .14rem;
+            @include border-radius(5px);
+            background: #308AE8;
+            text-align: center;
+        }
+    }
+}

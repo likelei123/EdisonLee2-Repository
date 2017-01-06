@@ -1,0 +1,68 @@
+<section class="subpage_add">
+	<header class="header">
+		<div class="left" v-on:click="goBack"><span>&#xe621;</span></div>
+		<span>新增员工</span>
+	</header>
+	<section class="mian">
+		<div class="navbar">
+			<div class="nav_left">]
+				<a href="native://photo?data={'returnfunction': 'empImgback','photoCount':1}">
+					<div class="nav_img">
+						<img v-bind:src="set_info.empImg">
+					</div>
+				</a>
+			</div>
+			<div class="nav_right">
+				<div class="nav_form"><span>姓名</span><input type="text" class="int" placeholder="请输入姓名" v-model="set_info.empName"></div>
+				<div class="nav_form"><span>职位</span><input type="text" class="int" placeholder="请输入职位" v-model="set_info.empJob"></div>
+				<div class="nav_form"><span>手机</span><input type="text" class="int" placeholder="请输入电话号码" v-model="set_info.empCellphone"></div>
+				<div class="nav_form none"><span>验证码<b>*</b></span><input class="int proving" type="text" placeholder="请输验证码" v-model="set_info.verification">
+					<button type="button" v-on:click="OnGetCode">获取验证码</button>
+				</div>
+			</div>
+		</div>
+		<div class="limits" v-on:click="onPermissions()">
+			<span class="lim_left">岗位权限<b>*</b></span><span class="lim_right">&#xe623;</span>
+		</div>
+		<div class="powerlist">
+			<ul>
+				{{back}}
+				<li v-for=" poews in back">{{poews.modulename}}</li>
+			</ul>
+		</div>
+		<div class="limits">
+			<span class="lim_left">显示在员工墙</span>
+			<span class="on_off" v-on:click="openActive" v-bind:class="{'open_up':contentShow}">
+				<em></em>
+			</span>
+		</div>
+		<div class="content_show" v-show="contentShow">
+			<div class="upload_img">
+				<p class="title">员工简介背景<span>(最多5张)</span></p>
+				<div class="upload">
+					<div class="content">
+						<img v-for="p in phone" v-bind:src="p">
+						<!--<div class="delete" v-show="makeCannot" v-on:click="Ondelet($index)">×</div>-->
+					</div>
+					<a v-show="hideaddphone" href="native://photo?data={'returnfunction':'addImages','photoCount':5}">
+						<div class="append">
+							<span>&#xe625;</span>
+						</div>
+					</a>
+				</div>
+			</div>
+			<div class="news">
+				<p class="title">员工简介</p>
+				<div class="text_content">
+					<textarea name="content" rows="6" placeholder="对员工的描述" maxlength="500" v-model="set_info.empInstructions"></textarea>
+					<p><span>{{textlength}}</span>/500字</p>
+				</div>
+			</div>
+		</div>
+	</section>
+	<footer class="footer">
+		<div class="add_news" v-on:click="ObtainAdd">
+			确认
+		</div>
+	</footer>
+</section>

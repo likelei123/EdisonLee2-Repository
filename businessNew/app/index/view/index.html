@@ -1,0 +1,203 @@
+<section class="index_mian">
+	<div v-show="data.shopStatus != 11" class="status_info">
+		<div class="background-box"></div>
+		<div class="front-box">
+			<span class="im_icon">&#xe60e;</span>
+			<span class="im_text">{{ data.shopStatusTextInfo }}</span>
+			<span class="im_enter_icon">&#xe623;</span>
+		</div>
+	</div>
+	<div class="first-tap" v-bind:style="{ display: state.tabIndex == 1 ? 'block': 'none' }">
+		<header class="header">
+			<div class="part">
+				<div class="head">
+					<div class="head_img">
+						<img :src="data.shopLogUrl">
+					</div>
+				</div>
+				<div class="message">
+					<p>{{ data.shopName }}</p>
+					<!-- <p class="full">
+						<span class="star">&#xe61f;</span>
+						<span class="star">&#xe61f;</span>
+						<span class="star">&#xe61f;</span>
+						<span class="star">&#xe61f;</span>
+						<span class="star">&#xe61f;</span>
+					</p>  -->
+					<div class="po">
+						<span>职位：{{ data.jobType }}</span>
+						<span class="poL">类型：{{ data.shopType }}</span>
+					</div>
+				</div>
+
+				<div 
+					v-show="data.shopStatus == 11" 
+					class="stop-button"
+					v-on:click="stopBusiness()">停业</div>
+			</div>
+			<div class="tool">
+				<div class="tool_left">
+					<input 
+					:class="{disable_input: data.middleMenu[2].disable == true }"
+					v-on:touchstart="(data.middleMenu[2].disable == false ) ? onScanCode($event, 'number') : null" 
+					type="text" 
+					disabled="disabled" 
+					placeholder="输入验证码" />
+				</div>
+				<div class="tool_right" v-on:touchstart="(data.middleMenu[2].disable == false ) ? onScanCode($event, 'scancode') : null">
+					<!-- <img src="../images/RichScan.png" /> -->
+					<label :class="{disable_btn: (data.middleMenu[2].disable == true) }">&#xe61d;</label><br/>
+					<span :class="{disable_btn: (data.middleMenu[2].disable == true) }">扫一扫</span>
+				</div>
+			</div>
+		</header>
+		<article class="index_content">
+			<section class="del">
+				<div class="del_list">
+					<div class="del_fy">
+						<p>今日成交总额</p>
+						<span class="color_green">￥{{ data.price || '0'}}.00</span>
+					</div>
+					<div class="rule del_fy"></div>
+					<div class="del_fy">
+						<p>今日访客量</p>
+						<span class="color_green">{{ data.pageView || '0'}}</span>
+					</div>
+					<div class="rule del_fy"></div>
+					<div class="del_fy">
+						<p>今日订单数</p>
+						<span class="color_green">{{ data.num || '0'}}</span>
+					</div>
+				</div>
+			</section>
+			<section class="del">
+				<div xtype="middle" class="del_list">
+				</div>
+			</section>
+			<section class="del">
+				<div class="classify">
+					<!-- <div v-on:click="onEnter('#/category')">
+						<p><span class="color_pink ">&#xe606;</span></p>
+						<p>分类管理</p>
+					</div>
+					<div v-on:click="onEnter('#/reimburse')">
+						<p><span class="color_yellow ">&#xe60a;</span></p>
+						<p>退款管理</p>
+					</div>
+					<div v-on:click="onEnter('#/notice')">
+						<p><span class="color_green ">&#xe607;</span></p>
+						<p>公告管理</p>
+					</div>
+					<div v-on:click="onEnter('#/pers')">
+						<p><span class="color_blue">&#xe60c;</span></p>
+						<p>员工管理</p>
+					</div>
+					<div v-on:click="onEnter('#/address')">
+						<p><span class="color_mazarine ">&#xe604;</span></p>
+						<p>地址管理</p>
+					</div>
+					<div>
+						<p><span class="color_purple ">&#xe60d;</span></p>
+						<p>配送管理</p>
+					</div> -->
+				</div>
+			</section>
+		</article>
+	</div>
+
+	<div class="my-tap" v-bind:style="{ display: state.tabIndex == 4 ? 'block': 'none' }">
+		<header class="header">
+	        <span>&#xe621;</span>
+	        <p>我的</p>
+	    </header>
+	    <div class="content">
+	    	<div class="title-box">
+	    		<div class="icon-face">
+	    			<img v-bind:src="backmydata.empImgs" />
+	    			<span class="like-bot" ></span>
+	    			<span class="like-top" v-show="data.isAddGoodsToEmp">已赞</span>
+	    		</div>
+
+	    		<div class="info-box">
+	    			<p class="name_role">
+	    				<span>{{backmydata.empNickname}}</span>-[<span>{{backmydata.empJob}}</span>]
+	    			</p>
+	    			<ul class="author_ls">
+	    				<li v-for=" power in powerlist">{{power.moduleName }}</li>
+	    				<!--<li>基础信息</li>
+	    				<li>订单查询</li>
+	    				<li>库存管理</li>
+	    				<li>调度管理</li>-->
+	    			</ul>
+	    		</div>
+	    	</div>
+
+	    	<div class="menu-box">
+				<ul class="menu-item" v-on:click="onEnter('#/index/shop_info', {isAdmin: backmydata.isAdmin})">
+					<li class="left">&#xe601;</li>
+					<li class="right">&#xe623;</li>
+					<li class="center">店铺信息</li>
+				</ul>
+				<ul class="menu-item" v-on:click="onEnter('#/index/shop_qualifi', {shopStatus: data.shopStatus,isAdmin: backmydata.isAdmin})">
+					<li class="left">&#xe602;</li>
+					<li class="right">&#xe623;</li>
+					<li class="center">店铺资质</li>
+				</ul>
+				<ul class="menu-item" v-on:click="onEnter('#/wallet')">
+					<li class="left">&#xe60b;</li>
+					<li class="right">&#xe623;</li>
+					<li class="center">我的钱包</li>
+				</ul>
+    		</div>
+
+    	<div class="menu-box" v-on:click="onEnter('#/index/password_manage')">
+				<ul class="menu-item">
+					<li class="left">&#xe608;</li>
+					<li class="right">&#xe623;</li>
+					<li class="center">密码管理</li>
+				</ul>
+    		</div>
+
+    		<div class="menu-box">
+				<ul class="menu-item">
+					<li class="left">&#xe60e;</li>
+					<li class="right">&#xe623;</li>
+					<li class="center">关于平行世界*商家</li>
+				</ul>
+    		</div>
+
+    		<div class="exit-button" v-on:click="onExit()">退出当前账户</div>
+	    </div>
+	</div>
+	
+	<footer class="main_footer color_gray">
+		<div
+		v-bind:class="{'selected-color': state.tabIndex == 1}"
+		v-on:click="changeTab(1)">
+			<span>&#xe61c;</span>
+			<p>首页</p>
+		</div>
+		<div
+		v-bind:class="{'selected-color': state.tabIndex == 2}"
+		v-on:click="changeTab(2)">
+			<span>&#xe61b;</span>
+			<p>客服</p>
+		</div>
+		<div
+			v-bind:class="{'selected-color': state.tabIndex == 3}"
+			v-on:click="changeTab(3)">
+			<!-- <a href="native://chatSession?data="> -->
+				<span>&#xe61a;</span>
+				<p>消息</p>
+			<!-- </a> -->
+		</div>
+		<div
+		v-bind:class="{'selected-color': state.tabIndex == 4}"
+		v-on:click="changeTab(4)">
+			<span>&#xe617;</span>
+			<p>我的</p>
+		</div>
+	</footer>
+</section>
+
+

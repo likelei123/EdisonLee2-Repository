@@ -1,0 +1,99 @@
+@import"../../../public/scss/variables.scss";
+.wallet-index {
+    position: absolute;
+    left: 0px;
+    right: 0px;
+    bottom: 0px;
+    top: 0px;
+    font-size: 0px;
+    i,
+    ins,
+    em {
+        font-style: normal;
+        text-decoration: none;
+    }
+    .wallet_header {
+        height: $header_height;
+        background-color: $header_background;
+        color: $header_color;
+        font-size: $header_fontsize;
+        span {
+            position: absolute;
+            display: inline-block;
+            width: $header_left_width;
+            height: $header_left_height;
+            text-align: center;
+            line-height: $header_left_height;
+        }
+        .wallet_left {
+            font-family: "iconfont";
+            left: 0px;
+        }
+        .wallet_right {
+            top: 0px;
+            height: 48px;
+            width: 60px;
+            right: 12px;
+            font-size: .14rem;
+            color: #fff;
+        }
+        .wallet_title {
+            text-align: center;
+            line-height: $header_height;
+            font-size: $header_center_fontsize;
+        }
+    }
+    .wallet_money {
+        font-size: 0px;
+        background-color: $header_background;
+        .withdrawal {
+            font-size: 0px;
+            padding: 0 60px;
+            text-align: center;
+            span {
+                display: block;
+                padding-top: 20px;
+                font-size: .14rem;
+                color: #fff;
+            }
+            p {
+                font-size: .35rem;
+                color: #fff;
+                padding-bottom: 10px;
+                border-bottom: 1px #fff solid;
+            }
+            .no_border{
+                border: none;
+            }
+        }
+    }
+    .wallet_sec{
+      i{
+          font-family: "iconfont";
+      }
+      .i_left{
+          font-size:.22rem;
+          margin-right: 20px;
+          color: #999;
+          float: left;
+      }
+      .i_right{
+          font-size:.18rem;
+          float: right;
+      }
+        font-size: 0px;
+        background-color: #eee;
+        .wallet_list{
+             padding: 0 12px;
+            background: #fff;
+            height: 44px;
+            line-height: 44px;
+            border-bottom: 1px #eee solid;
+            overflow: hidden;
+            span{
+                font-size: .14rem;
+                color:#333;
+            }
+        }
+    }
+}

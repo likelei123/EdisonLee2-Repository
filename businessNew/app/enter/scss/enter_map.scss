@@ -1,0 +1,199 @@
+@import"../../../public/scss/variables.scss";
+.enter-map {
+    position: absolute;
+    left: 0px;
+    right: 0px;
+    bottom: 0px;
+    top: 0px;
+    background-color: #eee;
+    ins,
+    i,
+    em,
+    s {
+        font-style: normal;
+        text-decoration: none;
+    }
+    ;
+    .enter_map_hea {
+        height: $header_height;
+        background-color: $header_background;
+        color: $header_color;
+        font-size: $header_fontsize;
+        span {
+            position: absolute;
+            left: 0px;
+            display: inline-block;
+            width: $header_left_width;
+            height: $header_left_height;
+            font-family: "iconfont";
+            text-align: center;
+            line-height: $header_left_height;
+        }
+        .map_title {
+            text-align: center;
+            line-height: $header_height;
+            font-size: $header_center_fontsize;
+        }
+    }
+    .enter_progress {
+        padding: .12rem;
+        height: 24px;
+        font-size: 0px;
+        background-color: #fff;
+        .enter_progress_bar {
+            position: relative;
+            width: 33%;
+            height: 5px;
+            font-size: 0px;
+            display: inline-block;
+            vertical-align: top;
+            background-color: #e0e0de;
+            span {
+                padding-top: 16px;
+                display: block;
+                width: 100%;
+                text-align: center;
+                font-size: .12rem;
+                color: #e0e0de;
+            }
+            i {
+                margin-top: -3px;
+                position: absolute;
+                left: 44%;
+                content: "";
+                width: .12rem;
+                height: .12rem;
+                border-radius: 50%;
+                background-color: #e0e0de;
+                -webkit-transform: translate(0, 44%, 0, 0);
+            }
+            .i_color {
+                background-color: #0d7efd;
+            }
+              .span_color {
+                color: #0d7efd;
+            }
+        }
+        .bar_color {
+            background-color: #0d7efd;
+        }
+        .has_radius_left {
+            border-top-left-radius: 4px;
+            border-bottom-left-radius: 4px;
+        }
+        .has_radius_right {
+            border-top-right-radius: 4px;
+            border-bottom-right-radius: 4px;
+        }
+    }
+    .is_map {
+        position: absolute;
+        top: 98px;
+        left: 0px;
+        right: 0px;
+        bottom: 0px;
+        overflow: auto;
+        .mark_control {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            width: 18px;
+            height: 34px;
+            z-index: 2;
+            font-size: 0px;
+            transform: translate(-50%, -31px);
+            -ms-transform: translate(-50%, -34px);
+            -moz-transform: translate(-50%, -34px);
+            -webkit-transform: translate(-50%, -31px);
+            -o-transform: translate(-50%, -34px);
+            .street_text {
+                position: absolute;
+                left: 50%;
+                top: 61px;
+                min-width: 30px;
+                font-size: .16rem;
+                text-align: center;
+                padding: 4px 4px 4px 6px;
+                border-radius: 5px;
+                white-space: nowrap;
+                color: #666;
+                background-color: #fff;
+                transform: translate(-50%, -20px);
+                -ms-transform: translate(-50%, -20px);
+                -moz-transform: translate(-50%, -20px);
+                -webkit-transform: translate(-50%, -20px);
+                -o-transform: translate(-50%, -20px);
+                span {
+                    font-family: "iconfont";
+                    font-size: .14rem;
+                    color: #f18022;
+                }
+            }
+            .street_text:after {
+                position: absolute;
+                content: '';
+                width: 0;
+                height: 0;
+                top: -5px;
+                left: 50%;
+                margin-left: -5px;
+                border-left: 5px solid transparent;
+                border-right: 5px solid transparent;
+                border-bottom: 5px solid #fff;
+            }
+        }
+        .shoose_city {
+            position: absolute;
+            left: 12px;
+            top: 10px;
+            min-width: 1.2rem;
+            // height: .3rem;
+            border-radius: 4px;
+            font-size: 0px;
+            overflow: hidden;
+            .switch_city {
+                display: inline-block;
+                vertical-align: top;
+                padding: .05rem .04rem;
+                height: 100%;
+                background-color: #e2e2e2;
+                color: #333;
+                text-align: center;
+                // line-height: .3rem;
+                font-size: .12rem;
+            }
+            .click_city {
+                display: inline-block;
+                vertical-align: top;
+                padding: .05rem .04rem;
+                height: 100%;
+                background-color: #fff;
+                color: #333;
+                text-align: center;
+                // line-height: .3rem;
+                font-size: .12rem;
+                span {
+                    margin-left: 2px;
+                }
+                i {
+                    position: relative;
+                    display: inline-block;
+                    vertical-align: top;
+                    width: 16px;
+                    height: 16px;
+                }
+                i:after {
+                    position: absolute;
+                    top: 8px;
+                    left: 3px;
+                    content: "";
+                    border-bottom: 0px;
+                    border-top: 5px #f2632b solid;
+                    border-right: 5px transparent solid;
+                    border-left: 5px transparent solid;
+                }
+            }
+        }
+    }
+    
+}

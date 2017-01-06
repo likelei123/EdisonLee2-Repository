@@ -1,0 +1,125 @@
+@import "../../../public/scss/variables.scss";
+@mixin border-radius($radius) {
+    -webkit-border-radius: $radius;
+    -moz-border-radius: $radius;
+    border-radius: $radius;
+}
+
+@mixin box-sizing($sizing) {
+    -webkit-box-sizing: $sizing;
+    -moz-box-sizing: $sizing;
+    box-sizing: $sizing;
+}
+
+@mixin opacity($index) {
+    -webkit-opacity: $index;
+    -moz-opacity: $index;
+    opacity: $index;
+}
+
+.bankMessage_main {
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    font-size: 0;
+    header {
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        background: $header_background;
+        height: $header_left_height;
+        line-height: $header_left_height;
+        font-size: $header_fontsize;
+        text-align: center;
+        color: #FFF;
+        .left {
+            position: absolute;
+            top: 0;
+            left: 10px;
+            font-family: 'iconfont';
+            font-size: .15rem;
+        }
+        span {
+            font-size: .15rem;
+        }
+        .right {
+            position: absolute;
+            top: 0;
+            right: 10px;
+            font-size: .15rem;
+        }
+    }
+    .content {
+        position: absolute;
+        top: 48px;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        overflow-x: hidden;
+        overflow-y: auto;
+        .con_list {
+            padding: 10px;
+            .arrange {
+                position: relative;
+                height: 100px;
+                margin-bottom: 5px;
+                background: #2075CF;
+                @include border-radius(5px);
+                .title {
+                    font-size: .16rem;
+                    color: #FFF;
+                    height: 50px;
+                    line-height: 50px;
+                    padding-left: 30px;
+                }
+                .white {
+                    position: absolute;
+                    top: 50px;
+                    left: 0;
+                    right: 0;
+                    background: #FFF;
+                    @include opacity(.2);
+                    height: 40px;
+                }
+                .number {
+                    font-size: .16rem;
+                    color: #FFF;
+                    height: 40px;
+                    line-height: 40px;
+                    text-align: center;
+                    span {
+                        margin-right: 5px;
+                    }
+                }
+            }
+        }
+    }
+    footer {
+        position: absolute;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        overflow: hidden;
+        height: 48px;
+        font-size: 0;
+        div {
+            width: 90%;
+            margin: 0 auto;
+            color: #2075CF;
+            font-size: .14rem;
+            height: 36px;
+            line-height: 36px;
+            text-align: center;
+            @include border-radius(5px);
+            @include box-sizing(border-box);
+            border: 1px solid #2075CF;
+            span {
+                font-family: 'iconfont';
+                margin-right: 5px;
+            }
+        }
+    }
+}

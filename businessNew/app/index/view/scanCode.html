@@ -1,0 +1,22 @@
+
+<div class="scan-code-box">
+	<header class="header">
+        <span v-on:click="onBack()">&#xe621;</span>
+        <p>消费验证码</p>
+    </header>
+    <div class="content">
+    	<div class="tab-title">
+    		<div v-on:click="onChange(true)" class="left-number" :class="{ selected: data.isNumber }">验证码验券</div>
+    		<div v-on:click="onChange(false)" class="right-scancode" :class="{ selected: !data.isNumber }">二维码验证券</div>
+    	</div>
+
+    	<div class="input-box">
+    		<div v-on:click="onValidate()" class="right-icon">
+    			<img src="../images/validate_03.png" />
+    		</div>
+    		<div class="left-input">
+    			<input v-model="data.code" type="text" placeholder="请输入消费码"/>
+    		</div>
+    	</div>
+    </div>
+</div>

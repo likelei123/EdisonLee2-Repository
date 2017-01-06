@@ -1,0 +1,59 @@
+@import "../../../public/scss/variables.scss";
+.purchase_main {
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    font-size: 0;
+    background: #EEE;
+    .header {
+        background: $header_background;
+        padding: 0 10px;
+        height: $header_left_height;
+        line-height: $header_left_height;
+        text-align: justify;
+        .nav {
+            font-family: 'iconfont';
+            font-size: $header_fontsize;
+            color: $header_color;
+            display: inline-block;
+            text-align: center;
+        }
+        .nav_title {
+            font-size: $header_fontsize;
+            color: $header_color;
+            display: inline-block;
+            text-align: center;
+        }
+    }
+    .header:after {
+        content: '';
+        display: inline-block;
+        position: relative;
+        top: 0;
+        left: 0;
+        width: 100%;
+    }
+    .content {
+        position: absolute;
+        top: 48px;
+        left: 0;
+        right: 0;
+        overflow-x: hidden;
+        overflow-y: auto;
+        .buy_notice {
+            background-color: #fff;
+            padding: .08rem .12rem;
+            textarea {
+                width: 100%;
+                color: #838383;
+                font-size: .14rem;
+                resize: none;
+            }
+             ::-webkit-textarea-placeholder {
+                color: #838383;
+            }
+        }
+    }
+}

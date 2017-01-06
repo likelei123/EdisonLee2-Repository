@@ -1,0 +1,146 @@
+@import"../../../public/scss/variables.scss";
+.enter-list {
+    position: absolute;
+    left: 0px;
+    right: 0px;
+    top: 0px;
+    bottom: 0px;
+    background-color: #fff;
+    overflow-x: hidden;
+    overflow-y: auto;
+    i,
+    ins,
+    s,
+    em {
+        font-style: normal;
+        text-decoration: none;
+    }
+    .enter_list_header {
+        height: .28rem;
+        background-color: #fff;
+        font-size: 0px;
+        border-bottom: .02rem solid #ddd;
+        padding: .1rem .2rem;
+        .enter_list_search {
+            height: 100%;
+            background-color: #eee;
+            border-radius: 4px;
+            overflow: hidden;
+            padding: 0 .04rem;
+            span {
+                display: inline-block;
+                width: 7%;
+                height: 100%;
+                font-family: "iconfont";
+                font-size: .17rem;
+                line-height: .28rem;
+                text-align: center;
+            }
+            input {
+                width: 93%;
+                font-size: .12rem;
+                background-color: #eee;
+                line-height: .28rem;
+            }
+        }
+    }
+    .enter_list_libiao {
+        position: relative;
+        font-size: 0px;
+        .list_libiao_ul {
+            ul {
+                li {
+                    list-style: none;
+                    height: .48rem;
+                    border-bottom: .01rem solid #ddd;
+                    position: relative;
+                    font-size: 0px;
+                    .icon {
+                        position: absolute;
+                        left: 0px;
+                        font-size: .16rem;
+                        width: .4rem;
+                        height: .48rem;
+                        font-family: "iconFont";
+                        text-align: center;
+                        line-height: .52rem;
+                    }
+                    .shop_name {
+                        height: .18rem;
+                        padding-top: .14rem;
+                        padding-bottom: .16rem;
+                        overflow: hidden;
+                        text-overflow: ellipsis;
+                        white-space: nowrap;
+                        position: absolute;
+                        left: .4rem;
+                        top: 0;
+                        right: 2rem;
+                        font-size: .14rem;
+                        color: #666;
+                    }
+                    .type {
+                        width: 1rem;
+                        height: .15rem;
+                        font-size: .12rem;
+                        padding-bottom: .16rem;
+                        padding-top: .17rem;
+                        color: #9C9C9C;
+                        position: absolute;
+                        top: 0;
+                        right: 0.7rem;
+                        overflow: hidden;
+                        text-overflow: ellipsis;
+                        white-space: nowrap;
+                    }
+                    .is_in {
+                        width: .6rem;
+                        height: .28rem;
+                        background-color: #FFCB67;
+                        font-size: .13rem;
+                        text-align: center;
+                        line-height: .28rem;
+                        border-radius: .05rem;
+                        -webkit-border-radius: .05rem;
+                        position: absolute;
+                        right: .2rem;
+                        top: .1rem;
+                        color: #fff;
+                    }
+                    .is_none {
+                        width: .26rem;
+                        height: .26rem;
+                        background-color: #FF6160;
+                        font-size: .13rem;
+                        text-align: center;
+                        line-height: .28rem;
+                        border-radius: .03rem;
+                        -webkit-border-radius: .03rem;
+                        position: absolute;
+                        right: .37rem;
+                        top: 5px;
+                        color: #fff;
+                    }
+                    .is_none:before {
+                        content: '';
+                        display: block;
+                        border-left: 18px solid #E44849;
+                        border-bottom: 14px solid transparent;
+                        position: absolute;
+                        top:25px;
+                        right: 7px;
+                    }
+                    .is_none:after {
+                        content: '';
+                        display: block;
+                        border-right: 18px solid #E44849;
+                        border-bottom: 14px solid transparent;
+                        position: absolute;
+                        right: 1px;
+                          top:25px;
+                    }
+                }
+            }
+        }
+    }
+}

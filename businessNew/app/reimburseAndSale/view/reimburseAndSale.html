@@ -1,0 +1,39 @@
+<section class="reimburseAndSale_main">
+    <header class="header">
+        <div class="head">
+            <div class="ret_left" v-on:click="goBack"><span>&#xe621;</span></div>
+            <span class="ret_title">退款/售后</span>
+        </div>
+        <div class="list">
+            <div class="nav" v-bind:class="{'nav_color':navStatus == 1}" v-on:click="navActive(1)">进行中({{create}})</div>
+            <div class="nav" v-bind:class="{'nav_color':navStatus == 2}" v-on:click="navActive(2)">已完成({{finish}})</div>
+            <div class="nav" v-bind:class="{'nav_color':navStatus == 3}" v-on:click="navActive(3)">全部({{total}})</div>
+        </div>
+    </header>
+    <section class="content">
+        <div class="cn_list" v-for="(key,item) in items" v-on:click="itemToolActive(key)">
+            <div class="cn_head">
+                {{item.shopName}}
+                <div class="sidebar">
+                    <div class="cn_text">{{item.currentRefundNodeCodeText}}</div>
+                    <div class="icn_time" v-show="item.currenttime">
+                        <span>&#xe618;</span>剩2天23时23分
+                    </div>
+                </div>
+            </div>
+            <div class="cn_con">
+                <div class="de_img">
+                    <img :src="item.skuPhoto">
+                </div>
+                <div class="int">
+                    <p><span class="int_title">{{item.goodsName}}</span><span class="R">x{{item.num}}</span></p>
+                    <p><span v-for="skuDetail in item.skuDetail" class="margin_r">{{skuDetail.skuAttrClass}}:{{skuDetail.skuAttrVal}}</span>
+                        <span class="R pir">￥{{item.price}}</span>
+                    </p>
+                    <p><span class="int_title">退款编号：{{item.orderNo}}</span></p>
+                    <p>时间{{item.createDate}}</p>
+                </div>
+            </div>
+        </div>
+    </section>
+</section>

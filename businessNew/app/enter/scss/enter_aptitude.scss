@@ -1,0 +1,303 @@
+@import"../../../public/scss/variables.scss";
+.enter-aptitude {
+    position: absolute;
+    left: 0px;
+    right: 0px;
+    top: 0px;
+    bottom: 0px;
+    background-color: #eee;
+    i,
+    ins,
+    em,
+    s {
+        text-decoration: none;
+        font-style: normal;
+    }
+    .enter_aptitude_header {
+        height: $header_height;
+        background-color: $header_background;
+        color: $header_color;
+        font-size: $header_fontsize;
+        span {
+            position: absolute;
+            left: 0px;
+            display: inline-block;
+            width: $header_left_width;
+            height: $header_left_height;
+            font-family: "iconfont";
+            text-align: center;
+            line-height: $header_left_height;
+        }
+        .aptitude_title {
+            text-align: center;
+            line-height: $header_height;
+            font-size: $header_center_fontsize;
+        }
+    }
+    .enter_progress {
+        padding: .12rem;
+        height: 24px;
+        font-size: 0px;
+        background-color: #fff;
+        .enter_progress_bar {
+            position: relative;
+            width: 33%;
+            height: 5px;
+            font-size: 0px;
+            display: inline-block;
+            vertical-align: top;
+            background-color: #e0e0de;
+            span {
+                padding-top: 16px;
+                display: block;
+                width: 100%;
+                text-align: center;
+                font-size: .12rem;
+                color: #e0e0de;
+            }
+            i {
+                margin-top: -3px;
+                position: absolute;
+                left: 44%;
+                content: "";
+                width: .12rem;
+                height: .12rem;
+                border-radius: 50%;
+                background-color: #e0e0de;
+                -webkit-transform: translate(0, 44%, 0, 0);
+            }
+            .i_color {
+                background-color: #0d7efd;
+            }
+            .span_color {
+                color: #0d7efd;
+            }
+        }
+        .bar_color {
+            background-color: #0d7efd;
+        }
+        .has_radius_left {
+            border-top-left-radius: 4px;
+            border-bottom-left-radius: 4px;
+        }
+        .has_radius_right {
+            border-top-right-radius: 4px;
+            border-bottom-right-radius: 4px;
+        }
+    }
+    .enter_aptitude_sec {
+        position: absolute;
+        top: 98px;
+        left: 0px;
+        right: 0px;
+        bottom: 0px;
+        overflow-y: scroll;
+        overflow-x: hidden;
+        .enter_warning {
+            padding: .2rem;
+            height: .46rem;
+            padding-bottom: 0px;
+            padding-top: .12rem;
+            .enter_warning_texte {
+                position: relative;
+                font-size: 0px;
+                height: .46rem;
+                background-color: #fffcea;
+                overflow: hidden;
+                span {
+                    margin-left: 7px;
+                    display: inline-block;
+                    width: .2rem;
+                    height: 100%;
+                    vertical-align: top;
+                    font-size: .16rem;
+                    color: #f17e20;
+                    text-align: center;
+                    line-height: .46rem;
+                    font-family: "iconfont";
+                }
+                .enter_warning_t {
+                    position: absolute;
+                    width: 88%;
+                    padding: .06rem 0;
+                    left: 36px;
+                    height: .3rem;
+                    top: 0px;
+                    font-size: .12rem;
+                    overflow: hidden;
+                    color: #8c4e04;
+                }
+            }
+        }
+        .aptitude_all_title {
+            margin-top: 16px;
+            position: relative;
+            font-size: .16rem;
+            background-color: #d2dfed;
+            height: .34rem;
+            line-height: .34rem;
+            padding: 0 .2rem;
+            color: #666;
+        }
+        .aptitude_all_title:before {
+            position: absolute;
+            content: "";
+            border-top: 0;
+            border-bottom: 10px #eee solid;
+            border-right: 10px transparent solid;
+            border-left: 10px transparent solid;
+            right: 20px;
+            top: 26px;
+        }
+        .business_photo {
+            font-size: 0px;
+            padding: 0 .2rem;
+            .add_yes,
+            .add_photo {
+                display: inline-block;
+                vertical-align: top;
+                width: 45%;
+                height: 120px;
+                border: 2px #666 dashed;
+                margin-bottom: 12px;
+                border-radius: 10px;
+                overflow: hidden;
+                background-color: #fff;
+            }
+            .add_photo {
+                margin-left: 3%;
+                text-align: center;
+                .icon {
+                    margin-top: 20px;
+                    margin-bottom: 10px;
+                    font-family: "iconfont";
+                    font-size: .4rem;
+                    color: #dedede;
+                }
+                p {
+                    text-align: center;
+                    font-size: .16rem;
+                    color: #666;
+                }
+            }
+            .add_yes {
+                position: relative;
+                img {
+                    width: 100%;
+                    height: 100%;
+                }
+                .big_img {
+                    font-size: 0px;
+                    position: absolute;
+                    width: 84px;
+                    height: 70px;
+                    right: 0px;
+                    top: 50px;
+                    border-radius: 6px;
+                    overflow: hidden;
+                }
+            }
+            // .add_yes:before {
+            //     position: absolute;
+            //     width: 60px;
+            //     height: 60px;
+            //     content: "";
+            //     background: rgba(0, 0, 0, 0.5);
+            //     top: 60px;
+            //     right: -1px;
+            //     border-top-right-radius: 10px;
+            //     transform: rotate(90deg);
+            //     -webkit-transform: rotate(90deg);
+            // }
+            // .add_yes:after {
+            //     position: absolute;
+            //     top: 36px;
+            //     left: 93px;
+            //     width: 0px;
+            //     height: 0px;
+            //     content: "";
+            //     background: #fff;
+            //     border-bottom:40px transparent solid;
+            //     border-top:40px transparent solid;
+            //     border-right:40px #fff solid;
+            //     border-left: 0px;
+            //       transform: rotate(45deg);
+            //     -webkit-transform: rotate(45deg);
+            // }
+        }
+        .write_business {
+            font-size: 0px;
+            height: .4rem;
+            background-color: #fff;
+            line-height: .4rem;
+            padding: 0 .2rem;
+            overflow: hidden;
+            em {
+                margin-top: 2px;
+                float: left;
+                font-size: .14rem;
+                color: #666;
+            }
+            input {
+                padding-left: 8px;
+                height: 100%;
+                width: 64%;
+                font-size: .14rem;
+                color: #666;
+                border: none;
+            }
+        }
+        .is_prompt {
+            padding: 0 .2rem;
+            height: .3rem;
+            line-height: .3rem;
+            font-size: .14rem;
+            color: #a9a9a9;
+        }
+        .legal_info_list {
+            font-size: 0px;
+            ul {
+                position: relative;
+                font-size: 0px;
+                li {
+                    position: relative;
+                    padding: 0 .2rem;
+                    height: .4rem;
+                    border-bottom: 1px #eee solid;
+                    background-color: #fff;
+                    line-height: .4rem;
+                    .icon {
+                        margin-right: .08rem;
+                        font-family: "iconfont";
+                        font-size: .22rem;
+                        display: inline-block;
+                        vertical-align: top;
+                        color: #666;
+                    }
+                    em {
+                        line-height: .4rem;
+                        font-size: .14rem;
+                        color: #666;
+                    }
+                    input {
+                        position: absolute;
+                        top: 0px;
+                        left: 135px;
+                        width: 57%;
+                        height: .4rem;
+                        font-size: .14rem;
+                    }
+                }
+            }
+        }
+        .is_tijiao {
+            margin-top: 10px;
+            font-size: .16rem;
+            color: #fff;
+            text-align: center;
+            line-height: 48px;
+            height: 48px;
+            background-color: #f17e20;
+        }
+    }
+}

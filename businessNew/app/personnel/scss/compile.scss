@@ -1,0 +1,151 @@
+@import "../../../public/scss/variables.scss";
+@mixin border-radius($radius) {
+    -webkit-border-radius: $radius;
+    -moz-border-radius: $radius;
+    border-radius: $radius;
+}
+
+@mixin box-sizing($sizing) {
+    -webkit-box-sizing: $sizing;
+    -moz-box-sizing: $sizing;
+    box-sizing: $sizing;
+}
+
+.subpage_compile {
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    font-size: 0;
+    .header {
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        overflow: hidden;
+        background: $header_background;
+        padding: 0 10px;
+        height: $header_left_height;
+        line-height: $header_left_height;
+        text-align: center;
+        font-size: $header_fontsize;
+        color: #FFF;
+        .left {
+            font-family: 'iconfont';
+            float: left;
+        }
+    }
+    .main {
+        position: absolute;
+        top: $header_left_height;
+        left: 0;
+        right: 0;
+        bottom: $header_left_height;
+        padding-bottom: 10px;
+        overflow-y: auto;
+        overflow-x: hidden;
+        background: #F1F6FC;
+        .wall {
+            padding-top: 8px;
+            .list {
+                height: 64px;
+                overflow: hidden;
+                background: #fff;
+                border-bottom: 1px solid #EEE;
+                .elect {
+                    width: 10%;
+                    float: left;
+                    margin-top: 20px;
+                    text-align: center;
+                    font-family: 'iconfont';
+                    span {
+                        display: inline-block;
+                        width: 20px;
+                        height: 20px;
+                        text-align: center;
+                        line-height: 20px;
+                        font-size: .1rem;
+                        overflow: hidden;
+                        font-weight: bold;
+                        background: #EEE;
+                        color: #EEE;
+                        @include border-radius(14px);
+                    }
+                    .check {
+                        background: #60C210;
+                    }
+                }
+                .list_img {
+                    width: 25%;
+                    float: left;
+                    text-align: center;
+                    margin-top: 11px;
+                    img {
+                        width: 44px;
+                        height: 44px;
+                        @include border-radius(44px);
+                        overflow: hidden;
+                    }
+                }
+                .message {
+                    width: 65%;
+                    float: left;
+                    margin-top: 11px;
+                    .name {
+                        font-size: .14rem;
+                        overflow: hidden;
+                        height: 22px;
+                        line-height: 22px;
+                        span {
+                            float: right;
+                            display: block;
+                            width: 84px;
+                            height: 22px;
+                            line-height: 22px;
+                            @include border-radius(84px 0 0 84px);
+                            text-align: center;
+                            background: #E8F1FA;
+                            color: #1D75CC;
+                        }
+                    }
+                    .details {
+                        font-family: 'iconfont';
+                        font-size: .14rem;
+                        overflow: hidden;
+                        height: 22px;
+                        line-height: 22px;
+                        padding-right: 12px;
+                        .tub {
+                            color: #1D75CC;
+                            margin-right: 5px;
+                        }
+                        .Phon {
+                            float: right;
+                        }
+                    }
+                }
+            }
+        }
+    }
+    .footer {
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        height: 48px;
+        font-size: 0;
+        padding: 0 12px;
+        background: #fff;
+        .add_news {
+            margin-top: 8px;
+            height: 32px;
+            line-height: 32px;
+            border: 1px solid #1D75CC;
+            @include border-radius(5px);
+            font-size: .14rem;
+            color: #1D75CC;
+            text-align: center;
+        }
+    }
+}

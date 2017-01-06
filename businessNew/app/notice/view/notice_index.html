@@ -1,0 +1,14 @@
+<div class="notice-index">
+    <header class="notice_header">
+        <span v-on:click="onGoback">&#xe621;</span>
+        <p class="notice_title">公告管理</p>
+        <em class="cancel" v-show="data.isCancelShow" v-on:click="onCancel">取消公告</em>
+        <em class="release" v-show="data.isEnsureShow" v-on:click="onStart">启动公告</em>
+        <em class="release" v-show="data.isReleaseShow" v-on:click="onRelease">发布公告</em>
+    </header>
+    <section class="notice_sec">
+        <textarea type="text" readonly="{{data.isReadonly}}" v-model="data.content" placeholder="编辑公告信息"></textarea>
+        <span><i>{{states.num}}</i>/500</span>
+    </section>
+    <div class="notice_foot" v-show="data.isEidterButtonShow" v-on:click="onWrite()"><span>&#xe629;</span></div>
+</div>

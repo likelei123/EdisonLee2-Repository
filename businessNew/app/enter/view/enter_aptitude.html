@@ -1,0 +1,119 @@
+<div class="enter-aptitude">
+    <header class="enter_aptitude_header">
+        <span v-on:click="onGoback">&#xe621;</span>
+        <p class="aptitude_title">上传资质</p>
+    </header>
+    <div class="enter_progress">
+        <div class="enter_progress_bar has_radius_left"><i></i><span>店铺定位</span></div>
+        <div class="enter_progress_bar"><i></i><span>基础信息 </span></div>
+        <div class="enter_progress_bar  bar_color has_radius_right"><i class="i_color"></i><span class="span_color">上传资质</span></div>
+    </div>
+    <section class="enter_aptitude_sec">
+        <div class="enter_warning">
+            <div class="enter_warning_texte">
+                <span>&#xe62c;</span>
+                <p class="enter_warning_t">1资质与法人和身份证要求一致 2.租房合同或房产证明，许可证等保证真实 3.保证一切真实，诚实守信经营</p>
+            </div>
+        </div>
+        <!--营业执照板块-->
+        <div class="aptitude_phone">
+            <div class="aptitude_all_title">
+                营业执照清晰照片
+            </div>
+            <div class="is_prompt"></div>
+            <div class="business_photo">
+                <div class="add_yes">
+                    <img :src="data.bizLicencePhoto" alt="上传营业执照">
+                </div>
+                <div class="add_photo">
+                    <a style="text-decoration:none;"
+                        href='native://photo?data={"returnfunction": "bizLicencePhoto","photoCount":1}'> 
+                        <div class="icon">&#xe62d;</div>
+                        <p>点击上传</p>
+                    </a>
+                </div>
+            </div>
+            <div class="write_business">
+                <em>输入营业执照号:</em>
+                <input type="number" v-model="data.bizLicenceCode" placeholder="请输入营业执照号" />
+            </div>
+        </div>
+        <!--店铺外观板块-->
+        <div class="shop_phone">
+            <div class="aptitude_all_title">
+                店铺外观照
+            </div>
+            <div class="is_prompt">请上传清晰的店铺外观照</div>
+            <div class="business_photo">
+                <div class="add_yes">
+                    <img :src="data.shopOutlookPhoto" alt="上传店铺外观照">
+                </div>
+                <div class="add_photo">
+                    <a style="text-decoration:none;"
+                        href='native://photo?data={"returnfunction": "shopOutlookPhoto","photoCount":1}'> 
+                        <div class="icon">&#xe62d;</div>
+                        <p>点击上传</p>
+                    </a>
+                </div>
+            </div>
+        </div>
+        <!--身份证板块-->
+        <div class="id_card">
+            <div class="aptitude_all_title">
+                法人身份证
+            </div>
+            <div class="is_prompt">请上传法人身份证正面</div>
+            <div class="business_photo">
+                <div class="add_yes">
+                    <img  :src="data.ownerIdPhotoFront" alt="上传法人身份证正面">
+                </div>
+                <div class="add_photo">
+                    <a style="text-decoration:none;"
+                        href='native://photo?data={"returnfunction": "ownerIdPhotoFront","photoCount":1}'> 
+                        <div class="icon">&#xe62d;</div>
+                        <p>点击上传</p>
+                    </a>
+                </div>
+            </div>
+            <div class="is_prompt">请上传法人身份证反面</div>
+            <div class="business_photo">
+                <div class="add_yes">
+                    <img  :src="data.ownerIdPhotoBack" alt="上传法人身份证反面">
+                </div>
+                <div class="add_photo">
+                    <a style="text-decoration:none;"
+                        href='native://photo?data={"returnfunction": "ownerIdPhotoBack","photoCount":1}'> 
+                        <div class="icon">&#xe62d;</div>
+                        <p>点击上传</p>
+                    </a>
+                </div>
+            </div>
+        </div>
+        <!--填写个人信息板块-->
+        <div class="legal_info">
+            <div class="aptitude_all_title">
+                法人信息
+            </div>
+            <div class=" legal_info_list">
+                <ul>
+                    <li>
+                        <div class="icon">&#xe617;</div>
+                        <em>法 人 姓 名</em>
+                        <input v-model="data.ownerName" type="text" placeholder="输入法人姓名">
+                    </li>
+                    <li>
+                        <div class="icon">&#xe610;</div>
+                        <em>法 人 电 话</em>
+                        <input v-model="data.ownerPhone" type="text" placeholder="输入法人姓名">
+                    </li>
+                    <li>
+                        <div class="icon">&#xe62f;</div>
+                        <em>法人身份证</em>
+                        <input v-model="data.ownerId" type="text" placeholder="输入法人姓名">
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <div class="is_tijiao" v-on:click="saveDetials()">提交</div>
+    </section>
+</div>

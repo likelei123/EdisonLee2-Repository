@@ -1,0 +1,45 @@
+
+<div class="register-box">
+	<header class="header">
+        <span v-on:click="onBack">&#xe621;</span>
+        <p>注册</p>
+    </header>
+    <section class="content">
+    	<div class="bg-camera"></div>
+    	<div class="form-group">
+    		<div class="form-item">
+    			<i>&#xe631;</i>
+    			<div class="button">获取验证码</div>
+    			<div class="input-box">
+    				<input xtype="phone" type="text" placeholder="请输入手机号"  v-model="states.phone"/>
+    			</div>
+
+    		</div>
+    		<div class="form-item">
+    			<i>&#xe630;</i>
+    			<div class="input-box">
+    				<input xtype="code" type="text" placeholder="请输入验证码"  v-model="states.code" v-bind:value="states.backcode"/>
+    			</div>
+    		</div>
+    		<div class="form-item">
+    			<i>&#xe632;</i>
+    			<div class="input-box">
+    				<input type="password" placeholder="请设置密码"  v-model="states.password"/>
+    			</div>
+    		</div>
+    		<div class="form-item">
+    			<i>&#xe632;</i>
+    			<div class="input-box">
+    				<input type="password" placeholder="请重复设置密码"  v-model="states.repeat"/>
+    			</div>
+    		</div>
+    	</div>
+    	<a class="active-btn" v-on:click="onRegister">下一步</a>
+
+        <div class="agreement-box">
+            <input type="checkbox" v-model="states.isAgreement" id="r_a_input_id"/>
+            <span for="r_a_input_id">同意</span>
+            <a v-on:click="onAgreement()">商家注册协议</a> 
+        </div>
+    </section>
+</div>

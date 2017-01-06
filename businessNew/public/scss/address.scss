@@ -1,0 +1,106 @@
+@import"./variables.scss";
+
+
+@mixin base-button {
+	height: 40px;
+	line-height: 40px;
+	font-size: .17rem;
+	color: $header_background;
+}
+
+@mixin level-box($zIndex) {
+	position: absolute;
+	z-index: $zIndex;
+	left: 0;
+	top: 0;
+	right: 0;
+	bottom: 0;
+}
+.address-cpt-light-box {
+	position: absolute;
+	z-index: 1;
+	bottom: 0;
+	left: 0;
+	right: 0;
+	top: 0;
+	background: black;
+	opacity: 0.6;
+	transition: all .4s;
+    transition-timing: ease-in;
+}
+.address-cpt-box {
+	height: 250px;
+	position: absolute;
+	bottom: 0;
+	left: 0;
+	right: 0;
+	background: #F7F7F7;
+	transform: translate3d(0px, 250px, 0px);
+	transition: all .4s;
+    transition-timing: ease-in;
+    z-index: 2;
+
+	.title-bar {
+		height: 40px;
+		width: 100%;
+		background: #EBEBEB;
+
+		.ensure-button {
+			float: left;
+			margin-left: 15px;
+			@include base-button;
+		}
+
+		.cancel-button {
+			float: right;
+			margin-right: 15px;
+			@include base-button;
+		}
+	}
+
+	.scroll-flexbox {
+		width: 100%;
+		height: 210px;
+		position: relative;
+		font-size: .13rem;
+		overflow: hidden;
+
+		.down-level-box {
+			@include level-box(1);
+
+			.item-box {
+				width: 33.333%;
+				height: 100%;
+				margin: 0;
+				padding: 0;
+				text-align: center;
+				float: left;
+				.cell {
+					margin: 0;
+					padding: 0;
+					height: 30px;
+					font-size: .15rem;
+					line-height: 30px;
+					overflow: hidden;
+				}
+			}
+		}
+
+		.up-level-box {
+			@include level-box(2);
+
+			.scroll-mask {
+				float: left;
+				width: 33.333%;
+				height: 100%;
+			    margin: 0 auto;
+			    padding: 0;
+			    background-image: -webkit-linear-gradient(top,hsla(0,0%,100%,.95),hsla(0,0%,100%,.6)),-webkit-linear-gradient(bottom,hsla(0,0%,100%,.95),hsla(0,0%,100%,.6));
+			    background-image: linear-gradient(180deg,hsla(0,0%,100%,.95),hsla(0,0%,100%,.6)),linear-gradient(0deg,hsla(0,0%,100%,.95),hsla(0,0%,100%,.6));
+			    background-position: top,bottom;
+			    background-size: 100% 90px;
+			    background-repeat: no-repeat;
+			} 
+		}
+	}
+}

@@ -1,0 +1,34 @@
+<div class="category-manage">
+    <header class="category_header">
+        <span v-on:click="onBack">&#xe621;</span>
+        <p class="category_title">店铺自分类</p>
+    </header>
+    <section class="category_sec">
+        <div class="categor_lists">
+            <div class="categor_allgoods">
+                <span>全部宝贝</span>
+                <em>(25)</em>
+            </div>
+            <ul>
+                <li v-for="(key,add) in states.add_categor" v-on:touchstart="touchEventStart" v-on:touchend="touchEventEnd(key)"><span>{{add.addname}}</span><em>&#xe623;</em></li>
+            </ul>
+        </div>
+    </section>
+    <div class="category_foot" v-on:click="onShow">
+        <em>&#xe625;</em>
+        <span>新建自分类</span>
+    </div>
+    <section class="addclass_jump" v-bind:style="{'display':states.is_hide}">
+        <div class="addclass_jump_div">
+            <p class="add_class">添加自分类</p>
+            <div class="jump_inpt">
+                <input type="text" placeholder="请输入分类"  v-model="states.add">
+                <p class="texte_right">限8个字内</p>
+            </div>
+            <div class="is_choose">
+                <span v-on:click="onHide">取消</span>
+                <span class="span_style" v-on:click="onAddclass">确定</span>
+            </div>
+        </div>
+    </section>
+</div>

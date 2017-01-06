@@ -1,0 +1,12 @@
+<section class="purchase_main">
+    <header class="header">
+        <div v-on:click="goBack" class="nav"><span>&#xe621;</span></div>
+        <div class="nav_title">购买须知</div>
+        <div class="nav" v-on:click="save"><span>保存</span></div>
+    </header>
+    <section class="content">
+        <div class="buy_notice">
+            <textarea rows="6" cols="100%" v-model="purchaseNotes" placeholder="进行文字编辑"></textarea>
+        </div>
+    </section>
+</section>

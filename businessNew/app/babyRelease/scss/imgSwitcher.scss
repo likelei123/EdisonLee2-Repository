@@ -1,0 +1,115 @@
+@import "../../../public/scss/variables.scss";
+@mixin border-radius($radius) {
+    -webkit-border-radius: $radius;
+    -moz-border-radius: $radius;
+    border-radius: $radius;
+}
+
+@mixin box-sizing($sizing) {
+    -webkit-box-sizing: $sizing;
+    -moz-box-sizing: $sizing;
+    box-sizing: $sizing;
+}
+
+@mixin opacity($index) {
+    -webkit-opacity: $index;
+    -moz-opacity: $index;
+    opacity: $index;
+}
+
+@mixin transform($time) {
+    -webkit-transform: $time;
+    -moz-transform: $time;
+    transform: $time;
+}
+
+@mixin box-shadow($color) {
+    -webkit-box-shadow: $color;
+    -moz-box-shadow: $color;
+    box-shadow: $color;
+}
+
+.switcher_main {
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    font-size: 0;
+    background: #EEE;
+    .header {
+        background: $header_background;
+        padding: 0 10px;
+        height: $header_left_height;
+        line-height: $header_left_height;
+        overflow: hidden;
+        .nav {
+            float: left;
+            font-family: 'iconfont';
+            font-size: $header_fontsize;
+            color: $header_color;
+            text-align: center;
+        }
+        .nav_title {
+            font-size: $header_fontsize;
+            color: $header_color;
+            text-align: center;
+            margin: 0 auto;
+        }
+    }
+    .content {
+        position: absolute;
+        top: 48px;
+        left: 0;
+        right: 0;
+        bottom: 48px;
+        overflow-x: hidden;
+        overflow-y: auto;
+        padding: 0 0 12px 0;
+        overflow: hidden;
+        .img_list {
+            float: left;
+            position:relative;
+            width: 20%;
+            height: 50px;
+            margin-left:4%;
+            margin-top:12px;
+            .choose{
+                position:absolute;
+                top: 0;
+                right:0;
+                width:20px;
+                height:20px;
+                line-height: 20px;
+                text-align: center;
+                background: #FFF;
+                @include box-sizing(border-box);
+                border: 1px solid #EEE;
+                @include border-radius(3px);
+                span{
+                   font-family: 'iconfont';
+                   font-size: .12rem;
+                }
+            }
+            img {
+                width: 100%;
+                height: 50px;
+            }
+        }
+    }
+    .footer {
+        position: absolute;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        height: $header_left_height;
+        line-height: $header_left_height;
+        text-align: center;
+        color: #FFF;
+        font-size: .14rem;
+        background: #D6D6D6;
+    }
+    .footerColor{
+        background: #F76C52;
+    }
+}

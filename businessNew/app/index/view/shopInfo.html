@@ -1,0 +1,72 @@
+<div class="shop-info-box">
+    <header class="header">
+        <span v-on:click="onBack()">&#xe621;</span>
+        <p>店铺信息</p>
+    </header>
+    <div class="content">
+        <div style="background:white;border:1px solid white;">
+            <div class="top-box">
+                <a href="native://photo?data={'returnfunction':'empImgback','photoCount':1}">
+                    <div class="face-box">
+                        <img v-bind:src="data.shopLogo" />
+                    </div>
+                </a>
+                <div class="name-field">
+                    <span>名&nbsp;&nbsp;&nbsp;&nbsp;称</span>
+                    <input type="text" v-bind:value="data.shopName" readonly="readonly" />
+                </div>
+                <div class="phone-field">
+                    <span>联系电话</span>
+                    <input type="text" v-bind:value="data.shopTel" v-model="set_info.shopTel" />
+                </div>
+                <div class="normal-field">
+                    <span>地&nbsp;&nbsp;&nbsp;&nbsp;址</span>
+                    <input type="text" v-bind:value="data.shopAddr" v-model="set_info.shopAddress" />
+                </div>
+            </div>
+        </div>
+        <div class="shopbackground">
+            <em>店铺内景图</em>
+                <a href="native://photo?data={'returnfunction':'empImgback2','photoCount':1}">
+                    <span>
+                        <img v-bind:src="data.shopPhoto" alt="店铺内景图">
+                    </span>
+                </a>
+        </div>
+        <div class="group-info">
+            <div class="from-item">
+                <span>所属行业</span>
+                <label>{{data.parentName}}</label>
+            </div>
+            <div class="from-item">
+                <span>行业名称</span>
+                <label>{{data.categoryName}}</label>
+            </div>
+        </div>
+        <div class="title-text">
+            营业起始时间 {{data.shopInstructions}}
+        </div>
+        <div class="time-box">
+            <p class="start_con">
+                <span>起：  </span>
+                <!--<span id="start_hour">-->
+                <input type="time" v-bind:value="data.beginTime" v-model="set_info.beginTime">
+                <!--</span>-->
+                <!--<span>:</span>
+                <span id="start_minite"></span>-->
+            </p>
+            <p class="end_con">
+                <span>止：  </span>
+                <!--<span>{{data.endTime}}</span>-->
+                <!--<span id="end_hour">22</span>
+                <span>:</span>
+                <span id="end_minite">00</span>-->
+                <input type="time" v-bind:value="data.endTime" v-model="set_info.endTime">
+            </p>
+        </div>
+    </div>
+    <footer class="footer">
+        <a class="ensure" v-on:click="SetstoreInfoEditData">确定</a>
+    </footer>
+    <div class="not_operate" v-show="show_hide"></div>
+</div>

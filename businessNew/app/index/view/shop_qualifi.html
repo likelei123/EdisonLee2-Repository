@@ -1,0 +1,84 @@
+<div class="shop-qualifi">
+    <header class="qualifi_header">
+        <span v-on:click="GoBack">&#xe621;</span>
+        <p class="qualifi_title">店铺资质</p>
+    </header>
+    <section class="qualifi_sec">
+        <div class="approve">
+            <div class="approve_cont">
+                <span>
+                    <img v-bind:src="imges">
+                </span>
+                <p>{{p_text}}</p>
+            </div>
+        </div>
+        <div class="people_editor">
+            <div class="all_info">
+                法人认证信息
+            </div>
+            <div class="people_list">
+                <ul>
+                    <li>
+                        <span>姓&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;名</span>
+                        <input type="text" placeholder="输入你 的姓名" v-bind:value="backdata.ownerName" v-model="set_info.ownerName" />
+                    </li>
+                    <li>
+                        <span>电&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;话</span>
+                        <input type="number" placeholder="输入你 的手机号" v-bind:value="backdata.ownerPhone" v-model="set_info.ownerPhone" />
+                    </li>
+                    <li>
+                        <span>法人身份证</span>
+                        <input type="number" placeholder="输入你 的法人身份证" v-bind:value="backdata.ownerId" v-model="set_info.ownerId" />
+                    </li>
+                    <li>
+                        <span>营业执照号</span>
+                        <input type="number" placeholder="输入你 的营业执照号" v-bind:value="backdata.bizLicenceCode" v-model="set_info.bizLicenceCode" />
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <div class="add_photo">
+            <div class="all_info">
+                店铺照片认证信息
+            </div>
+            <div class="photo_list">
+                <ul>
+                    <li>
+                        <a>
+                            <a href="native://photo?data={'returnfunction':'empImgback','photoCount':1}">
+                                <div class="upload_photo">
+                                    <em>&#xe62d;</em>
+                                    <i>重新上传图片</i>
+                                </div>
+                            </a>
+                        </a>
+                        <span>
+                            <img alt="营业执照图片" v-bind:src="backdata.bizLicencePhoto">
+                        </span>
+                        <p>营业执照</p>
+                    </li>
+                    <li>
+                        <span style="margin-left:15px;">
+                            <img alt="店铺外观照片" v-bind:src="backdata.shopOutlookPhoto">
+                        </span>
+                        <p style="margin-left:15px;">店铺外观照片</p>
+                    </li>
+                    <li>
+                        <span>
+                            <img alt="身份证正面照" v-bind:src="backdata.ownerIdPhotoFront">
+                        </span>
+                        <p>身份证正面照</p>
+                    </li>
+                    <li>
+                        <span style="margin-left:15px;">
+                            <img alt="身份证反面照" v-bind:src="backdata.ownerIdPhotoBack">
+                        </span>
+                        <p style="margin-left:15px;">身份证反面照</p>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <div class="qualifi_foot" v-on:click="SendEditExaminationLnfo" v-show="tijiao">提交</div>
+    </section>
+    <div class="not_operate" v-show="show_hide"></div>
+</div>

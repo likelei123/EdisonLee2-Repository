@@ -1,0 +1,35 @@
+<div class="baby_content">
+	<div class="menu_list" v-show="menuList">
+		<ul>
+			<li v-for="(key,list) in customList" v-bind:class="{'active_li':menu == key}" v-on:click="menus(key)">{{list.addname}}</li>
+		</ul>
+	</div>
+	<div class="lists" v-for="(key,item) in items">
+		<div class="check" v-show="check">
+			<div class="check_btn" v-on:click="checkActive(key)">
+				<span v-bind:class="{'check_color':item.checkStatus}"></span>
+			</div>
+		</div>
+		<div class="list_product" v-on:click="skipRelease">
+			<div class="list_img"><img :src="item.merchandiseLogo"></div>
+			<div class="message">
+				<p class="message_list">{{item.merchandiseName}}</p>
+				<p>实体价：${{item.onLinePrice}}-{{item.linePrice}}</p>
+				<p>销量：{{item.salesMonth}} <span class="orange" v-bind:class="{'red':item.totalQty == 0}">库存：{{item.totalQty}}</span>
+					<span class="run_out" v-show="item.totalQty == 0">告罄</span>
+				</p>
+				<p>收藏：{{item.collections}} <span>添加时间：{{item.createTime}}</span></p>
+			</div>
+			<div class="sku" v-show="skushow">
+				<ul>
+					<li class="sku_list">
+						<p>SKU:M-红色问题：无法获得SKU数据 暂不处理</p>
+						<p>平台价：￥99</p>
+						<p>销量：￥99<span>库存：0</span></p>
+					</li>
+				</ul>
+			</div>
+			<div class="status_review"><img :src="item.imageSrc"></div>
+		</div>
+	</div>
+</div>

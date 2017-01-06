@@ -1,0 +1,45 @@
+<div class="enter-city">
+    <section class="enter_city">
+        <header class="enter_city_hea">
+            <div class="city_search">
+                <span class="city_search_left" v-on:click="onGoback">&#xe621;</span>
+                <div class="is_search">
+                    <input type="text" placeholder="请输入城市">
+                    <span>&#xe61e;</span>
+                </div>
+                <span class="city_search_right"></span>
+            </div>
+        </header>
+        <div class="enter_city_list">
+            <div class="current_city">
+                <p>定位城市</p>
+                <ul>
+                    <li v-for=" city in itmes.position_city"  v-on:click="onGocity($event)">{{city.cityname}}</li>
+
+                </ul>
+            </div>
+            <div class="hot_city">
+                <p>热门城市</p>
+                <ul>
+                    <li  v-for="(index,hotcitys) in itmes.hotcity"  v-on:click="onGocity($event)">{{hotcitys.cityname}}</li>
+                </ul>
+            </div>
+            <div class="all_city">
+                <ul>
+                    <p>A</p>
+                    <li v-for="(index,allcity) in itmes.A" v-on:click="onGocity($event)"><span>{{allcity.cityname}}</span></li>
+                </ul>
+                <ul>
+                    <p>B</p>
+                    <li><span>北京</span></li>
+                    <li><span>巴中</span></li>
+                </ul>
+                <ul>
+                    <p>C</p>
+                    <li><span>成都</span></li>
+                    <li><span>重庆</span></li>
+                </ul>
+            </div>
+        </div>
+    </section>
+</div>

@@ -1,0 +1,90 @@
+@import "../../../public/scss/variables.scss";
+@mixin border-radius($radius) {
+    -webkit-border-radius: $radius;
+    -moz-border-radius: $radius;
+    border-radius: $radius;
+}
+
+.search_main {
+    position: absolute;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    font-size: 0;
+    background: #EEE;
+    .header {
+        .head {
+            background: $header_background;
+            padding: 0 10px;
+            height: $header_left_height;
+            line-height: $header_left_height;
+            text-align: justify;
+            .nav {
+                font-family: 'iconfont';
+                font-size: $header_fontsize;
+                color: $header_color;
+                display: inline-block;
+                text-align: center;
+            }
+            .nav_title {
+                font-size: $header_fontsize;
+                color: $header_color;
+                display: inline-block;
+                text-align: center;
+            }
+        }
+        .head:after {
+            content: '';
+            display: inline-block;
+            position: relative;
+            top: 0;
+            left: 0;
+            width: 100%;
+        }
+        .search {
+            height: $header_left_height;
+            line-height: $header_left_height;
+            background: #FFF;
+            overflow: hidden;
+            .search_bar {
+                width: 80%;
+                background: #EEE;
+                margin: 0 auto;
+                height: 30px;
+                margin-top: 9px;
+                padding: 0 12px;
+                overflow: hidden;
+                @include border-radius(5px);
+                input {
+                    float: left;
+                    width: 80%;
+                    height: 30px;
+                    background: #EEE;
+                    font-size: .14rem;
+                }
+                 ::-webkit-input-placeholder {
+                    color: #D4D4D4;
+                }
+                span {
+                    float: right;
+                    display: block;
+                    height: 30px;
+                    line-height: 30px;
+                    font-family: 'iconfont';
+                    font-size: .14rem;
+                }
+            }
+        }
+    }
+    .content {
+        position: absolute;
+        top: 96px;
+        left: 0;
+        right: 0;
+        overflow-x: hidden;
+        overflow-y: auto;
+        text-align: center;
+        font-size: .2rem;
+    }
+}

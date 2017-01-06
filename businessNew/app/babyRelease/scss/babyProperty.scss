@@ -1,0 +1,97 @@
+@import "../../../public/scss/variables.scss";
+@mixin border-radius($radius) {
+    -webkit-border-radius: $radius;
+    -moz-border-radius: $radius;
+    border-radius: $radius;
+}
+
+@mixin box-sizing($sizing) {
+    -webkit-box-sizing: $sizing;
+    -moz-box-sizing: $sizing;
+    box-sizing: $sizing;
+}
+
+@mixin opacity($index) {
+    -webkit-opacity: $index;
+    -moz-opacity: $index;
+    opacity: $index;
+}
+
+.property_main {
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    font-size: 0;
+    background: #EEE;
+    .header {
+        background: $header_background;
+        padding: 0 10px;
+        height: $header_left_height;
+        line-height: $header_left_height;
+        overflow: hidden;
+        .nav {
+            float: left;
+            font-family: 'iconfont';
+            font-size: $header_fontsize;
+            color: $header_color;
+            text-align: center;
+        }
+        .nav_title {
+            font-size: $header_fontsize;
+            color: $header_color;
+            text-align: center;
+            margin: 0 auto;
+        }
+    }
+    .content {
+        position: absolute;
+        top: 58px;
+        left: 0;
+        right: 0;
+        bottom: 48px;
+        overflow-x: hidden;
+        overflow-y: auto;
+        .nav {
+            background: #FFF;
+            padding: 0 12px;
+            .list {
+                height: 40px;
+                line-height: 40px;
+                overflow: hidden;
+                @include box-sizing(border-box);
+                border-bottom: 1px solid #EEE;
+                .L {
+                    float: left;
+                    font-size: .14rem;
+                }
+                .int_r {
+                    float: right;
+                    font-size: .14rem;
+                    color: #333;
+                    line-height: 40px;
+                    min-height: 40px;
+                    display: block;
+                    width: 80%;
+                    outline: none;
+                    text-align: right;
+                    overflow: hidden;
+                    white-space: nowrap;
+                }
+            }
+        }
+    }
+    .footer {
+        position: absolute;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        height: 48px;
+        line-height: 48px;
+        text-align: center;
+        background: #F17F22;
+        font-size: .14rem;
+        color: #FFF;
+    }
+}

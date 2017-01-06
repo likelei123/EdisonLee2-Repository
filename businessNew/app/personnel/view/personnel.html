@@ -1,0 +1,30 @@
+<section class="personnel_main">
+	<header class="header">
+		<div class="head">
+			<div class="ret_left" v-on:click="goBack"><span>&#xe621;</span></div>
+			<span class="ret_title">员工管理</span>
+		</div>
+		<div class="per_list">
+			<div class="nav" v-on:click="parActive(1)" v-bind:class="{'nav_color':personnel == 1}">在岗(<span>{{BackNumber.onGuardCount}}</span>)</div>
+			<div class="nav" v-on:click="parActive(2)" v-bind:class="{'nav_color':personnel == 2}">员工墙(<span>{{BackNumber.isShowCount}}</span>)</div>
+			<div class="nav" v-on:click="parActive(3)" v-bind:class="{'nav_color':personnel == 3}">离岗(<span>{{BackNumber.absencesCount}}</span>)</div>
+			<div class="nav" v-on:click="parActive(4)" v-bind:class="{'nav_color':personnel == 4}">离职(<span>{{BackNumber.dimissionCount}}</span>)</div>
+		</div>
+	</header>
+	<section class="pe_content" v-show="personnel == 1">
+	</section>
+	<section class="pe_compile" v-show="personnel == 2">
+	</section>
+	<section class="pe_leave" v-show="personnel == 3">
+	</section>
+	<section class="pe_leaveOffice" v-show="personnel == 4">
+	</section>
+	<footer class="footer" v-show="personnel == 2 || personnel == 1">
+		<div class="add_news" v-on:click="addPersion()" v-if="personnel == 1">
+			<span class="ico_tu">&#xe625;</span>添加新成员
+		</div>
+		<div class="add_news" v-on:click="editorPersion()" v-if="personnel == 2">
+			编辑员工墙
+		</div>
+	</footer>
+</section>

@@ -1,0 +1,69 @@
+<section class="subpage_particulars_leave">
+	<header class="header">
+		<div class="left" v-on:click="goBack"><span>&#xe621;</span></div>
+		<span>详情</span>
+	</header>
+	<section class="mian">
+		<div class="navbar">
+			<div class="nav_left">
+				<div class="nav_img">
+					<img src="https://city-source.pek3a.qingstor.com/57f89fdff34e4fNz9DVqGtY.jpg">
+					<div class="praise">已赞<span>541</span></div>
+				</div>
+			</div>
+			<div class="nav_right">
+				<div class="nav_form">
+					<span class="title">姓名</span>
+					<span class="nav_text">Alice</span>
+				</div>
+				<div class="nav_form">
+					<span class="title">职位</span>
+					<span class="nav_text">造型师05</span>
+				</div>
+				<div class="nav_form">
+					<span class="title">手机</span>
+					<span class="nav_text">15874875487 </span>
+				</div>
+			</div>
+		</div>
+		<div class="limits">
+			<div class="lim_title"><span class="lim_left">岗位权限</span></div>
+			<div class="lim_nav">
+				<div class="list">销售前台</div>
+				<div class="list">秒团</div>
+				<div class="list">评价管理</div>
+				<div class="list">基础信息</div>
+			</div>
+		</div>
+		<div class="limits">
+			<div class="open_left">显示在员工墙</div>
+			<div class="open" v-on:click="openActive" v-bind:class="{'open_up':contentShow}">
+				<div class="open_btn"></div>
+			</div>
+		</div>
+		<div class="contetn_show" v-show="contentShow">
+			<div class="upload_img">
+				<p class="title">员工简介背景<span>(最多5张)</span></p>
+				<div class="upload">
+					<div class="content">
+						<div class="content_img"><img src="https://city-source.pek3a.qingstor.com/57f89fdff34e4fNz9DVqGtY.jpg">
+						</div>
+						<div class="content_img"><img src="https://city-source.pek3a.qingstor.com/57f89fdff34e4fNz9DVqGtY.jpg">
+						</div>
+						<div class="content_img"><img src="https://city-source.pek3a.qingstor.com/57f89fdff34e4fNz9DVqGtY.jpg">
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="news">
+				<p class="title">员工简介</p>
+				<p class="title_text">很好很好很好</p>
+			</div>
+		</div>
+	</section>
+	<footer class="footer">
+		<div class="add_news" v-on:click='active'>
+			重新聘用
+		</div>
+	</footer>
+</section>

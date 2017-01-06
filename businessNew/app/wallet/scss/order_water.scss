@@ -1,0 +1,164 @@
+@import"../../../public/scss/variables.scss";
+.order-water {
+    position: absolute;
+    top: 0px;
+    bottom: 0px;
+    right: 0px;
+    left: 0px;
+    background-color: #eee;
+    @mixin box-transform($deg) {
+        transform: rotate($deg);
+        -ms-transform: rotate($deg);
+        -moz-transform: rotate($deg);
+        -webkit-transform: rotate($deg);
+        -o-transform: rotate($deg);
+    }
+    i,
+    ins,
+    em {
+        font-style: normal;
+        text-decoration: none;
+    }
+    .icon {
+        font-family: "iconfont";
+    }
+    .size_14 {
+        font-size: .14rem;
+    }
+    .balance_header {
+        height: $header_height;
+        background-color: $header_background;
+        color: $header_color;
+        font-size: $header_fontsize;
+        span {
+            position: absolute;
+            display: inline-block;
+            width: $header_left_width;
+            height: $header_left_height;
+            text-align: center;
+            line-height: $header_left_height;
+            font-family: "iconfont";
+        }
+        .balance_title {
+            // position: relative;
+            text-align: center;
+            line-height: $header_height;
+            font-size: $header_center_fontsize;
+            i {
+                position: absolute;
+                font-family: "iconfont";
+                font-size: .12rem;
+                margin-left: 5px
+            }
+            em{
+                display: inline-block;
+                vertical-align: top;
+                width:120px;
+                height: 47px;
+            }
+            .i_down {
+                 top: 5px;
+                @include box-transform(90deg)
+            }
+            .i_up {
+                 top: -5px;
+                @include box-transform(270deg)
+            }
+        }
+    }
+    .balance_sec {
+        position: absolute;
+        width: 100%;
+        top: 48px;
+        left: 0px;
+        right: 0px;
+        bottom: 0px;
+        font-size: 0px;
+        background-color: #fff;
+        overflow-y: auto;
+         overflow-x: hidden; 
+        .balance_lists {
+            margin-top: 10px;
+            font-size: 0px;
+            ul {
+                li {
+                    position: relative;
+                    padding: 0 12px;
+                    border-bottom: 1px #eee solid;
+                    overflow: hidden;
+                    padding-bottom: 8px;
+                    p {
+                        padding-top: 6px;
+                        span {
+                            font-size: .15rem;
+                            color: #333;
+                        }
+                        .i_ye {
+                            color: #fe7800;
+                        }
+                        .i_blue {
+                            color: #06c4c6;
+                        }
+                        i {
+                            font-size: .13rem;
+                        }
+                        em {
+                            font-size: .12rem;
+                            color: #999;
+                        }
+                    }
+                    .flat_right {
+                        float: right;
+                    }
+                }
+            }
+        }
+    }
+    .small_class {
+        position: absolute;
+        top: 48px;
+        right: 0px;
+        bottom: 0px;
+        left: 0px;
+        background: rgba(0, 0, 0, 0.5);
+        div {
+            padding: 0 12px;
+            background-color: #fff;
+            span {
+                display: block;
+                border-bottom: 1px #eee solid;
+                font-size: .14rem;
+                padding: 10px 0;
+            }
+        }
+        .change_color{
+            color:#f3632a;
+        }
+    }
+    .goods_details{
+         position: absolute;
+        top: 48px;
+        right: 0px;
+        bottom: 0px;
+        left: 0px;
+        background: rgba(0, 0, 0, 0.5);
+        .all_goods{
+            position: absolute;
+            bottom: 0px;
+            width: 100%;
+            background-color: #fff;
+            ul{
+                padding: 0 12px;
+                font-size: 0px;
+                padding-bottom: 20px;
+                li{
+                    height: 44px;
+                    border-bottom: 1px #eee solid;
+                    font-size: .14rem;
+                    line-height: 44px;
+                    color: #333;
+                }
+            }
+        }
+    }
+}

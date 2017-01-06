@@ -1,0 +1,32 @@
+<div class="wallet-index">
+    <header class="wallet_header">
+        <span class="wallet_left" v-on:click="Goback">&#xe621;</span>
+        <p class="wallet_title">我的钱包</p>
+        <span class="wallet_right"  v-on:click="ListGo('#/wallet/balance-payments')">收支明细</span>
+    </header>
+    <div class="wallet_money" >
+        <div class="withdrawal" >
+            <span>可提现（元）</span>
+            <p>60000</p>
+            <span>未结算（元）</span>
+            <p class="no_border">60000</p>
+        </div>
+    </div>
+    <section class="wallet_sec">
+        <div class="wallet_list" v-on:click="ListGo('#/wallet/withdrawal')">
+            <i class="i_left">&#xe60b;</i>
+            <span>提现</span>
+            <i class="i_right">&#xe623;</i>
+        </div>
+        <div class="wallet_list">
+            <i class="i_left">&#xe624; </i>
+            <span>银行卡</span>
+            <i class="i_right">&#xe623;</i>
+        </div>
+        <div class="wallet_list"  v-on:click="ListGo('#/wallet/order-water')">
+            <i class="i_left">&#xe624;</i>
+            <span>订单流水</span>
+            <i class="i_right">&#xe623;</i>
+        </div>
+    </section>
+</div>

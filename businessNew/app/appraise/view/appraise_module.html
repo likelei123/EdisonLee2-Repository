@@ -1,0 +1,38 @@
+<div class="menu_list" style="display: none" v-show="news==true">
+</div>
+<div class="list" v-for="item in items">
+	<div class="user">
+		<div class="user_img"><img v-bind:src="item.avatar"></div>
+		<div class="user_title">
+			<p v-text="item.nickName"></p>
+			<p>
+				<span v-for="s in [1, 2, 3, 4, 5]" :class="{stared:s<=item.userCmtScore, star:s>item.userCmtScore}">&#xe61f;</span>
+				<span v-text="item.userCmtTime"></span>
+			</p>
+		</div>
+		<button v-show="item.shopReplyStatus == 0" class="btn" v-on:click="redact(item)">回复</button>
+		<label v-show="item.shopReplyStatus == 1" class="btned">已回复</label>
+	</div>
+	<div class="raise">
+		<div class="raise_title" v-text="item.userCmtContent">
+		</div>
+		<div>
+			<img v-for="img in item.userCmtPhotoUrl" v-bind:src="img">
+		</div>
+	</div>
+	<div class="order_name">
+		<span>&#xe60f;</span>{{ item.merchandiseName }}<span>&#xe623;</span>
+	</div>
+	<div class="reply" v-show="item.shopReplyStatus == 1">
+		<div class="rp_title">我的回复：{{ item.shopReplyContent }}
+			<div class="reply_tg"></div>
+		</div>
+
+	</div>
+	<div class="order_number">
+		订单编号：<span v-text="item.orderNo"></span>
+	</div>
+</div>
+<footer class="order_end">
+	<span class="state_title">没有更多数据了</span>
+</footer>

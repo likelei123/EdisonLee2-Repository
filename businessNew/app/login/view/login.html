@@ -1,0 +1,25 @@
+<div class="login-box">
+	<div class="denglu">登录</div>
+	<section class="login_cont">
+		<div class="cameras">
+			<img src="../../../public/images/camera.png" />
+		</div>
+		<div class="inputs">
+			<div class="is_border">
+				<span>&#xe631;</span>
+				<input v-model="phoneNum" type="text" placeholder="请输入注册的手机号">
+			</div>
+			<div>
+				<span>&#xe632;</span>
+				<input v-model="pwd" type="password"  placeholder="请输入登录密码">
+			</div>
+		</div>
+		<div class="ation_pasword">
+			<input id="login-box-checkbox" v-on:click="onRememberPwd()" v-model="isCheck" type="checkbox">
+			<label for="login-box-checkbox" class="remember">记住密码</label>
+			<span v-on:click="onForgetPwd()"class="forget">忘记密码？</span>
+		</div>
+		<div class="login" v-on:click="onLogin()">登录</div>
+		<div class="register" v-on:click="onRegister()">注册</div>
+	</section>
+</div>

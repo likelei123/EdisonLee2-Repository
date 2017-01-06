@@ -1,0 +1,7 @@
+vim .gitignore
+*.mdb  
+*.ldb  
+*.sln  
+*.config  
+node_modules
+node_modules.zip

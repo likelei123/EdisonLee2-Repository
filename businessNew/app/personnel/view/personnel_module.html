@@ -1,0 +1,34 @@
+<div class="wall" v-for=" lists in res.data">
+	<!--在岗模板-->
+	<div class="list" v-on:click="Goparticulars(lists.empId,'在岗')">
+		<div class="list_img"><img v-bind:src="lists.empImgs"></div>
+		<div class="message">
+			<div class="name">
+				{{lists.empName}}
+				<span v-show="lists.isShow==1">已在员工墙</span>
+			</div>
+			<div class="details">
+				<span class="tub">&#xe617;</span>{{lists.empJob}}
+				<span class="is_good">
+						<em>&#xe617;</em>
+						<em>{{lists.empGoods}}</em>
+				</span>
+				<span class="Phon">{{lists.empCellphone}}</span>
+			</div>
+		</div>
+	</div>
+</div>
+<!--<div class="wall">
+	<div class="list" v-on:click="onEnter('#/particulars')">
+		<div class="list_img"><img src="https://city-source.pek3a.qingstor.com/57f89fdff34e4fNz9DVqGtY.jpg"></div>
+		<div class="message">
+			<div class="name">
+				张捷
+			</div>
+			<div class="details">
+				<span class="tub">&#xe627;</span>店主
+				<span class="Phon">18482144775</span>
+			</div>
+		</div>
+	</div>-->
+</div>

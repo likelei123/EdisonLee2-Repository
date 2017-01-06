@@ -1,0 +1,177 @@
+<section class="babyRecomposeRelease_main">
+	<header class="header">
+		<div class="left" v-on:click="goBack"><span>&#xe621;</span></div>
+		<span>商品详情</span>
+		<div class="right"><span class="off">保存</span></div>
+	</header>
+	<section class="rel_content">
+		<div class="fa_col">
+			<div class="column column_none col_mar" v-on:click="onEnter('#/babyRecomposeSelect')">
+				<div class="title">
+					<em>*</em>
+					<span>选择类目</span>
+				</div>
+				<div class="title_right">
+					<span class="result" v-for=" item in selectArray">
+					 {{item}}
+				</span>
+					<span class="icon_go">&#xe623;</span>
+				</div>
+			</div>
+		</div>
+		<div class="upload">
+			<!-- <p>(长按图片并拖动可排序)</p> -->
+			<div class="up_img">
+				<div class="preview_img" v-for="url in imagesUrl" track-by="$index">
+					<img :src="url">
+					<div class="close" v-on:click="clearImage($index)">×</div>
+				</div>
+				<div class="up_active" v-show="upImagesUrl">
+					<a style="text-decoration:none;color:#EEE;" href='native://photo?data={"returnfunction": "b_loadImageCallback","photoCount":5}'> 
+                        &#xe625;
+                    </a>
+				</div>
+			</div>
+		</div>
+		<div class="fa_col">
+			<div class="column">
+				<div class="title">
+					<em>*</em>
+					<span>产品名称</span>
+				</div>
+				<input type="text" placeholder="樱桃小蛋糕" v-model="shopName" class="int_span">
+			</div>
+		</div>
+		<div class="fa_col">
+			<div class="column">
+				<div class="title">
+					<em>*</em>
+					<span>实体价格</span>
+				</div>
+				<input type="text" placeholder="￥25.00" v-model="shopName" class="int_span">
+			</div>
+		</div>
+		<div class="fa_col">
+			<div class="column">
+				<div class="title">
+					<em>*</em>
+					<span>平台价格</span>
+				</div>
+				<input type="text" placeholder="￥25.00" v-model="shopName" class="int_span">
+			</div>
+		</div>
+		<div class="fa_col">
+			<div class="column">
+				<div class="title">
+					<em>*</em>
+					<span>库存</span>
+				</div>
+				<input type="text" placeholder="108个" v-model="shopName" class="int_span">
+			</div>
+		</div>
+		<div class="fa_col">
+			<div class="column">
+				<div class="title">
+					<span>商家编码</span>
+				</div>
+				<input type="text" placeholder="请输入编码" v-model="shopName" class="int_span">
+			</div>
+		</div>
+		<div class="fa_col">
+			<div class="column col_mar " v-on:click="onEnter('#/babyRecomposeStandard')">
+				<div class="title">
+					<em>*</em>
+					<span>宝贝规格</span>
+				</div>
+				<div class="title_right">
+					<span class="result" v-show="copyreaderStatus">已编辑</span>
+					<span class="icon_go">&#xe623;</span>
+				</div>
+			</div>
+			<div class="table_list mar_ten">
+				<table border="1" rules="rows" width="100%">
+					<tr>
+						<td align="center" valign="middle">颜色</td>
+						<td align="center" valign="middle">尺寸</td>
+						<td align="center" valign="middle">实体价格</td>
+						<td align="center" valign="middle">平台价格</td>
+						<td align="center" valign="middle">数量</td>
+						<td align="center" valign="middle">商品编码</td>
+					</tr>
+					<tr>
+						<td align="center" valign="middle">苹果绿</td>
+						<td align="center" valign="middle">232</td>
+						<td align="center" valign="middle">334</td>
+						<td align="center" valign="middle">324</td>
+						<td align="center" valign="middle">534</td>
+						<td align="center" valign="middle">DHESTFVDSFDSFSD</td>
+					</tr>
+					<tr>
+						<td align="center" valign="middle">134</td>
+						<td align="center" valign="middle">232</td>
+						<td align="center" valign="middle">334</td>
+						<td align="center" valign="middle">324</td>
+						<td align="center" valign="middle">534</td>
+						<td align="center" valign="middle">534</td>
+					</tr>
+					<tr>
+						<td align="center" valign="middle">134</td>
+						<td align="center" valign="middle">232</td>
+						<td align="center" valign="middle">334</td>
+						<td align="center" valign="middle">324</td>
+						<td align="center" valign="middle">534</td>
+						<td align="center" valign="middle">534</td>
+					</tr>
+				</table>
+			</div>
+		</div>
+		<!--<div class="fa_col">
+			<div class="column" v-on:click="purchaseNotesAction('#/purchaseRecomposeText')">
+				<div class="title">
+					<span>购买须知</span>
+				</div>
+				<div class="title_right">
+					<span class="result" v-show="purchaseNotes">已编辑</span>
+					<span class="icon_go">&#xe623;</span>
+				</div>
+			</div>
+		</div>-->
+		<div class="fa_col">
+			<div class="column  col_mar column_none" v-on:click="onEnter('#/babyRecomposeDetails')">
+				<div class="title">
+					<em>*</em>
+					<span>宝贝描述</span>
+				</div>
+				<div class="title_right">
+					<span class="result" v-show="descriptionStatus">已编辑</span>
+					<span class="icon_go">&#xe623;</span>
+				</div>
+			</div>
+		</div>
+		<div class="fa_col">
+			<div class="column col_mar column_none" v-on:click="classificationAction('#/storeRecomposeClass')">
+				<div class="title">
+					<em>*</em>
+					<span>店铺自分类</span>
+				</div>
+				<div class="title_right">
+					<span class="result" v-show="shopClassify">已选择</span>
+					<span class="icon_go">&#xe623;</span>
+				</div>
+			</div>
+		</div>
+		<!--<div class="fa_col">
+			<div class="column" v-show="distributionStatus">
+				<div class="title">
+					<em>*</em>
+					<span>配送费用</span>
+				</div>
+				<input type="text" placeholder="请输入￥0.00" v-model="distribution" class="int_span">
+			</div>
+		</div>-->
+	</section>
+	<footer class="footer">
+		<div class="nav_1" v-on:click="putaway">上架</div>
+		<div class="nav_2" v-on:click="soldOut">删除</div>
+	</footer>
+</section>

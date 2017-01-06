@@ -1,0 +1,59 @@
+<section class="baby_main">
+	<header class="header">
+		<div class="head">
+			<div class="left" v-on:click="goBack"><span>&#xe621;</span></div>
+			<span>宝贝管理</span>
+			<div class="right" v-on:click="batchActive"><span class="off">{{off}}</span></div>
+		</div>
+		<div class="nav" v-show="batch">
+			<div class="column" v-for="(key,item) in getGoodsEach" v-on:click="parActive(key+1)" v-bind:class="{'list_active':personnel == key+1}" v-show="key !== 1">{{item.name}}<span>({{item.count}})</span></div>
+		</div>
+		<div class="status_list" v-show="batch">
+			<div class="column">
+				<div class="submenu" v-for="(key,item) in navSubmenu" v-on:click="submenu(key)">
+					<div class="sub">
+						<span>{{item.navName}}</span>
+						<span>
+							<i class="i_s1" v-bind:class="{'i_activeBottom':item.s1}"></i>
+							<i class="i_s2" v-bind:class="{'i_activeTop':item.s2}"></i>
+						</span>
+					</div>
+				</div>
+			</div>
+			<div class="search" v-on:click="onEnter('#/search')">
+				<span>&#xe61e;</span>
+			</div>
+		</div>
+	</header>
+	<section class="content " :class="{'content_width':menuList,'content_bottom':check}">
+	</section>
+	<footer class="footer" v-show="check">
+		<div class="check_all">
+			<div class="check_btn" v-on:click="allCheckActive">
+				<span v-bind:class="{'check_color':allCheck}"></span>
+			</div>
+			<div class="check_text">全选</div>
+		</div>
+		<div class="btn_right" v-show="personnel == 1">
+			<!--<button class="btn" v-bind:class="{'btn_color':btnStatus}" v-on:click="SetRecommend(1)">推送橱窗</button>-->
+			<button class="btn" v-bind:class="{'btn_color':btnStatus}" v-on:click="setUpDwon">下架</button>
+			<button class="btn" v-bind:class="{'btn_color':btnStatus}" v-on:click="deleCommodity">删除</button>
+		</div>
+		<div class="btn_right" v-show="personnel == 2">
+			<!--<button class="btn" v-bind:class="{'btn_color':btnStatus}" v-on:click="SetRecommend(0)">移除橱窗</button>-->
+			<button class="btn" v-bind:class="{'btn_color':btnStatus}" v-on:click="setUpDwon">下架</button>
+			<button class="btn" v-bind:class="{'btn_color':btnStatus}" v-on:click="deleCommodity">删除</button>
+		</div>
+		<div class="btn_right" v-show="personnel == 3">
+			<button class="btn" v-bind:class="{'btn_color':btnStatus}" v-on:click="putaway">上架</button>
+			<button class="btn" v-bind:class="{'btn_color':btnStatus}" v-on:click="deleCommodity">删除</button>
+		</div>
+		<div class="btn_right" v-show="personnel == 4">
+			<button class="btn" v-bind:class="{'btn_color':btnStatus}" v-on:click="deleCommodity">删除</button>
+		</div>
+	</footer>
+	<div class="menu_btn" v-bind:class="{'menu_status':menuList}" v-on:click="menuBtn" v-show="batch">
+		<span class="si_2" v-if="menuList">&#xe621;</span>
+		<span class="si_1" v-else>&#xe623;</span>
+	</div>
+</section>

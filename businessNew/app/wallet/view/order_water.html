@@ -1,0 +1,37 @@
+<div class="order-water">
+    <header class="balance_header">
+        <span v-on:click="Goback">&#xe621;</span>
+        <p class="balance_title">
+            <em v-on:click="Titleclick">{{states.title}} 
+                <i v-bind:class="states.bind_class==true?'i_down':'i_up'">&#xe623;</i>
+            </em>
+        </p>
+    </header>
+    <section class="balance_sec">
+        <div class="balance_lists">
+            <ul>
+                <li v-on:click="OnShowDetails($index)">
+                    <p><span>订单</span><i class="flat_right i_ye">+388</i></p>
+                    <p><em>订单</em><em class="flat_right">2016-10-11</em></p>
+                </li>
+                <li>
+                    <p><span>退款</span><i class="flat_right i_blue">+388</i></p>
+                    <p><em>成功</em><em class="flat_right">2016-10-11</em></p>
+                </li>
+            </ul>
+        </div>
+    </section>
+    <section class="small_class"  v-show="states.show_hide" v-on:click="hide_small">
+        <div v-for=" (index,small) in states.small_list" v-bind:class="{'change_color':index==states.list_index}" v-on:click="obtainTetx($index)">
+            <span>{{small}}</span>
+        </div>
+    </section>
+    <section class="goods_details" v-show="states.details_show"  v-on:click="OnSecHide">
+        <div class="all_goods">
+            <ul>
+                <li>类型：<em>订单清分</em></li>
+                 <li>收入：<em>388</em></li>
+            </ul>
+        </div>
+    </section>
+</div>

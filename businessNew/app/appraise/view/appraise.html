@@ -1,0 +1,77 @@
+<section class="appraise_mian">
+	<header class="header">
+		<div class="head">
+			<div v-on:click="goBack" class="nav"><span>&#xe621;</span></div>
+			<div class="nav_title">评价</div>
+			<div class="nav"><span>&#xe620;</span></div>
+		</div>
+		<div class="ap_column">
+			<div class="left">
+				<div class="title">
+					<img src="../images/icon.png">
+					<span>5.0</span>
+				</div>
+			</div>
+			<div class="right">
+				<p>赞！完美的服务</p>
+				<p>
+					<span class="star">&#xe61f;</span>
+					<span class="star">&#xe61f;</span>
+					<span class="star">&#xe61f;</span>
+					<span class="star">&#xe61f;</span>
+					<span class="star">&#xe61f;</span>
+				</p>
+			</div>
+		</div>
+		<div class="ap_input">
+			<div class="int">
+				<input class="search" type="text" placeholder="请输入用户名/商品名/订单编号">
+				<div></div>
+				<span class="bt_search">&#xe61e;</span>
+			</div>
+		</div>
+		<div class="ap_nav" @click.prevent>
+			<div class="column" v-on:click="aPactive(1,$event)" v-bind:class="{'at_color':isColor == 1}">星级<span>◆</span></div>
+			<span class="long"></span>
+			<div class="column" v-on:click="aPactive(2,$event)" v-bind:class="{'at_color':isColor == 2}">状态<span>◆</span></div>
+			<span class="long"></span>
+			<div class="column" v-on:click="aPactive(3,$event)" v-bind:class="{'at_color':isColor == 3}">分类<span>◆</span></div>
+		</div>
+		<div class="menu" style="display: none" v-show="isShow == 1" @click.prevent>
+			<div v-on:click="starChange(0,$event)" :class="{'list_color':star == 0}">全部星级</div>
+			<div v-on:click="starChange(5,$event)" :class="{'list_color':star == 5}">五星</div>
+			<div v-on:click="starChange(4,$event)" :class="{'list_color':star == 4}">四星</div>
+			<div v-on:click="starChange(3,$event)" :class="{'list_color':star == 3}">三星</div>
+			<div v-on:click="starChange(2,$event)" :class="{'list_color':star == 2}">二星</div>
+			<span class="quar"></span>
+		</div>
+		<div class="menu" style="display: none" v-show="isShow == 2" @click.prevent>
+			<div v-on:click="stateChange(3,$event)" :class="{'list_color':state == 3}">全部状态</div>
+			<div v-on:click="stateChange(0,$event)" :class="{'list_color':state == 0}">待回复</div>
+			<div v-on:click="stateChange(1,$event)" :class="{'list_color':state == 1}">已回复</div>
+			<span class="quar quar_t"></span>
+		</div>
+		<div class="menu" style="display: none" v-show="isShow == 3" @click.prevent>
+			<div v-on:click="typeChange(0,$event)" :class="{'list_color':type == 0}">全部分类</div>
+			<div 
+				v-for="t in types"
+				v-on:click="typeChange(t.categoryId,$event)" 
+				:class="{'list_color':type == t.categoryId}">{{ t.categoryName }}</div>
+			<span class="quar quar_l"></span>
+		</div>
+	</header>
+	<section class="ap_content">
+		<div class="raise_list">
+			<div class="content">
+			</div>
+		</div>
+	</section>
+	<div class="cover" v-show="redactState" v-on:click="hide">	
+	</div>
+	<div class="reply_title"  v-show="redactState" >
+			<div class="rep">
+				<textarea type="text" class="redact" v-model="replyComments"></textarea>
+				<div class="reply_btn"><button class="btn" v-on:click="send()">发送</button></div>
+			</div>
+		</div>
+</section>

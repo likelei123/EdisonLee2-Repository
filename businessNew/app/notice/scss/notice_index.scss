@@ -1,0 +1,89 @@
+@import"../../../public/scss/variables.scss";
+.notice-index {
+    position: absolute;
+    left: 0px;
+    right: 0px;
+    bottom: 0px;
+    top: 0px;
+    background-color: #eee;
+    i,
+    ins,
+    em,
+    s {
+        font-style: normal;
+        text-decoration: none;
+    }
+    .notice_header {
+        height: $header_height;
+        background-color: $header_background;
+        color: $header_color;
+        font-size: $header_fontsize;
+        span {
+            position: absolute;
+            left: 0px;
+            display: inline-block;
+            width: $header_left_width;
+            height: $header_left_height;
+            font-family: "iconfont";
+            text-align: center;
+            line-height: $header_left_height;
+        }
+        .notice_title {
+            text-align: center;
+            line-height: $header_height;
+            font-size: $header_center_fontsize;
+        }
+        em {
+            position: absolute;
+            top: 0px;
+            right: 12px;
+            width: 70px;
+            height: $header_left_height;
+            font-size: .14rem;
+            text-align: center;
+            line-height: $header_left_height;
+            color: #fff;
+        }
+        .release {
+            color: #30BF75;
+            // display: none;
+        }
+    }
+    .notice_sec {
+        margin-top: 10px;
+        font-size: 0px;
+        background-color: #fff;
+        padding: .08rem .12rem;
+        overflow: hidden;
+        textarea {
+            resize: none;
+            height: 1.4rem;
+            width: 100%;
+            font-size: .14rem;
+            letter-spacing: 1px;
+            color: #666666;
+        }
+        span {
+            display: block;
+            text-align: right;
+            font-size: .14rem;
+            color: #d9d9d9;
+        }
+    }
+    .notice_foot {
+        position: absolute;
+        bottom: 0px;
+        height: 48px;
+        width: 100%;
+        font-size: 0px;
+        line-height: 48px;
+        text-align: center;
+        background-color: #fff;
+        border-top: .01rem solid #d7d7d7;
+        span {
+            color: #666;
+            font-size: .2rem;
+            font-family: "iconfont";
+        }
+    }
+}

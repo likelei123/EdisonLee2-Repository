@@ -1,0 +1,72 @@
+<section class="reOperation_main">
+  <header class="header">
+    <div class="head">
+      <div class="ret_left" v-on:click="goBack"><span>&#xe621;</span></div>
+      <span class="ret_title">处理退款</span>
+    </div>
+    <div class="list" v-for="list in babyMessage">
+      <div class="de_img">
+        <img :src="list.skuPhoto">
+      </div>
+      <div class="int">
+        <p><span class="int_title">{{list.goodsName}}</span><span class="R">x{{list.num}}</span></p>
+        <p><span v-for="skuDetail in list.skuDetail" class="margin_r">{{skuDetail.skuAttrClass}}:{{skuDetail.skuAttrVal}}</span>
+          <span class="R pir">￥{{list.price}}</span>
+        </p>
+        <p><span class="int_title">退款编号：{{list.orderNo}}</span></p>
+        <p>时间{{list.createDate}}</p>
+      </div>
+    </div>
+  </header>
+  <section class="content">
+    <div class="con_main" v-show="mainShow == 1">
+      <div class="record" v-for="userMessage in userMessage">
+        <div class="re_text">{{userMessage.userId}}
+          <div class="re_time">{{userMessage.createTime}}</div>
+        </div>
+        <div class="del">
+          <div class="user_apply">买家申请退款</div>
+          <div class="user_res"><span>{{userMessage.applicationReason}} </span></div>
+        </div>
+      </div>
+      <div class="record" v-for="terraceMessage in terraceMessage">
+        <div class="re_text">平行世界
+          <div class="re_time">{{terraceMessage.startDate}}</div>
+        </div>
+        <div class="del del_color">
+          <div class="apply">请处理申请<span>{{terraceMessage.surplusTime}}</span><span class="icn">&#xe618;</span></div>
+          <div class="reason">
+            <span>买家申请了退款,请尽快处理，逾期未处理，系统将自动同意申请</span>
+          </div>
+          <div class="cod">
+            <span class="block">编号：{{terraceMessage.refundNo}}</span>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="con_refuse" v-show="mainShow == 2">
+      <textarea placeholder="请填写拒绝理由" v-model="repulseMessage"></textarea>
+    </div>
+  </section>
+  <footer class="footer">
+    <div class="main" v-show="mainShow == 1">
+      <div class="btn">联系买家</div>
+      <div class="btn" v-on:click="refuseActive(2)">拒绝申请</div>
+      <div class="btn" v-on:click="affirmPayActive(3)">同意申请</div>
+    </div>
+    <div class="refuse" v-show="mainShow == 2">
+      <div class="btn" v-on:click="callOffActive(1)">取消</div>
+      <div class="btn btn_L" v-on:click="repulseActive">确定</div>
+    </div>
+  </footer>
+  <div class="meng_block" v-show="mainShow == 3">
+  </div>
+  <div class="pay" v-show="mainShow == 3">
+    <div class="input_box">
+      <input type="text" placeholder="请输入密码">
+    </div>
+    <div class="btn" v-on:click="callOffActive(1)">
+      确认退款
+    </div>
+  </div>
+</section>

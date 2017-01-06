@@ -1,0 +1,83 @@
+<div class="enter-info">
+    <header class="enter_info_header">
+        <span v-on:click="onGoback">&#xe621;</span>
+        <p class="info_title">店铺入驻</p>
+    </header>
+    <div class="enter_progress">
+        <div class="enter_progress_bar has_radius_left"><i></i><span>店铺定位</span></div>
+        <div class="enter_progress_bar  bar_color"><i class="i_color"></i><span class="span_color">基础信息 </span></div>
+        <div class="enter_progress_bar has_radius_right"><i></i><span>上传资质</span></div>
+    </div>
+    <section class="enter_info_sec">
+        <div class="addinfo_shop_logo">
+            <div class="info_logo_test">店铺Logo</div>
+            <div class="info_logo_img_box" >
+                <img v-show="loginImageUrl ? true : false" v-bind:src="loginImageUrl" />
+            </div>
+            <div class="info_logo_phone" v-on:click="onSelectImage()">
+                <a href='native://photo?data={"returnfunction": "enterLoadImageCallback","photoCount":1}'> 
+                    <span>&#xe625;</span>
+                </a>
+            </div>
+        </div>
+        <div class="addinfo_shop_logo">
+            <div class="info_logo_test">店铺内景图</div>
+            <div class="info_logo_img_box" >
+                <img v-show="innerImageUrl ? true : false" v-bind:src="innerImageUrl" />
+            </div>
+            <div class="info_logo_phone" v-on:click="onSelectImage()">
+                <a href='native://photo?data={"returnfunction": "enterInnerLoadImageCallback","photoCount":1}'> 
+                    <span>&#xe625;</span>
+                </a>
+            </div>
+        </div>
+        <div class="write_info">
+            <ul>
+                <li><em>店铺名称</em><span>{{ shopName }}</span></li>
+                <li><em>店铺地址</em><input v-model="shopAddress" type="text"></li>
+                <li><em>联系电话</em><input v-model="shopPhone" type="number"></li>
+            </ul>
+        </div>
+        <div class="write_info">
+            <ul>
+                <li v-on:click="onSelectTrade('行业类别', 1)">
+                    <em>行业类别 </em>
+                    
+                    <span class="enter_icon">&#xe623;</span>
+                    <label>{{ tradeType }}</label>
+                </li>
+                <li v-on:click="onSelectTrade('行业名称', 2)">
+                    <em>行业名称 </em>
+                    <span class='enter_icon'>&#xe623;</span>
+                    <label>{{ tradeName }}</label>
+                    
+                </li>
+            </ul>
+        </div>
+        <div class="enter_shop_hours">
+            <em>营业时间</em>
+            <div class="enter_choose_time">
+                <i v-on:click='onshow("1")'>{{states.shistring}}</i> <s>至</s> 
+                <i v-on:click='onshow("2")'>{{states.fenstring}}</i>
+            </div>
+        </div>
+        <div class="write_label">
+            <textarea type="text" v-model="shopTag" placeholder="标签"></textarea>
+        </div>
+        <div class="enter_next" v-on:click="onGoaptitude">下一步</div>
+    </section>
+    <section class="hidden_time" v-bind:style="{'display': states.show_none}">
+        <!--<section class="hidden_time" style="display:none;">-->
+        <div class="is_times">
+            <p><span v-on:click="on_Hide">取消</span><em v-on:click="isSure">确定</em></p>
+            <div class="is_time_ul">
+                <ul class="is_time_ul_1">
+                    <li v-for="(index,times) in states.times" v-on:click="onLI($index)" v-bind:class="{'li_style':states.li_index==index}">{{times.shi}}点</li>
+                </ul>
+                <ul class="is_time_ul_2">
+                    <li v-for="(index,minute) in states.minutes" v-on:click="onLifen($index)" v-bind:class="{'li_style':states.fen_index==index}">{{minute.fen}}分</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+</div>

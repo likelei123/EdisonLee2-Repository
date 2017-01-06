@@ -1,0 +1,32 @@
+<section class="storeClass_main">
+    <header class="header">
+        <div class="head">
+            <div v-on:click="goBack" class="nav"><span>&#xe621;</span></div>
+            <div class="nav_title">店铺自分类</div>
+        </div>
+    </header>
+    <section class="content">
+        <div class="column" v-on:click="storeActive">
+            <div class="title">
+                <span class="icn">&#xe625;</span>
+                <span class="title_name">选择类目</span>
+            </div>
+        </div>
+        <div class="column_add" v-for="(key,item) in valArray" track-by="$index">
+            <div class="list" v-on:click="choose(key)">
+                <div class="list_tit">{{item.categoryName}}</div>
+                <span class="icn_go">&#xe623;</span>
+            </div>
+        </div>
+    </section>
+    <div class="matte" v-show="reveal">
+    </div>
+    <div class="ma_cont" v-show="reveal">
+        <p>添加分类</p>
+        <input type="text" placeholder="请输入宝贝类型" v-model="valude">
+        <div class="choose">
+            <span v-on:click="conceal">取消</span>
+            <span v-on:click="success">保存</span>
+        </div>
+    </div>
+</section>

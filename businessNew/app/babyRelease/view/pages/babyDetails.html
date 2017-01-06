@@ -1,0 +1,28 @@
+<section class="details_main">
+    <header class="header">
+        <div class="head">
+            <div v-on:click="goBack" class="nav"><span>&#xe621;</span></div>
+            <div class="nav_title">宝贝详情</div>
+        </div>
+    </header>
+    <section class="content">
+        <a class="btn_img" style="text-decoration:none;color:#7B7B7B;" href='native://photo?data={"returnfunction": "d_detailsImageCallback","photoCount":5}'>
+             继续添加图片<span>&#xe625;</span>
+         </a>
+        
+        <div class="container">
+            <div class="column" v-for="(key,item) in items">
+                <img :src="item.imageUrl" />
+                <!-- <p>{{item.description}}</p> -->
+                
+                <div class="inp">
+                    <textarea rows="6" v-model="item.description" placeholder="点击宝贝图片进行文字编辑"></textarea>
+                </div>
+            </div>
+        </div>
+    </section>
+    <footer class="footer">
+        <div class="nav_1">预览</div>
+        <div class="nav_2" v-on:click="success">完成</div>
+    </footer>
+</section>

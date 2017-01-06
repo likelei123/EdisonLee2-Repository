@@ -1,0 +1,132 @@
+@import"../../../public/scss/variables.scss";
+.enter-city {
+    position: absolute;
+    left: 0px;
+    right: 0px;
+    top: 0px;
+    bottom: 0px;
+    background-color: #eee;
+    i,
+    ins,
+    em,
+    s {
+        text-decoration: none;
+        font-style: normal;
+    }
+    .enter_city {
+        background-color: #fff;
+        .enter_city_hea {
+            height: $header_height;
+            color: $header_color;
+            font-size: $header_fontsize;
+            .city_search {
+                padding: 0 .08rem;
+                font-size: 0px;
+                overflow: hidden;
+                height: .48rem;
+                span {
+                    position: absolute;
+                    display: inline-block;
+                    width: $header_left_width;
+                    height: $header_left_height;
+                    font-family: "iconfont";
+                    text-align: center;
+                    line-height: $header_left_height;
+                    font-size: .16rem;
+                    color: #333;
+                }
+                .city_search_left {
+                    left: 0px;
+                }
+                .city_search_right {
+                    right: 0px;
+                }
+                .is_search {
+                    position: absolute;
+                    left: 50px;
+                    top: 9px;
+                    background-color: #eee;
+                    height: .3rem;
+                    width: 66%;
+                    border-radius: 6px;
+                    overflow: hidden;
+                    padding: 0 .12rem;
+                    span {
+                        right: 1px;
+                        height: .3rem;
+                        width: .3rem;
+                        line-height: .3rem;
+                    }
+                    input {
+                        width: 80%;
+                        height: 100%;
+                        background-color: #eee;
+                        font-size: .12rem;
+                    }
+                }
+            }
+        }
+        .enter_city_list {
+            position: absolute;
+            top: 50px;
+            left: 0px;
+            right: 0px;
+            bottom: 0px;
+            overflow-y: auto;
+            overflow-x: hidden;
+            font-size: 0px;
+            .current_city,
+            .hot_city {
+                padding: 0 0.13rem;
+                font-size: .14rem;
+                color: #666666;
+                p {
+                    height: .33rem;
+                    line-height: .33rem;
+                    border-bottom: .01rem solid #D9D9D9;
+                }
+                ul {
+                    font-size: 0px;
+                    li {
+                        width: .75rem;
+                        height: .33rem;
+                        line-height: .33rem;
+                        text-align: center;
+                        background-color: #ffffff;
+                        display: inline-block;
+                        margin: .1rem .13rem .1rem 0;
+                        border: .02rem solid #D9D9D9;
+                        font-size: .14rem;
+                    }
+                }
+            }
+            .all_city {
+                border-top: 1px solid #D9D9D9;
+                ul {
+                    font-size: 0px;
+                    background-color: #fff;
+                    p {
+                        height: .34rem;
+                        line-height: .34rem;
+                        padding-left: .12rem;
+                        font-size: .16rem;
+                        border-bottom: 1px solid #D9D9D9;
+                        color: #666;
+                        background-color: #eee;
+                    }
+                    li {
+                        padding: 0 .12rem;
+                        font-size: .14rem;
+                        height: .34rem;
+                        line-height: .34rem;
+                        color: #666;
+                        span {
+                            display: block;
+                            border-bottom: .01rem solid #D9D9D9;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

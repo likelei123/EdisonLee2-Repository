@@ -1,0 +1,106 @@
+<section class="release_main">
+	<header class="header">
+		<div class="left" v-on:click="goBack"><span>&#xe621;</span></div>
+		<span>宝贝发布</span>
+		<div class="right" v-on:click="preview"><span class="off">预览</span></div>
+	</header>
+	<section class="rel_content">
+		<div class="fa_col">
+			<div class="column column_none col_mar" v-on:click="onEnter('#/babySelect')">
+				<div class="title">
+					<em>*</em>
+					<span>选择类目</span>
+				</div>
+				<div class="title_right">
+					<span class="result" v-for=" item in selectArray">
+					 {{item}}
+				</span>
+					<span class="icon_go">&#xe623;</span>
+				</div>
+			</div>
+		</div>
+		<div class="upload">
+			<!-- <p>(长按图片并拖动可排序)</p> -->
+			<div class="up_img">
+				<div class="preview_img" v-for="url in imagesUrl" track-by="$index">
+					<img :src="url">
+					<div class="close" v-on:click="clearImage($index)">×</div>
+				</div>
+				<div class="up_active" v-show="upImagesUrl">
+					<a style="text-decoration:none;color:#EEE;" href='native://photo?data={"returnfunction": "b_loadImageCallback","photoCount":5}'> 
+                        &#xe625;
+                    </a>
+				</div>
+			</div>
+		</div>
+		<div class="fa_col">
+			<div class="column">
+				<div class="title">
+					<em>*</em>
+					<span>宝贝名称</span>
+				</div>
+				<input type="text" placeholder="请输入名称" v-model="shopName" class="int_span">
+			</div>
+		</div>
+		<div class="fa_col">
+			<div class="column" v-on:click="onEnter('#/babyStandard')" v-show="property">
+				<div class="title">
+					<em>*</em>
+					<span>宝贝规格</span>
+				</div>
+				<div class="title_right">
+					<span class="result" v-show="copyreaderStatus">已编辑</span>
+					<span class="icon_go">&#xe623;</span>
+				</div>
+			</div>
+		</div>
+		<div class="fa_col">
+			<div class="column" v-on:click="purchaseNotesAction('#/purchaseText')">
+				<div class="title">
+					<span>购买须知</span>
+				</div>
+				<div class="title_right">
+					<span class="result" v-show="purchaseNotes">已编辑</span>
+					<span class="icon_go">&#xe623;</span>
+				</div>
+			</div>
+		</div>
+		<div class="fa_col">
+			<div class="column" v-on:click="onEnter('#/babyDetails')">
+				<div class="title">
+					<em>*</em>
+					<span>宝贝描述</span>
+				</div>
+				<div class="title_right">
+					<span class="result" v-show="descriptionStatus">已编辑</span>
+					<span class="icon_go">&#xe623;</span>
+				</div>
+			</div>
+		</div>
+		<div class="fa_col">
+			<div class="column col_mar" v-on:click="classificationAction('#/storeClass')">
+				<div class="title">
+					<em>*</em>
+					<span>店铺自分类</span>
+				</div>
+				<div class="title_right">
+					<span class="result" v-show="shopClassify">已选择</span>
+					<span class="icon_go">&#xe623;</span>
+				</div>
+			</div>
+		</div>
+		<div class="fa_col">
+			<div class="column" v-show="distributionStatus">
+				<div class="title">
+					<em>*</em>
+					<span>配送费用</span>
+				</div>
+				<input type="text" placeholder="请输入￥0.00" v-model="distribution" class="int_span">
+			</div>
+		</div>
+	</section>
+	<footer class="footer">
+		<div class="nav_1" v-on:click="putaway">上架</div>
+		<div class="nav_2" v-on:click="soldOut">加入仓库</div>
+	</footer>
+</section>

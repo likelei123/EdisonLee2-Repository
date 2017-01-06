@@ -1,0 +1,27 @@
+<div class="enter-list">
+    <div class="enter_list_header">
+        <div class="enter_list_search">
+            <input type="text" v-model="shopName" placeholder="请输入店铺名称">
+            <span v-on:click="onSearchShopInfo()">&#xe61e;</span>
+        </div>
+    </div>
+    <section class="enter_list_libiao">
+        <div class="list_libiao_ul">
+            <ul>
+              <!--   <li v-for="da in itmes" v-on:dblclick="enterShopInfo(da)" >
+                    <div class="icon">&#xe601;</div>
+                    <span class="shop_name">{{da.shop_name}}</span>
+                    <i class="type">类别：{{da.type}}</i>
+                    <div class="is_in" v-show="!da.isOccupancy" v-on:click="change3dView(da)">未入驻</div>
+                    <div class="is_none" v-show="da.isOccupancy">驻</div>
+                </li> -->
+                <li v-for="da in itmes" v-on:click="change3dView(da)" >
+                    <div class="icon">&#xe601;</div>
+                    <span class="shop_name">{{da.shop_name}}</span>
+                    <i class="type" v-show="da.isOccupancy" >已入住</i>
+                    <div class="is_in" v-show="!da.isOccupancy" v-on:click="enterShopInfo(da)">入驻</div>
+                </li>
+            </ul>
+        </div>
+    </section>
+</div>

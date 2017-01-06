@@ -1,0 +1,82 @@
+<section class="subpage_power">
+	<header class="header">
+		<div class="left" v-on:click="goBack"><span>&#xe621;</span></div>
+		<span>设置岗位权限</span>
+	</header>
+	<section class="pow_content">
+		<div class="nav">
+			<div class="list" v-for=" power in res" v-on:click="Onlist($index)">
+				{{power.moduleName }}
+				<div  class="choose" v-bind:style="{'display':power.class}">
+					<div class="list_sure">
+					</div>
+					<span>&#xe619;</span>
+				</div>
+				<!--<div class="choose" v-show="ishide">
+					<div class="list_sure">
+					</div>
+					<span>&#xe619;</span>
+				</div>-->
+			</div>
+			<!--<div class="list">
+				转租/出售
+				<div class="list_sure">
+				</div>
+				<span>&#xe619;</span>
+			</div>
+			<div class="list">
+				广告投放
+				<div class="list_sure">
+				</div>
+				<span>&#xe619;</span>
+			</div>
+			<div class="list">
+				店铺装修
+				<div class="list_sure">
+				</div>
+				<span>&#xe619;</span>
+			</div>
+			<div class="list">
+				招聘
+				<div class="list_sure">
+				</div>
+				<span>&#xe619;</span>
+			</div>
+			<div class="list">
+				车位投标
+				<div class="list_sure">
+				</div>
+				<span>&#xe619;</span>
+			</div>
+			<div class="list">
+				秒团
+				<div class="list_sure">
+				</div>
+				<span>&#xe619;</span>
+			</div>
+			<div class="list">
+				评价管理
+				<div class="list_sure">
+				</div>
+				<span>&#xe619;</span>
+			</div>
+			<div class="list">
+				调价
+				<div class="list_sure">
+				</div>
+				<span>&#xe619;</span>
+			</div>
+			<div class="list">
+				订单查询
+				<div class="list_sure">
+				</div>
+				<span>&#xe619;</span>
+			</div>-->
+		</div>
+	</section>
+	<footer class="footer">
+		<div class="add_news" v-on:click="Onadd_news">
+			确认
+		</div>
+	</footer>
+</section>

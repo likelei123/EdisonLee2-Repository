@@ -1,0 +1,20 @@
+<div class="wall">
+	<!--离岗模板-->
+	<div class="list" v-for="lists in res.data" v-on:click="Goparticulars(lists.empId,'离岗')">
+		<!--v-on:click="Goparticulars_leave(lists.empId)"-->
+		<div class="list_img"><img v-bind:src="lists.empImgs"></div>
+		<div class="message">
+			<div class="name">
+				{{lists.empName}}
+			</div>
+			<div class="details">
+				<span class="tub">&#xe617;</span>{{lists.empJob}}
+				<span class="is_good">
+						<em>&#xe617;</em>
+						<em>{{lists.empGoods}}</em>
+				</span>
+				<span class="Phon">{{lists.empCellphone}}</span>
+			</div>
+		</div>
+	</div>
+</div>

@@ -1,0 +1,24 @@
+<div class="cap_leave" v-show="whole == true">
+	<div class="block"></div>
+	<div class="content" v-show="cap == 1">
+		<div class="title">确认将该员工解除雇佣关系？</div>
+		<div class="cap_active">
+			<button class="btn btn_left" v-on:click="OnEnsure">确认</button>
+			<button class="btn btn_right" v-on:click="affirm">取消</button>
+		</div>
+	</div>
+		<div class="content" v-show="cap == 2">
+		<div class="title">确认将该员工解除雇佣关系？</div>
+		<div class="cap_active">
+			<button class="btn btn_left"  v-on:click="OnEnsure">确认</button><!--v-on:click="OnEnsure"-->
+			<button class="btn btn_right" v-on:click="affirm">取消</button>
+		</div>
+	</div>
+	<div class="content" v-show="cap == 3">
+		<div class="title">确认将该员工标记为上岗？</div>
+		<div class="cap_active">
+			<button class="btn btn_left" v-on:click="OnEnsure">确认</button>
+			<button class="btn btn_right" v-on:click="affirm">取消</button>
+		</div>
+	</div>
+</div>

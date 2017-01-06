@@ -1,0 +1,199 @@
+
+
+@font-face {
+	font-family: 'iconfont';
+    src: url('../../public/scss/font/iconfont.ttf') format('truetype'); 
+	overflow: hidden;
+}
+
+body,html{
+    position:relative;
+	padding: 0px;
+	margin:0px;
+	width: 100%;
+    height: 100%;
+    font-family: Tahoma, 'Lucida Grande', Verdana, 'Microsoft Yahei', STXihei, hei;
+    font-size: 100px;
+    overflow: hidden;
+    border:1px solid blue;
+}
+
+.alert-light-box {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 999999;
+  font-size: .14rem;
+  transition: all .4s;
+  transition-timing: ease-in;
+  opacity: 1;
+
+  .msg-box {
+    padding: 15px 30px 15px 30px;
+    position: absolute;
+    z-index: 2;
+    top: 200px;
+    color: white;
+    border-radius: 5px;
+  }
+
+  .bg-box {
+    padding: 15px 30px 15px 30px;
+    position: absolute;
+    z-index: 1;
+    top: 200px;
+    background: black;
+    color: black;
+    opacity: .6;
+    border-radius: 5px;
+  }
+}
+
+.active-box {
+  background-color: white;
+	border: 0;
+	position: absolute;
+	left: 0;
+	right: 0;
+	top: 0;
+	bottom: 0;
+  overflow: hidden;
+}
+.active-box-animate {
+    transition: all .4s;
+    transition-timing: ease-in;
+}
+
+input, select, textarea, button {
+    font-family: inherit;
+    font-size: inherit;
+}
+input, select, textarea, button, datalist, option {
+    outline: 0;
+}
+h1, h2, h3, h4, h5, h6 {
+    font-size: 100%;
+    font-weight: normal;
+}
+html, body, article, section, header, footer, nav, div, dl, dt, dd, hr, ul, ol, li, h1, h2, h3, h4, h5, h6, pre, form, fieldset, input, textarea, p, th, td {
+    margin: 0;
+    padding: 0;
+    border: none;
+    outline: none;
+    text-indent: 0;
+    list-style: none;
+}
+
+.spinner {
+  margin: 70% auto;
+  width: 30px;
+  height: 30px;
+  position: relative;
+  z-index: 99;
+}
+ 
+.container1 > div, .container2 > div, .container3 > div {
+  width: 6px;
+  height: 6px;
+  background-color: #333;
+ 
+  border-radius: 100%;
+  position: absolute;
+  -webkit-animation: bouncedelay 1.2s infinite ease-in-out;
+  animation: bouncedelay 1.2s infinite ease-in-out;
+  -webkit-animation-fill-mode: both;
+  animation-fill-mode: both;
+}
+ 
+.spinner .spinner-container {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+}
+ 
+.container2 {
+  -webkit-transform: rotateZ(45deg);
+  transform: rotateZ(45deg);
+}
+ 
+.container3 {
+  -webkit-transform: rotateZ(90deg);
+  transform: rotateZ(90deg);
+}
+ 
+.circle1 { top: 0; left: 0; }
+.circle2 { top: 0; right: 0; }
+.circle3 { right: 0; bottom: 0; }
+.circle4 { left: 0; bottom: 0; }
+ 
+.container2 .circle1 {
+  -webkit-animation-delay: -1.1s;
+  animation-delay: -1.1s;
+}
+ 
+.container3 .circle1 {
+  -webkit-animation-delay: -1.0s;
+  animation-delay: -1.0s;
+}
+ 
+.container1 .circle2 {
+  -webkit-animation-delay: -0.9s;
+  animation-delay: -0.9s;
+}
+ 
+.container2 .circle2 {
+  -webkit-animation-delay: -0.8s;
+  animation-delay: -0.8s;
+}
+ 
+.container3 .circle2 {
+  -webkit-animation-delay: -0.7s;
+  animation-delay: -0.7s;
+}
+ 
+.container1 .circle3 {
+  -webkit-animation-delay: -0.6s;
+  animation-delay: -0.6s;
+}
+ 
+.container2 .circle3 {
+  -webkit-animation-delay: -0.5s;
+  animation-delay: -0.5s;
+}
+ 
+.container3 .circle3 {
+  -webkit-animation-delay: -0.4s;
+  animation-delay: -0.4s;
+}
+ 
+.container1 .circle4 {
+  -webkit-animation-delay: -0.3s;
+  animation-delay: -0.3s;
+}
+ 
+.container2 .circle4 {
+  -webkit-animation-delay: -0.2s;
+  animation-delay: -0.2s;
+}
+ 
+.container3 .circle4 {
+  -webkit-animation-delay: -0.1s;
+  animation-delay: -0.1s;
+}
+ 
+@-webkit-keyframes bouncedelay {
+  0%, 80%, 100% { -webkit-transform: scale(0.0) }
+  40% { -webkit-transform: scale(1.0) }
+}
+ 
+@keyframes bouncedelay {
+  0%, 80%, 100% {
+    transform: scale(0.0);
+    -webkit-transform: scale(0.0);
+  } 40% {
+    transform: scale(1.0);
+    -webkit-transform: scale(1.0);
+  }
+}

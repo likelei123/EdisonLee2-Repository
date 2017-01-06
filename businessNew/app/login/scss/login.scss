@@ -1,0 +1,107 @@
+@import"../../../public/scss/variables.scss";
+.login-box {
+	position: absolute;
+	left:0px;
+	right:0px;
+	top:0px;
+	bottom: 0px;
+	background-image: url("../image/background.jpg");
+	background-repeat: no-repeat;
+	background-size: 100% 100%;
+	.denglu {
+		height: 48px;
+		text-align: center;
+		line-height: 48px;
+		font-size: .18rem;
+		color: #fff;
+	}
+	.login_cont {
+		position: absolute;
+		left: 50%;
+		top: 50%;
+		width: 278px;
+		height: 468px;
+		font-size: .18rem;
+		-webkit-transform: translate(-50%, -50%);
+		.cameras {
+			position: relative;
+			top: 22px;
+			left: 50%;
+			width: 124px;
+			height: 118px;
+			-webkit-transform: translate(-50%, 0);
+			img {
+				width: 100%;
+				height: 100%;
+			}
+		}
+		.inputs {
+			margin-top: 20%;
+			background: rgba(255, 255, 255, 0.2);
+			width: 2.42rem;
+			border-radius: .08rem;
+			padding: 0 .18rem;
+			color: #8BADD1;
+			text-align: center;
+			div {
+				height: 48px;
+				font-size: 0px;
+				line-height: 48px;
+				input {
+					border: none;
+					background: 0;
+					font-size: .13rem;
+					color: #8BADD1;
+					padding-left: .2rem;
+					border: none;
+					border-left: 1px solid #8BADD1;
+				}
+				span {
+					display: inline-block;
+					width: 0.5rem;
+					font-family: "iconfont";
+					font-size: .18rem;
+				}
+			}
+		}
+		.ation_pasword {
+			margin-bottom: 20%;
+			margin-top: 14px;
+			padding: 0 .1rem;
+			font-size: .11rem;
+			color: #fff;
+			overflow: hidden;
+			input {
+				margin: 0px;
+				padding-top: 5px;
+				width: 11px;
+				height: 11px;
+			}
+
+			.remember {
+				vertical-align: 2px;
+			}
+		}
+		.ation_pasword .forget {
+			float: right;
+		}
+		.login,
+		.register {
+			margin-bottom: .1rem;
+			width: 2.78rem;
+			background: #2075CF;
+			height: .47rem;
+			line-height: .47rem;
+			font-size: .17rem;
+			text-align: center;
+			border-radius: .08rem;
+			color: #fff;
+		}
+		.is_border {
+			border-bottom: 1px solid #8794A6;
+		}
+		.inputs div input::-webkit-input-placeholder {
+			color: #8BADD1;
+		}
+	}
+}

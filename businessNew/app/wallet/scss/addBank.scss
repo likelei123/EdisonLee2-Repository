@@ -1,0 +1,197 @@
+@import "../../../public/scss/variables.scss";
+@mixin border-radius($radius) {
+    -webkit-border-radius: $radius;
+    -moz-border-radius: $radius;
+    border-radius: $radius;
+}
+
+@mixin box-sizing($sizing) {
+    -webkit-box-sizing: $sizing;
+    -moz-box-sizing: $sizing;
+    box-sizing: $sizing;
+}
+
+@mixin opacity($index) {
+    -webkit-opacity: $index;
+    -moz-opacity: $index;
+    opacity: $index;
+}
+
+@mixin transform($rotate) {
+    -webkit-transform: $rotate;
+    -moz-transform: $rotate;
+    transform: $rotate;
+}
+
+.addBank_main {
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    font-size: 0;
+    header {
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        background: $header_background;
+        height: $header_left_height;
+        line-height: $header_left_height;
+        font-size: $header_fontsize;
+        text-align: center;
+        color: #FFF;
+        .left {
+            position: absolute;
+            top: 0;
+            left: 10px;
+            font-family: 'iconfont';
+            font-size: .15rem;
+        }
+        span {
+            font-size: .15rem;
+        }
+    }
+    .content {
+        position: absolute;
+        top: 48px;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        overflow-x: hidden;
+        overflow-y: auto;
+        background: #EEE;
+        .list {
+            .user_name {
+                margin-top: 10px;
+                background: #FFF;
+                padding: 0 10px;
+                overflow: hidden;
+                height: 48px;
+                line-height: 48px;
+                .oper {
+                    float: left;
+                    font-size: .14rem;
+                    .int {
+                        padding-left: 10px;
+                    }
+                }
+                .icn {
+                    float: right;
+                    font-family: 'iconfont';
+                    font-size: .14rem;
+                }
+            }
+            .user_phone {
+                margin-top: 10px;
+                background: #FFF;
+                padding: 0 10px;
+                overflow: hidden;
+                height: 48px;
+                line-height: 48px;
+                .oper {
+                    float: left;
+                    font-size: .14rem;
+                    .int {
+                        padding-left: 10px;
+                        width: 120px;
+                    }
+                }
+                .btn {
+                    float: right;
+                    height: 36px;
+                    padding: 0 5px;
+                    line-height: 36px;
+                    font-size: .12rem;
+                    background: #F17E21;
+                    text-align: center;
+                    color: #FFF;
+                    margin-top: 6px;
+                    @include border-radius(5px);
+                }
+            }
+            .phone_code {
+                padding: 0 10px;
+                height: 48px;
+                line-height: 48px;
+                background: #FFF;
+                @include box-sizing(border-box);
+                border-top: 1px solid #EEE;
+                .oper {
+                    font-size: .14rem;
+                    .int {
+                        padding-left: 10px;
+                    }
+                }
+            }
+            .look_out {
+                padding: 0 10px;
+                font-size: .14rem;
+                color: #F17E21;
+                height: 30px;
+                line-height: 30px;
+            }
+            .open_bank {
+                padding: 0 10px;
+                font-size: .14rem;
+                height: 48px;
+                line-height: 48px;
+                overflow: hidden;
+                background: #FFF;
+                .oper {
+                    float: left;
+                    .bank_text {
+                        padding-left: 10px;
+                    }
+                }
+                .icn {
+                    float: right;
+                    font-family: 'iconfont';
+                    font-size: .14rem;
+                    margin-top: 4px;
+                    @include transform(rotate(90deg));
+                }
+            }
+            .card {
+                padding: 0 10px;
+                font-size: .14rem;
+                height: 48px;
+                line-height: 48px;
+                overflow: hidden;
+                background: #FFF;
+                @include box-sizing(border-box);
+                border-top: 1px solid #EEE;
+                .oper {
+                    font-size: .14rem;
+                    .int {
+                        padding-left: 10px;
+                        width: 200px;
+                    }
+                }
+            }
+            .select_bank {
+                padding: 0 10px;
+                font-size: .14rem;
+                height: 48px;
+                line-height: 48px;
+                overflow: hidden;
+                background: #FFF;
+                @include box-sizing(border-box);
+                border-top: 1px solid #EEE;
+                .oper {
+                    float: left;
+                    font-size: .14rem;
+                }
+                .select_text{
+                    float:right;
+                    font-size:.14rem;
+                    color:#ABABAE;
+                    .icn{
+                        margin-left: 10px;
+                        font-family: 'iconfont';
+                    }
+                }
+            }
+        }
+    }
+}

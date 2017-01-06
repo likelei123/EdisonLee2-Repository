@@ -1,0 +1,363 @@
+@import"../../../public/scss/variables.scss";
+.enter-info {
+    position: absolute;
+    left: 0px;
+    right: 0px;
+    top: 0px;
+    bottom: 0px;
+    background-color: #eee;
+    i,
+    ins,
+    em,
+    s {
+        font-style: normal;
+        text-decoration: none;
+    }
+    .enter_info_header {
+        height: $header_height;
+        background-color: $header_background;
+        color: $header_color;
+        font-size: $header_fontsize;
+        span {
+            position: absolute;
+            left: 0px;
+            display: inline-block;
+            width: $header_left_width;
+            height: $header_left_height;
+            font-family: "iconfont";
+            text-align: center;
+            line-height: $header_left_height;
+        }
+        .info_title {
+            text-align: center;
+            line-height: $header_height;
+            font-size: $header_center_fontsize;
+        }
+    }
+    .enter_progress {
+        padding: .12rem;
+        height: 24px;
+        font-size: 0px;
+        background-color: #fff;
+        .enter_progress_bar {
+            position: relative;
+            width: 33%;
+            height: 5px;
+            font-size: 0px;
+            display: inline-block;
+            vertical-align: top;
+            background-color: #e0e0de;
+            span {
+                padding-top: 16px;
+                display: block;
+                width: 100%;
+                text-align: center;
+                font-size: .12rem;
+                color: #e0e0de;
+            }
+            i {
+                margin-top: -3px;
+                position: absolute;
+                left: 44%;
+                content: "";
+                width: .12rem;
+                height: .12rem;
+                border-radius: 50%;
+                background-color: #e0e0de;
+                -webkit-transform: translate(0, 44%, 0, 0);
+            }
+            .i_color {
+                background-color: #0d7efd;
+            }
+              .span_color {
+                color: #0d7efd;
+            }
+        }
+        .bar_color {
+            background-color: #0d7efd;
+        }
+        .has_radius_left {
+            border-top-left-radius: 4px;
+            border-bottom-left-radius: 4px;
+        }
+        .has_radius_right {
+            border-top-right-radius: 4px;
+            border-bottom-right-radius: 4px;
+        }
+    }
+    .enter_info_sec {
+        position: absolute;
+        top: 98px;
+        left: 0px;
+        right: 0px;
+        bottom: 0px;
+        overflow-x: hidden;
+        overflow-y: auto;
+        .addinfo_shop_logo {
+            position: relative;
+            margin-top: 10px;
+            height: 1rem;
+            background-color: #fff;
+
+            .info_logo_img_box {
+                width: 70px;
+                height: 70px;
+                float: right;
+                margin-right: 90px;
+                margin-top: 14px;
+
+                img {
+                    width: 100%;
+                    height: 100%;
+                    border: 0;
+                    display: block;
+                }
+            }
+
+            .info_logo_test {
+                position: absolute;
+                left: 12px;
+                top: 35%;
+                font-size: .14rem;
+                color: #666;
+            }
+
+            .info_logo_phone {
+                position: absolute;
+                right: 12px;
+                top: 14px;
+                width: 70px;
+                height: 70px;
+                text-align: center;
+                line-height: 66px;
+                font-size: 0px;
+                border: 2px #D9D9D9 dashed;
+                span {
+                    font-size: .28rem;
+                    font-family: "iconfont";
+                    color: #D9D9D9;
+                }
+
+                a {
+                    display: block;
+                    height: 100%;
+                    width:100%;
+                    border:0;
+                    text-decoration:none;
+                }
+            }
+        }
+        .write_info {
+            ul {
+                margin-top: 12px;
+                font-size: 0px;
+                padding: 0 12px;
+                background-color: #fff;
+                li {
+                    position: relative;
+                    height: .4rem;
+                    font-size: .14rem;
+                    line-height: .4rem;
+                    color: #666;
+                    border-bottom: .01rem solid #d9d9d9;
+                    vertical-align: top;
+                    overflow: hidden;
+                    span {
+                        float: right;
+                        clear: both;
+                    }
+                    input {
+                        position: absolute;
+                        right: 0px;
+                        width: 66%;
+                        height: 100%;
+                        text-align: right;
+                        padding-right: 5px;
+                    }
+                    .enter_icon {
+                        font-family: "iconfont";
+                        font-size: .14rem;
+                    }
+
+                    label {
+                        float: right;
+                        margin-right: 15px;
+                    }
+                }
+            }
+        }
+        .enter_shop_hours {
+            position: relative;
+            padding: 0 12px;
+            margin-top: 12px;
+            font-size: 0px;
+            height: .4rem;
+            background-color: #fff;
+            line-height: .4rem;
+            overflow: hidden;
+            em {
+                float: left;
+                clear: both;
+                color: #666;
+                font-size: .14rem;
+            }
+            .enter_choose_time {
+                position: absolute;
+                right: 12px;
+                height:.4rem;
+                overflow: hidden;
+              font-size: 0px;
+                color: #666;
+                     vertical-align: top;
+                i {
+                      font-size: .14rem;
+                    display: inline-block;
+                    vertical-align: top;
+                    width: 56px;
+                    height: .3rem;
+                    text-align: center;
+                    line-height: 40px;
+                    color: #666;
+                    border-bottom: .01rem solid #d9d9d9;
+                }
+                s{
+                     font-size: .14rem;
+                       color: #666;
+                }
+            }
+        }
+        .write_label {
+            margin-top: 12px;
+            padding: 12px;
+            background-color: #fff;
+            font-size: 0px;
+            textarea {
+                width: 100%;
+                height: 100px;
+                resize: none;
+                font-size: .14rem;
+            }
+        }
+        .enter_next {
+            margin-top: 100px;
+            height: 48px;
+            font-size: .16rem;
+            line-height: 48px;
+            text-align: center;
+            background-color: #f17f22;
+            color: #fff;
+        }
+
+        	.shopbackground{
+			margin-top: 10px;
+			background-color: #fff;
+			padding: 12px;
+			position: relative;
+			overflow: hidden;
+			font-size: 0px;
+			height: 66px;
+			em{
+				position: absolute;
+				left: 12px;
+				top:36px;
+				font-size: .15rem;
+				color:#666;
+				font-style: normal;
+			}
+			span{
+				position: absolute;
+				right: 12px;
+				width: 88px;
+				height: 66px;
+				overflow: hidden;
+				img{
+					width: 100%;
+					height: 100%;
+				}
+			}
+		}
+    }
+    .hidden_time {
+        position: absolute;
+        top: 0px;
+        bottom: 0px;
+        right: 0px;
+        left: 0px;
+        background: rgba(0, 0, 0, 0.5);
+        .is_times {
+            position: absolute;
+            top: 60%;
+            bottom: 0px;
+            left: 0px;
+            right: 0px;
+            background: #fff;
+            overflow-y: auto;
+            p {
+                height: 41px;
+                background-color: #333333;
+                line-height: 41px;
+                padding: 0 12px;
+                font-size: 0px;
+                span {
+                    color: #fff;
+                    font-size: .14rem;
+                }
+                em {
+                    float: right;
+                     font-size: .14rem;
+                    color: #EF622A;
+                    margin-right: 0.08rem;
+                }
+            }
+            .is_time_ul{
+                position: relative;
+                top:1px;
+                height: 84%;
+                font-size: 0px;
+                overflow: hidden;
+                ul{
+                    display: inline-block;
+                    width: 50%;
+                    height: 100%;
+                    overflow-y: auto;
+                    scrollbar-base-color:#fff;
+                    li{
+                        margin-left: 2px;
+                        font-size: .14rem;
+                        width: 96%;
+                        height: .3rem;
+                        line-height: .3rem;
+                        text-align: center;
+                        color: #666;
+                        border:1px transparent solid;
+                    }
+                    .li_style{
+                            border: 1px #d7d7d7 solid;
+                    }
+                }
+                .is_time_ul_1{
+                    position: absolute;
+                    left: 0px;
+                }
+                  .is_time_ul_1::-webkit-scrollbar {
+                      width: 0px;
+                  }
+                .is_time_ul_2{
+                    position: absolute;
+                    right: 0px;
+                }
+                 .is_time_ul_2::-webkit-scrollbar {
+                      width: 0px;
+                  }
+            }
+        }
+    }
+    .enter_info_sec::-webkit-scrollbar {
+        width: 0px;
+        height: 1px;
+    }
+}
+.enter-info::-webkit-scrollbar{
+    width: 0px;
+    height: 0px;
+}

@@ -1,0 +1,27 @@
+<div class="enter-map">
+
+        <header class="enter_map_hea">
+            <span v-on:click="onGoback">&#xe621;</span>
+            <p class="map_title">店铺入驻</p>
+        </header>
+        <div class="enter_progress">
+            <div class="enter_progress_bar  bar_color has_radius_left"><i class="i_color"></i><span class="span_color">店铺定位</span></div>
+            <div class="enter_progress_bar "><i></i><span>基础信息 </span></div>
+            <div class="enter_progress_bar has_radius_right"><i></i><span>上传资质</span></div>
+        </div>
+        <section class="is_map">
+            <div id="ismap" style="height:100%;width: 100%">
+            </div>
+            <div class="mark_control">
+                <img src="../../../public/images/dingwei.png" alt="控制的手杆" style="width: 100%;height: 100%;">
+                <div class="street_text" v-on:click="onGolist"><i>未知地点</i> <span>&#xe623;</span></div>
+            </div>
+            <div class="shoose_city" v-on:click="onEntercity">
+                <div class="switch_city">切换城市</div>
+                <div class="click_city">
+                    <span>{{states.city}}</span>
+                    <i></i>
+                </div>
+            </div>
+        </section>
+</div>

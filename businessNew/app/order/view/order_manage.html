@@ -1,0 +1,55 @@
+<div class="order-box">
+    <header class="order_header">
+        <span v-on:click="onBack">&#xe621;</span>
+        <div class="biaoti">订单管理</div>
+    </header>
+    <div class="order_search">
+        <div class="order_search_text">
+            <input type="number" v-model="states.searchText" placeholder="输入手机号/订单编号">
+            <span v-on:click="queryOrderList()" class="search_but">&#xe61e;</span>
+        </div>
+    </div>
+    <nav class="order_nav">
+        <ul>
+            <li v-on:click="onLi(1, $event)">
+                <a v-bind:class="{'a_style':states.state==1}">状态</a>
+                <i v-bind:class="{'i_top':states.state==1}"></i>
+            </li>
+            <li v-on:click="onLi(2, $event)">
+                <a v-bind:class="{'a_style':states.state==2}">分类</a>
+                <i v-bind:class="{'i_top':states.state==2}"></i>
+            </li>
+            <li v-on:click="onLi(3, $event)">
+                <a v-bind:class="{'a_style':states.state==3}">最近</a>
+                <i v-bind:class="{'i_top':states.state==3}"></i>
+            </li>
+        </ul>
+    </nav>
+    <section class="order_list">
+    </section>
+    <section class="order_small_category"  v-bind:style="{'display':states.isblock}">
+        <div class="small_category_all">
+            <ul v-on:click="onSelectStatus('statusType', $event)" class="small_category_ul" v-show="states.state==1" >
+                <div class="sanjiao"></div>
+                <li :class="{selected_status:states.statusType == 'ALL'}" code="ALL">全部状态</li>
+                <li :class="{selected_status:states.statusType == 'PAY'}" code="PAY">待付款</li>
+                <li :class="{selected_status:states.statusType == 'SEND'}" code="SEND">待发货</li>
+                <li :class="{selected_status:states.statusType == 'RESERVE'}" code="RESERVE">待收货</li>
+                <li :class="{selected_status:states.statusType == 'CONSUME'}" code="CONSUME">待使用</li>
+                <li :class="{selected_status:states.statusType == 'END'}" code="END">交易成功</li>
+                <li :class="{selected_status:states.statusType == 'CLOUSE'}" code="CLOUSE">交易关闭</li>
+            </ul>
+            <ul v-on:click="onSelectStatus('classType', $event)" class="small_category_ul" v-show="states.state==2">
+                <div class="sanjiao left_2"></div>
+                <li :class="{selected_status:states.classType == 'ALL'}" code="ALL">全部分类</li>
+                <li :class="{selected_status:states.classType == '1'}" code="1">零售订单</li>
+                <li :class="{selected_status:states.classType == '2'}" code="2">服务订单</li>
+            </ul>
+            <ul v-on:click="onSelectStatus('sortTime', $event)" class="small_category_ul" v-show="states.state==3">
+                <div class="sanjiao left_3"></div>
+                <li :class="{selected_status:states.sortTime == 'desc'}" code="desc">最晚</li>
+                <li :class="{selected_status:states.sortTime == 'asc'}" code="asc">最早</li>
+            </ul>
+        </div>
+    </section>
+</div>

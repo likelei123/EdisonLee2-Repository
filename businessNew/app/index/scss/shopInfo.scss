@@ -1,0 +1,252 @@
+@import "../../../public/scss/variables.scss";
+@mixin input-field {
+	height: 33px;
+	margin-left: 90px;
+	border-bottom: 1px solid #d9d9d9;
+	color: #7B7B7B;
+	line-height: 33px;
+	position: relative;
+}
+
+.shop-info-box {
+	position: absolute;
+	left: 0;
+	top: 0;
+	bottom: 0;
+	right: 0;
+	background: #f2f5f9;
+	.header {
+		height: $header_height;
+		background-color: $header_background;
+		color: $header_color;
+		font-size: $header_fontsize;
+		position: absolute;
+		left: 0;
+		top: 0;
+		right: 0;
+		span {
+			position: absolute;
+			left: 0px;
+			display: inline-block;
+			width: $header_left_width;
+			height: $header_left_height;
+			font-family: "iconfont";
+			text-align: center;
+			line-height: $header_left_height;
+		}
+		p {
+			text-align: center;
+			line-height: $header_height;
+			font-size: $header_center_fontsize;
+		}
+	}
+	.content {
+		position: absolute;
+		top: $header_height;
+		left: 0;
+		right: 0;
+		bottom: 48px;
+		.top-box {
+			margin: 15px 15px 8px 15px;
+			overflow: hidden;
+			font-size: .14rem;
+			.face-box {
+				width: 66px;
+				height: 66px;
+				float: left;
+				img {
+					display: block;
+					width: 100%;
+					height: 100%;
+				}
+			}
+			.name-field {
+				@include input-field;
+				input {
+					position: absolute;
+					left: 60px;
+					top: 0;
+					right: 0;
+					bottom: 0;
+					height: 100%;
+					border: 0;
+					float: right;
+					background: white;
+				}
+			}
+			.phone-field {
+				@include input-field;
+				input {
+					position: absolute;
+					left: 60px;
+					top: 0;
+					right: 0;
+					bottom: 0;
+					height: 100%;
+					border: 0;
+					float: right;
+					background: white;
+				}
+			}
+			.normal-field {
+				height: 34px;
+				line-height: 34px;
+				position: relative;
+				//margin-left: 90px;
+				input {
+					position: absolute;
+					left: 60px;
+					top: 0;
+					right: 0;
+					bottom: 0;
+					height: 100%;
+					border: 0;
+					float: right;
+					background: white;
+					line-height: 50px;
+				}
+				span {
+					color: #7B7B7B;
+				}
+			}
+		}
+		.group-info {
+			background: white;
+			margin-top: 15px;
+			.from-item {
+				height: 35px;
+				font-size: .14rem;
+				line-height: 35px;
+				margin: 0 15px 0 15px;
+				border-bottom: 1px solid #d9d9d9;
+				label {
+					margin-left: 20px;
+				}
+				span {
+					color: #7B7B7B;
+				}
+			}
+		}
+		.title-text {
+			height: 30px;
+			line-height: 30px;
+			padding-left: 15px;
+			font-size: .14rem;
+			color: #7B7B7B;
+		}
+		.time-box {
+			height: 40px;
+			position: relative;
+			line-height: 40px;
+			text-align: center;
+			font-size: .14rem;
+			color: #fff;
+			.start_con {
+				position: absolute;
+				width: 50%;
+				height: 100%;
+				left: 0;
+				top: 0;
+				background: #297ad1;
+				input {
+					position: absolute;
+					height: 100%;
+					width: 34%;
+					background: #297ad1;
+					color: #fff
+				}
+			}
+			.end_con {
+				position: absolute;
+				width: 50%;
+				height: 100%;
+				right: 0;
+				top: 0;
+				background: #73b1f4;
+				input {
+					position: absolute;
+					height: 100%;
+					width: 34%;
+					background: #73b1f4;
+					color: #fff
+				}
+			}
+			.end_con:before {
+				position: absolute;
+				content: '';
+				width: 0;
+				height: 0;
+				left: -5px;
+				top: 0;
+				border-left: 5px solid transparent;
+				border-top: 20px solid #73b1f4;
+			}
+			.end_con:after {
+				position: absolute;
+				content: '';
+				width: 0;
+				height: 0;
+				left: -5px;
+				bottom: 0;
+				border-left: 5px solid transparent;
+				border-bottom: 20px solid #73b1f4;
+			}
+		}
+		.shopbackground{
+			margin-top: 10px;
+			background-color: #fff;
+			padding: 12px;
+			position: relative;
+			overflow: hidden;
+			font-size: 0px;
+			height: 66px;
+			em{
+				position: absolute;
+				left: 12px;
+				top:36px;
+				font-size: .15rem;
+				color:#666;
+				font-style: normal;
+			}
+			span{
+				position: absolute;
+				right: 12px;
+				width: 88px;
+				height: 66px;
+				overflow: hidden;
+				img{
+					width: 100%;
+					height: 100%;
+				}
+			}
+		}
+	}
+	.footer {
+		height: 48px;
+		position: absolute;
+		left: 0;
+		right: 0;
+		bottom: 0;
+		border-top: 1px solid #d9d9d9;
+		font-size: .15rem;
+		background: #fff;
+		.ensure {
+			display: block;
+			height: 34px;
+			border: 1px solid $header_background;
+			margin: 7px 15px 0 15px;
+			border-radius: 5px;
+			line-height: 34px;
+			color: $header_background;
+			text-align: center;
+		}
+	}
+	.not_operate {
+		position: absolute;
+		top: 48px;
+		bottom: 0px;
+		right: 0px;
+		left: 0px;
+		background: transparent;
+	}
+}

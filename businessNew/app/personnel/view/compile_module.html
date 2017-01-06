@@ -1,0 +1,20 @@
+<div class="wall">
+	<!--员工墙模板-->
+	<div class="list" v-for="lists in res.data" v-on:click="Goparticulars(lists.empId,'员工墙')">
+		<div class="list_img"><img v-bind:src="lists.empImgs"></div>
+		<div class="message">
+			<div class="name">
+				{{lists.empName}}
+				<span v-show="lists.isShow==1">已在员工墙</span>
+			</div>
+			<div class="details">
+				<span class="tub">&#xe617;</span>{{lists.empJob}}
+				<span class="is_good">
+						<em>&#xe617;</em>
+						<em>{{lists.empGoods}}</em>
+				</span>
+				<span class="Phon">{{lists.empCellphone}}</span>
+			</div>
+		</div>
+	</div>
+</div>

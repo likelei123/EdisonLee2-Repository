@@ -1,0 +1,155 @@
+@import "../../../public/scss/variables.scss";
+@mixin border-radius($radius) {
+    -webkit-border-radius: $radius;
+    -moz-border-radius: $radius;
+    border-radius: $radius;
+}
+
+@mixin box-sizing($sizing) {
+    -webkit-box-sizing: $sizing;
+    -moz-box-sizing: $sizing;
+    box-sizing: $sizing;
+}
+
+.reimburseAndSale_main {
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    font-size: 0;
+    background: #F2F5F9;
+    .header {
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        font-size: 0;
+        .head {
+            background: $header_background;
+            padding: 0 10px;
+            height: $header_left_height;
+            line-height: $header_left_height;
+            text-align: center;
+            font-size: $header_fontsize;
+            overflow: hidden;
+            .ret_left {
+                float: left;
+                font-family: "iconfont";
+                color: $header_color;
+            }
+            .ret_title {
+                color: $header_color;
+            }
+        }
+        .list {
+            overflow: hidden;
+            background: #FFF;
+            .nav {
+                float: left;
+                height: 40px;
+                font-size: .14rem;
+                width: 33.33%;
+                line-height: 40px;
+                text-align: center;
+                color: #999;
+            }
+            .nav_color {
+                color: #1D75CC;
+                @include box-sizing(border-box);
+                border-bottom: 1px solid #1D75CC;
+            }
+        }
+    }
+    .content {
+        position: absolute;
+        top: 88px;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        overflow-y: auto;
+        overflow-x: hidden;
+        background: #F2F5F9;
+        font-size: 0;
+        .cn_list {
+            margin-top: 10px;
+            background: #FFF;
+            .cn_head {
+                width: 95%;
+                margin: 0 auto;
+                font-size: .14rem;
+                overflow: hidden;
+                height: 30px;
+                line-height: 30px;
+                border-bottom: 1px solid #F2F2F2;
+                .sidebar {
+                    float: right;
+                    height: 30px;
+                    line-height: 30px;
+                    font-size: .14rem;
+                    color: #AEAEAE;
+                    overflow: hidden;
+                    .icn_time {
+                        float: right;
+                        span {
+                            font-family: 'iconfont';
+                            margin-right: 5px
+                        }
+                    }
+                    .cn_text {
+                        float: right;
+                        margin-top: 3px;
+                        font-size: .14rem;
+                        margin-left: 5px;
+                        color: red;
+                        padding: 0 5px;
+                        height: 24px;
+                        line-height: 24px;
+                    }
+                    // .cn_border{
+                    //      @include box-sizing(border-box);
+                    //     border-left: 1px solid #F2F2F2;
+                    // }
+                }
+            }
+            .cn_con {
+                width: 95%;
+                margin: 0 auto;
+                overflow: hidden;
+                padding: 5px 0;
+                .de_img {
+                    width: 60px;
+                    height: 60px;
+                    float: left;
+                    img {
+                        width: 60px;
+                        height: 60px;
+                    }
+                }
+                .int {
+                    width: 76%;
+                    float: right;
+                    p {
+                        color: #AEAEAE;
+                        padding: 2px 0;
+                        color: #AEAEAE;
+                        font-size: .13rem;
+                        overflow: hidden;
+                        .int_title {
+                            color: #000;
+                        }
+                        .pir {
+                            color: #FFA842;
+                        }
+                        .R {
+                            float: right;
+                        }
+                        .margin_r {
+                            margin-right: 3px;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

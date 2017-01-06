@@ -1,0 +1,39 @@
+<div class="address-details">
+    <header class="address_details_hea">
+        <span class="details_left" v-on:click="onBack">&#xe621;</span>
+        <p class="details_bioati_de">{{states.title}}</p>
+        <!--<span class="details_right">&#xe620;</span>-->
+    </header>
+    <section class="address_details_sec" style="height:clac(100% - 50px);overflow-y: scroll;">
+        <div class="details_inputs">
+            <ul>
+                <li><input type="text" readonly="{{states.write}}" placeholder="收货人" v-model="states.name"/></li>
+                <li><input type="text" readonly="{{states.write}}" placeholder="手机号" v-model="states.tel"/></li>
+                <li><input type="text" readonly="{{states.write}}" placeholder="邮编号" v-model="states.zipcode"/></li>
+                <li class="choose_address">
+                    <p v-bind:style="{'display':states.is_hide}">
+                        <i>省</i>
+                        <i>市</i>
+                        <i>区</i>
+                    </p>
+                    <p v-bind:style="{'display':states.is_show}" v-on:click="onOpenAddress()">
+                        <i>{{states.provinceName}}</i>
+                        <i>{{states.cityName}}</i>
+                        <i>{{states.countyName}}</i>
+                    </p>
+                </li>
+                <li><input type="text" readonly="{{states.write}}" placeholder="详细地址" v-model="states.addrdetail" /></li>
+            </ul>
+            <div class="details_other">其他退货信息</div>
+            <div class="details_other_text">
+                <textarea type="text"></textarea>
+            </div>
+        </div>
+        <div class="bottom_has_editor" v-bind:style="{'display':states.is_hide}">
+            <span class="is_blue">删除</span>
+            <span class="is_ylow" v-on:click="onEditor()">编辑</span>
+        </div>
+        <div class="details_bottom_save" v-bind:style="{'display':states.is_show}" v-on:click="validateAddressInfo()">保存</div>
+    </section>
+    <address></address>
+</div>

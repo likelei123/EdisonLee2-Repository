@@ -1,0 +1,127 @@
+@import"../../../public/scss/variables.scss";
+.address-details {
+    position: absolute;
+    left: 0px;
+    right: 0px;
+    top: 0px;
+    bottom: 0px;
+    background-color: #fff;
+    overflow-y: hidden;
+    overflow-x: hidden;
+    background-color: #eee;
+    i,
+    em,
+    ins,
+    s {
+        text-decoration: none;
+        font-style: normal;
+    }
+    .address_details_hea {
+        height: $header_height;
+        background-color: $header_background;
+        color: $header_color;
+        font-size: $header_fontsize;
+        overflow: hidden;
+        span {
+            position: absolute;
+            display: inline-block;
+            width: $header_left_width;
+            height: $header_left_height;
+            font-family: "iconfont";
+            text-align: center;
+            line-height: $header_left_height;
+        }
+        .details_left {
+            left: 0px;
+        }
+        .details_right {
+            top: 0px;
+            right: 0px;
+        }
+        .details_bioati_de {
+            text-align: center;
+            line-height: $header_height;
+            font-size: $header_center_fontsize;
+        }
+    }
+    .address_details_sec {
+         position: absolute;
+        top:50px;
+        left:0px;
+        right:0px;
+        bottom: 0px;
+        .details_inputs {
+            background-color: #fff;
+            ul {
+                li {
+                    padding: 0 .12rem;
+                    height: .46rem;
+                    border-bottom: .01rem solid #D9D9D9;
+                    font-size: .13rem;
+                    input {
+                        width: 100%;
+                        height: 100%;
+                        font-size: .13rem;
+                    }
+                }
+                .choose_address{
+                    p{
+                        height: 100%;
+                        line-height: .46rem;
+                    }
+                }
+            }
+            .details_other {
+                padding: .1rem .12rem;
+                font-size: .13rem;
+                color: #A4A4A4;
+                background-color: #eee;
+            }
+            .details_other_text {
+                font-size: 0px;
+                padding: .12rem;
+                textarea {
+                    width: 100%;
+                    resize: none;
+                    height: .95rem;
+                    font-size: .13rem;
+                }
+            }
+        }
+        .bottom_has_editor{
+            position: absolute;
+            bottom: 0px;
+            width: 100%;
+            height: 48px;
+            font-size: 0px;
+            overflow: hidden;
+            span{
+                display: inline-block;
+                vertical-align: top;
+                  text-align: center;
+                  line-height: 48px;
+                width:50%;
+                font-size: .16rem;
+                color: #fff;
+            }
+            .is_blue{
+                background-color: #2075CF;
+            }
+            .is_ylow{
+                background-color: #F27F22;
+            }
+        }
+         .details_bottom_save{
+                 position: absolute;
+                bottom: 0px;
+                width: 100%;
+                height: 48px;
+                line-height: 48px;
+                text-align: center;
+                color: #fff;
+                font-size:.16rem;
+                overflow: hidden;
+                 background-color: #F27F22;
+            }
+    }
+}

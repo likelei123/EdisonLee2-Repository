@@ -1,0 +1,102 @@
+<section class="subpage_particulars">
+	<header class="header">
+		<div class="left" v-on:click="goBack"><span>&#xe621;</span></div>
+		<span>详情</span>
+	</header>
+	<section class="mian">
+		<div class="navbar">
+			<div class="nav_left">
+				<div class="nav_img">
+					<a href="native://photo?data={'returnfunction':'empImgback','photoCount':1}">
+						<img v-bind:src="res.empImgs">
+					</a>
+					<div class="praise">已赞<span>{{res.empGoods}}</span></div>
+				</div>
+			</div>
+			<div class="nav_right">
+				<div class="nav_form">
+					<span class="title">姓名</span>
+					<span class="nav_text" v-show="makeCannot == false">{{res.empName}}</span>
+					<input class="int  proving" type="text" name="username" placeholder="姓名" v-show="makeCannot" v-bind:value="res.empName" v-model="set_info.empName">
+				</div>
+				<div class="nav_form">
+					<span class="title">职业</span>
+					<span class="nav_text" v-show="makeCannot == false">{{res.empJob}}</span>
+					<input class="int  proving" type="text" name="profession" placeholder="职业" v-show="makeCannot" v-bind:value="res.empJob"
+									v-model="set_info.empJob">
+				</div>
+				<div class="nav_form">
+					<span class="title">手机</span>
+					<span class="nav_text">{{res.empCellphone}} </span>
+					<!--<input class="int  proving" type="text" name="profession" placeholder="手机号" v-show="makeCannot" v-bind:value="res.empCellphone">-->
+				</div>
+			</div>
+		</div>
+		<div class="limits">
+			<div class="no_click" v-show="res.isAdmin==1"></div>
+			<div class="lim_title" v-on:click="Gopower" v-show="makeCannot">
+				<span class="lim_left">岗位权限<b>*</b></span>
+				<span v-show="res.isAdmin==0"  class="lim_right">&#xe623;</span>
+			</div>
+			<!--<div class="lim_nav" v-show="makeCannot">
+				<div class="list" v-for=" lists in back">{{lists.modulename}}</div>
+				<div class="list">秒团</div>
+				<div class="list">评价管理</div>
+				<div class="list">基础信息</div>
+			</div>-->
+			<div class="lim_title" v-show="makeCannot == false"><span class="lim_left">岗位权限<b>*</b></span><span class="lim_right" v-show="makeCannot">&#xe623;</span></div>
+			<div class="lim_nav">
+				<div class="list" v-for=" lists in houtaiback">{{lists.moduleName}}</div>
+				<!--<div class="list">秒团</div>
+				<div class="list">评价管理</div>
+				<div class="list">基础信息</div>-->
+			</div>
+		</div>
+		<div class="limits">
+			<div class="open_left">显示在员工墙</div>
+			<div class="open" v-on:click="openActive" v-bind:class="{'open_up':contentShow}">
+				<div class="open_btn"></div>
+			</div>
+		</div>
+		<div class="content_show" v-show="contentShow">
+			<div class="upload_img">
+				<p class="title">员工简介背景<span>(最多5张)</span></p>
+				<div class="upload">
+					<div class="content">
+						<div class="content_img" v-for="p in phone">
+							<img v-bind:src="p">
+							<div class="delete" v-show="makeCannot" v-on:click="Ondelet($index)">×</div>
+						</div>
+					</div>
+					<a v-show="hideaddphone" href="native://photo?data={'returnfunction':'addImages','photoCount':5}">
+						<div class="append" v-show="makeCannot">
+							<span>&#xe625;</span>
+						</div>
+					</a>
+				</div>
+			</div>
+			<div class="news">
+				<p class="title">员工简介</p>
+				<p class="title_text" v-show="makeCannot == false">{{res.empInstructions}}</p>
+				<div class="text_content" v-show="makeCannot">
+					<textarea name="content" rows="6" placeholder="对员工的描述" maxlength="500" v-bind:value="res.empInstructions" v-model="set_info.empInstructions"></textarea>
+					<p><span>{{textlength}}</span>/500字</p>
+				</div>
+			</div>
+		</div>
+	</section>
+	<footer class="footer">
+		<div class="nav" v-show="foot">
+			<button class="btn" v-on:click="active(1)" v-show="statuslizhi">离职</button>
+			<button class="btn" v-on:click="active(2)" v-show="statusligang">离岗</button>
+			<button class="btn" v-on:click="active(3)" v-show="statusshanggang">上岗</button>
+			<button class="btn" v-on:click="Cannot">编辑</button>
+		</div>
+		<div class="add_news" v-show="pingyong" v-on:click="Onpingyong">
+			重新聘用
+		</div>
+		<div class="add_news" v-show="baocun" v-on:click="OnSave">
+			保存
+		</div>
+	</footer>
+</section>

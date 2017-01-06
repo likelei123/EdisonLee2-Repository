@@ -1,0 +1,183 @@
+@import "../../../public/scss/variables.scss";
+@mixin border-radius($radius) {
+    -webkit-border-radius: $radius;
+    -moz-border-radius: $radius;
+    border-radius: $radius;
+}
+
+@mixin box-sizing($sizing) {
+    -webkit-box-sizing: $sizing;
+    -moz-box-sizing: $sizing;
+    box-sizing: $sizing;
+}
+
+.wall {
+    padding-top: 8px;
+    em{
+        font-style: normal;
+    }
+    .list {
+        height: 64px;
+        overflow: hidden;
+        background: #fff;
+        border-bottom: 1px solid #EEE;
+        .list_img {
+            width: 25%;
+            float: left;
+            text-align: center;
+            margin-top: 11px;
+            img {
+                width: 44px;
+                height: 44px;
+                @include border-radius(44px);
+                overflow: hidden;
+            }
+        }
+        .message {
+            width: 75%;
+            float: left;
+            margin-top: 11px;
+            .name {
+                font-size: .14rem;
+                overflow: hidden;
+                height: 22px;
+                line-height: 22px;
+                span {
+                    float: right;
+                    display: block;
+                    width: 84px;
+                    height: 22px;
+                    line-height: 22px;
+                    @include border-radius(84px 0 0 84px);
+                    text-align: center;
+                    background: #E8F1FA;
+                    color: #1D75CC;
+                }
+            }
+            .details {
+                font-family: 'iconfont';
+                font-size: .14rem;
+                overflow: hidden;
+                height: 22px;
+                line-height: 22px;
+                padding-right: 12px;
+                position: relative;
+                .tub {
+                    color: #1D75CC;
+                    margin-right: 5px;
+                }
+                .Phon {
+                    float: right;
+                }
+                .is_good{
+                   position: absolute;
+                   left: 30%;
+                }
+            }
+        }
+    }
+}
+
+@mixin center-block {
+    position: absolute;
+    top: 88px;
+    left: 0;
+    right: 0;
+    bottom: 48px;
+    overflow-y: auto;
+    overflow-x: hidden;
+    background: #F2F5F9;
+    font-size: 0;
+    padding: 0;
+}
+
+.personnel_main {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: #F2F5F9;
+    .header {
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        font-size: 0;
+        .head {
+            background: $header_background;
+            padding: 0 10px;
+            height: $header_left_height;
+            line-height: $header_left_height;
+            text-align: center;
+            font-size: $header_fontsize;
+            overflow: hidden;
+            .ret_left {
+                float: left;
+                font-family: "iconfont";
+                color: $header_color;
+            }
+            .ret_title {
+                color: $header_color;
+            }
+        }
+        .per_list {
+            overflow: hidden;
+            background:#FFF;
+            .nav {
+                float: left;
+                height: 40px;
+                font-size: .14rem;
+                width: 25%;
+                line-height: 40px;
+                text-align: center;
+                color: #999;
+            }
+            .nav_color {
+                color: #1D75CC;
+                @include box-sizing(border-box);
+                border-bottom: 1px solid #1D75CC;
+            }
+        }
+    }
+    .pe_content {
+        @include center-block;
+        @extend .wall;
+    }
+    .pe_compile {
+        @include center-block;
+        @extend .wall;
+    }
+    .pe_leave {
+        @include center-block;
+        @extend .wall;
+    }
+    .pe_leaveOffice {
+        @include center-block;
+        @extend .wall;
+    }
+    .footer {
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        height: 48px;
+        font-size: 0;
+        padding: 0 12px;
+        background: #fff;
+        .add_news {
+            margin-top: 8px;
+            height: 32px;
+            line-height: 32px;
+            border: 1px solid #1D75CC;
+            @include border-radius(5px);
+            font-size: .14rem;
+            color: #1D75CC;
+            text-align: center;
+            .ico_tu {
+                font-family: 'iconfont';
+                margin-right: 8px;
+            }
+        }
+    }
+}

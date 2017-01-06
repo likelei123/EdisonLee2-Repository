@@ -1,0 +1,137 @@
+@import"../../../public/scss/variables.scss";
+.register-box {
+	border: 0;
+	position: absolute;
+	left: 0;
+	top: 0;
+	right: 0;
+	bottom: 0;
+
+	.header {
+		height: $header_height;
+        background-color: $header_background;
+        color: $header_color;
+        font-size: $header_fontsize;
+        position: absolute;
+        left: 0;
+        top: 0;
+        right: 0;
+
+        span {
+            position: absolute;
+            left: 0px;
+            display: inline-block;
+            width: $header_left_width;
+            height: $header_left_height;
+            font-family: "iconfont";
+            text-align: center;
+            line-height: $header_left_height;
+        }
+
+        p {
+            text-align: center;
+            line-height: $header_height;
+            font-size: $header_center_fontsize;
+        }
+	}
+
+	.content {
+		position: absolute;
+		top: $header_height;
+		left: 0;
+		bottom: 0;
+		right: 0;
+		overflow-y:auto;
+
+		.bg-camera {
+			width: 125px;
+			height: 118px;
+			margin: auto;
+			margin-top: 47px;
+			background-image: url(../../../public/images/camera.png);
+			background-size: cover;
+		}
+		
+		.form-group {
+			margin: 50px 32px 0 32px;
+			border: 2px solid $header_background;
+			border-radius: 8px;
+
+			.form-item {
+				border-bottom: 1px solid #bacfe5;
+				height: 45px;
+				margin: 0 15px 0 15px;
+				padding: 0;
+
+				i {
+					display: block;
+					font-family: "iconfont";
+					color: $header_background;
+					font-size: .2rem;
+					font-style: normal;
+					float: left;
+					margin: 10px 0 0 15px;
+				}
+				.input-box {
+					height: 100%;
+					margin: 0px 80px 0 45px;
+					overflow: hidden;
+
+					input {
+						height: 20px;
+						width: 100%;
+						border-left: 1px solid $header_background;
+						margin-top: 12px;
+						font-size: .15rem;
+						float: left;
+						line-height: 18px;
+						padding-left: 10px;
+					}
+				}
+
+				.button {
+					font-size: .12rem;
+					background-color: #f17f22;
+					height: 30px;
+					padding: 0 5px 0 5px;
+					float: right;
+					border-radius: 5px;
+					color: white;
+					line-height: 28px;
+					margin-top: 7px;
+				}
+			}
+		}
+
+		.active-btn {
+			display: block;
+			margin: 30px 32px 0 32px;
+			height: 46px;
+			line-height: 46px;
+			background: $header_background;
+			color: white;
+			font-size: .16rem;
+			border-radius: 5px;
+			text-align: center;
+		}
+
+		.agreement-box {
+			font-size: .14rem;
+			text-align: center;
+			margin-top: 20px;
+
+			input {
+				vertical-align: -3px;
+			}
+
+			span {
+				vertical-align: middle;
+			}
+
+			a {
+				vertical-align: middle;
+				color: #5194ff;
+			}
+		}
+	}
+}

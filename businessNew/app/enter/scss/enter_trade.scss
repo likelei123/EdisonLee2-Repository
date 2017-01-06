@@ -1,0 +1,49 @@
+@import"../../../public/scss/variables.scss";
+.enter-trade-box {
+    position: absolute;
+    left: 0px;
+    right: 0px;
+    top: 0px;
+    bottom: 0px;
+    background-color: #eee;
+
+    header {
+        height: $header_height;
+        background-color: $header_background;
+        color: $header_color;
+        font-size: $header_fontsize;
+        span {
+            position: absolute;
+            left: 0px;
+            display: inline-block;
+            width: $header_left_width;
+            height: $header_left_height;
+            font-family: "iconfont";
+            text-align: center;
+            line-height: $header_left_height;
+        }
+        p {
+            text-align: center;
+            line-height: $header_height;
+            font-size: $header_center_fontsize;
+        }
+    }
+
+    .content {
+        position: absolute;
+        top: $header_height;
+        left: 0;
+        right: 0;
+        bottom: 0;
+
+        .item {
+            height: 30px;
+            font-size: .14rem;
+            line-height: 30px;
+            padding-left: 10px;
+            background: white;
+            color: #333;
+            margin-top: 5px;
+        }
+    }
+}
